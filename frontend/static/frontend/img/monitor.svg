@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="204.14644mm"
+   height="157.72847mm"
+   viewBox="0 0 204.14644 157.72847"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="monitor.svg">
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient6416">
+      <stop
+         style="stop-color:#808080;stop-opacity:1"
+         offset="0"
+         id="stop6412" />
+      <stop
+         style="stop-color:#333333;stop-opacity:1"
+         offset="1"
+         id="stop6414" />
+    </linearGradient>
+    <meshgradient
+       inkscape:collect="always"
+       id="meshgradient4932"
+       gradientUnits="userSpaceOnUse"
+       x="6.0854168"
+       y="172.91042"
+       gradientTransform="translate(0,-12.700002)">
+      <meshrow
+         id="meshrow4934">
+        <meshpatch
+           id="meshpatch4936">
+          <stop
+             path="c 66.4986,0  132.997,0  199.496,0"
+             style="stop-color:#ffffff;stop-opacity:1"
+             id="stop4938" />
+          <stop
+             path="c 0,35.6306  0,71.2611  0,106.892"
+             style="stop-color:#000000;stop-opacity:1"
+             id="stop4940" />
+          <stop
+             path="c -66.4986,0  -132.997,0  -199.496,0"
+             style="stop-color:#ffffff;stop-opacity:1"
+             id="stop4942" />
+          <stop
+             path="c 0,-35.6306  0,-71.2611  0,-106.892"
+             style="stop-color:#000000;stop-opacity:1"
+             id="stop4944" />
+        </meshpatch>
+      </meshrow>
+    </meshgradient>
+    <meshgradient
+       inkscape:collect="always"
+       id="meshgradient5104"
+       gradientUnits="userSpaceOnUse"
+       x="98.604065"
+       y="271.45645"
+       gradientTransform="translate(0,7.4083337)">
+      <meshrow
+         id="meshrow5106">
+        <meshpatch
+           id="meshpatch5108">
+          <stop
+             path="c 4.84495,0  9.68991,0  14.5349,0"
+             style="stop-color:#000000;stop-opacity:1"
+             id="stop5110" />
+          <stop
+             path="c 0,4.53981  0,9.07961  0,13.6194"
+             style="stop-color:#ffffff;stop-opacity:1"
+             id="stop5112" />
+          <stop
+             path="c -4.84495,0  -9.68991,0  -14.5349,0"
+             style="stop-color:#000000;stop-opacity:1"
+             id="stop5114" />
+          <stop
+             path="c 0,-4.53981  0,-9.07961  0,-13.6194"
+             style="stop-color:#ffffff;stop-opacity:1"
+             id="stop5116" />
+        </meshpatch>
+      </meshrow>
+    </meshgradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient6416"
+       id="linearGradient6418"
+       x1="225.23566"
+       y1="320.48981"
+       x2="229.49396"
+       y2="336.02026"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="270.62867"
+     inkscape:cy="242.92445"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:snap-grids="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:snap-to-guides="false"
+     inkscape:window-width="1613"
+     inkscape:window-height="995"
+     inkscape:window-x="67"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-3.7982667,-158.03728)">
+    <g
+       id="g6426">
+      <rect
+         transform="matrix(1,0,-0.34219106,0.93963039,0,0)"
+         ry="0"
+         y="307.01758"
+         x="169.60263"
+         height="28.537283"
+         width="92.420319"
+         id="rect4930-2-3-7-9"
+         style="fill:#808080;fill-opacity:1;stroke:url(#linearGradient6418);stroke-width:0.99654889;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <rect
+         ry="0"
+         y="271.99548"
+         x="89.850845"
+         height="29.933634"
+         width="32.041294"
+         id="rect4930-2-3-7"
+         style="fill:#1a1a1a;fill-opacity:1;stroke:#646464;stroke-width:0.04095932;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <rect
+         ry="6.5007086"
+         y="279.17389"
+         x="98.913063"
+         height="13.001417"
+         width="13.916862"
+         id="rect4930-2-3-7-5"
+         style="fill:#ffffff;fill-opacity:1;stroke:url(#meshgradient5104);stroke-width:0.61799997;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <rect
+         ry="0"
+         y="158.13913"
+         x="3.900121"
+         height="116.325"
+         width="203.94273"
+         id="rect4930-2"
+         style="fill:#646464;fill-opacity:1;stroke:#646464;stroke-width:0.20370859;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <rect
+         ry="0"
+         y="160.21059"
+         x="6.0854168"
+         height="106.89166"
+         width="199.49583"
+         id="rect4930"
+         style="fill:url(#meshgradient4932);fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.82352941" />
+      <rect
+         ry="0"
+         y="269.6662"
+         x="95.391991"
+         height="3.1522558"
+         width="20.959005"
+         id="rect4930-2-3"
+         style="fill:#000000;fill-opacity:0.82352941;stroke:#646464;stroke-width:0.01075014;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+  </g>
+</svg>
