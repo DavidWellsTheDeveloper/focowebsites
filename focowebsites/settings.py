@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'django_filters',
     'debug_toolbar',
 
-
     # User apps
     'api',
     'frontend',
@@ -117,15 +116,19 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'MST'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
+# Email Settings
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_USE_SSL = False
+EMAIL_HOST_USER = 'dave1.t.wells@gmail.com'
+EMAIL_HOST_PASSWORD = 'y8UwfzSiwdYhdZ'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
