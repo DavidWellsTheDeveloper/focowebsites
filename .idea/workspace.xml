@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b73208aa-1f2b-4569-83d2-18fa7e8e7aed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/css/app.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/css/palette.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/focowebsites/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/focowebsites/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/static/frontend/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/frontend/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/templates/frontend/includes/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/frontend/includes/footer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/templates/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,10 +39,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../crime-uk-dash" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../travel-threat-assessment" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.CSS" />
   </component>
@@ -97,7 +91,8 @@
       <workItem from="1587329201858" duration="8869000" />
       <workItem from="1587348734848" duration="7031000" />
       <workItem from="1587395583469" duration="12000" />
-      <workItem from="1587610393446" duration="8289000" />
+      <workItem from="1587610393446" duration="9746000" />
+      <workItem from="1587689508866" duration="2621000" />
     </task>
     <task id="LOCAL-00001" summary="Added content form &amp; nav backend redesign">
       <created>1587357212302</created>
@@ -113,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587357287854</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Rework styles &amp; implement Sass">
+      <created>1587658817111</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1587658817111</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,22 +124,23 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added content form &amp; nav backend redesign" />
     <MESSAGE value="added migrations" />
-    <option name="LAST_COMMIT_MESSAGE" value="added migrations" />
+    <MESSAGE value="Rework styles &amp; implement Sass" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rework styles &amp; implement Sass" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="459" y="136" width="912" height="904" key="CommitChangelistDialog2" timestamp="1587357287752">
+    <state x="459" y="136" width="912" height="904" key="CommitChangelistDialog2" timestamp="1587658816903">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
-    <state x="459" y="136" width="912" height="904" key="CommitChangelistDialog2/0.27.1680.1023/1680.0.1920.1080@0.27.1680.1023" timestamp="1587357287752" />
+    <state x="459" y="136" width="912" height="904" key="CommitChangelistDialog2/0.27.1680.1023/1680.0.1920.1080@0.27.1680.1023" timestamp="1587658816903" />
     <state x="2205" y="115" width="860" height="847" key="CommitChangelistDialog2/0.27.1680.1023/1680.0.1920.1080@1680.0.1920.1080" timestamp="1586217262636" />
     <state x="475" y="315" width="719" height="445" key="EditFileWatcherDialog" timestamp="1587610486348">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
     <state x="475" y="315" width="719" height="445" key="EditFileWatcherDialog/0.27.1680.1023/1680.0.1920.1080@0.27.1680.1023" timestamp="1587610486348" />
-    <state x="650" y="308" width="374" height="459" key="FileChooserDialogImpl" timestamp="1587395593690">
+    <state x="650" y="308" width="374" height="459" key="FileChooserDialogImpl" timestamp="1587665524379">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
-    <state x="650" y="308" width="374" height="459" key="FileChooserDialogImpl/0.27.1680.1023/1680.0.1920.1080@0.27.1680.1023" timestamp="1587395593690" />
+    <state x="650" y="308" width="374" height="459" key="FileChooserDialogImpl/0.27.1680.1023/1680.0.1920.1080@0.27.1680.1023" timestamp="1587665524379" />
     <state x="2423" y="297" width="424" height="484" key="FileChooserDialogImpl/0.27.1680.1023/1680.0.1920.1080@1680.0.1920.1080" timestamp="1584214787626" />
     <state x="2468" y="244" width="334" height="590" key="RollbackChangesDialog" timestamp="1586217231254">
       <screen x="1680" y="0" width="1920" height="1080" />
@@ -147,10 +150,10 @@
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
     <state x="329" y="172" key="SettingsEditor/0.27.1680.1023/1680.0.1920.1080@0.27.1680.1023" timestamp="1587612009837" />
-    <state x="435" y="259" width="800" height="556" key="Vcs.Push.Dialog.v2" timestamp="1587357289596">
+    <state x="435" y="259" width="800" height="556" key="Vcs.Push.Dialog.v2" timestamp="1587658819653">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
-    <state x="435" y="259" width="800" height="556" key="Vcs.Push.Dialog.v2/0.27.1680.1023/1680.0.1920.1080@0.27.1680.1023" timestamp="1587357289596" />
+    <state x="435" y="259" width="800" height="556" key="Vcs.Push.Dialog.v2/0.27.1680.1023/1680.0.1920.1080@0.27.1680.1023" timestamp="1587658819653" />
     <state x="496" y="365" key="com.intellij.ide.util.TipDialog" timestamp="1586187547498">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
@@ -159,5 +162,16 @@
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
     <state x="531" y="228" width="618" height="618" key="find.popup/0.27.1680.1023/1680.0.1920.1080@0.27.1680.1023" timestamp="1587613020268" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/focowebsites/settings.py</url>
+          <line>119</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

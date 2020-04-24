@@ -4,7 +4,7 @@ from api.models import Nav
 from .forms import ContactForm
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
-from focowebsites.settings import EMAIL_HOST_USER
+# from focowebsites.settings import EMAIL_HOST_USER
 
 
 # Create your views here.
@@ -13,8 +13,8 @@ from rest_framework import routers
 
 
 def get_nav():
-    pages = Nav.objects.all()
-    return pages
+    nav_pages = Nav.objects.all()
+    return nav_pages
 
 
 class HomeView(TemplateView):
@@ -46,7 +46,7 @@ class HomeView(TemplateView):
             from_email = form.cleaned_data['from_email']
             message = form.cleaned_data['message']
             try:
-                send_mail(subject, message, EMAIL_HOST_USER, ['dave1.t.wells@gmail.com'], fail_silently=False)
+                send_mail(subject, message, 'dave1.t.wells@gmail.com', ['dave1.t.wells@gmail.com'], fail_silently=False)
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect('home')
