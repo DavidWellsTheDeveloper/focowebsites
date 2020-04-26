@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
-from api.models import Nav
+from api.models import Nav, Faq
 from .forms import ContactForm
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
@@ -15,6 +15,11 @@ from rest_framework import routers
 def get_nav():
     nav_pages = Nav.objects.all()
     return nav_pages
+
+
+def get_faq():
+    faqs = Faq.objects.all()
+    return faqs
 
 
 class HomeView(TemplateView):
@@ -34,6 +39,7 @@ class HomeView(TemplateView):
                 'carousel_images': carousel_images,
                 'active': 'Home',
                 'nav_pages': get_nav(),
+                'faqs': get_faq(),
                 'form': ContactForm,
             }
         )
@@ -81,7 +87,3 @@ class ConstructionView(TemplateView):
                 'nav_pages': get_nav(),
             }
         )
-
-
-def successView(request):
-    return HttpResponse('Success! Thank you for your message.')

@@ -1,5 +1,13 @@
 body {
-  padding-top: 6em;
+  padding-top: 5em;
+}
+
+h1 {
+  text-align: center;
+}
+
+section {
+  margin-bottom: 10em;
 }
 
 nav {

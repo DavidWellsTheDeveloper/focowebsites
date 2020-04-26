@@ -1,7 +1,17 @@
+//python manage.py sass frontend/static/frontend/css/app.scss frontend/static/frontend/css/app.css --watch
+
 @import "palette";
 
 body {
-    padding-top: 6em;
+    padding-top: 5em;
+}
+
+h1 {
+    text-align: center;
+}
+
+section {
+    margin-bottom: 10em;
 }
 
 nav {
