@@ -1,5 +1,13 @@
 # focowebsites
 Refactored Consulting site using Django.
+
+## Prerequisites
+pip3 is installed on machine (preferably alias pip=pip3)
+python3 is installed on machine (perferably alias python=python3)
+virtualenv is installed.
+Verify that `startup.development.sh` is executable. If not run `chmod u+x startup.development.sh`
+
+
 ## Getting Started
 * Development works best on Linux or Mac, you may need to adjust startup script to use windows.
 * Clone this repository.
