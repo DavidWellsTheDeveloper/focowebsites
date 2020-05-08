@@ -15,7 +15,7 @@ WD="$(pwd)"
 
 # [CMD Arguments and Env. Vars]
 
-venvdir="$(pwd)/focowebsites"
+venvdir="$(pwd)"
 pipfile="requirements.txt"
 
 
