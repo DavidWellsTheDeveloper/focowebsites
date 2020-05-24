@@ -1,16 +1,14 @@
 {% load static %}
-<nav class="navbar navbar-expand-md fixed-top">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
-    <i class="fas fa-bars"></i>
-  </button>
-  <a class="navbar-brand" href="../index.html"><img class="img-fluid" src="{% static "frontend/img/drwLogo.png" %}"/></a>
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav ml-auto mr-4">
-        {% for page in nav_pages %}
-            <li class="nav-item {% if page.name == active %}active{% endif %}">
-                <a class="nav-link" href="{{ page.path }}"><i class="fas {{ page.fa_icon }}"></i> {{ page.name }}</a>
-            </li>
-        {% endfor %}
-    </ul>
-  </div>
+<nav>
+
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Logo</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            {% for page in nav_pages %}
+                <li>
+                    <a href="{{ page.path }}"><i class="inline-icon material-icons">{{ page.icon }}</i> {{ page.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 </nav>
