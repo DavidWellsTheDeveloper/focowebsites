@@ -59,11 +59,26 @@ class HomeView(TemplateView):
         return render(request, "email.html", {'form': form})
 
 
-class AboutView(TemplateView):
-    template_name = "frontend/about.html"
+class ContactView(TemplateView):
+    template_name = "frontend/contact.html"
 
     def get(self, request):
-        print(get_nav().first().fa_icon)
+        print(get_nav().first().icon)
+        return render(
+            request,
+            self.template_name,
+            {
+                'active': 'Contact',
+                'nav_pages': get_nav(),
+            }
+        )
+
+
+class AboutView(TemplateView):
+    template_name = "frontend/construction.html"
+
+    def get(self, request):
+        print(get_nav().first().icon)
         return render(
             request,
             self.template_name,

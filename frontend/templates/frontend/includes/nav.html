@@ -5,7 +5,7 @@
         <a href="#" class="brand-logo">Logo</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             {% for page in nav_pages %}
-                <li>
+                <li class="{% if page.name == active %}active{% endif %}">
                     <a href="{{ page.path }}"><i class="inline-icon material-icons">{{ page.icon }}</i> {{ page.name }}</a>
                 </li>
             {% endfor %}

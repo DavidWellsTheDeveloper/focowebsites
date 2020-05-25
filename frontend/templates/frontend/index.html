@@ -2,7 +2,81 @@
 
 {% load static %}
 {% block body %}
-    {#<?php $page = "home" ?>#}
+
+    <div class="parallax-container">
+        <div class="parallax">
+            <img style="width:100%" src="{% static 'frontend/img/ben-karpinski-aJAfKxscG3k-unsplash.jpg' %}" alt="" >
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>FAQ</h1>
+        <ul class="collapsible">
+            {% for faq in faqs %}
+                <li>
+                    <div class="collapsible-header z-depth-2"> <i class="material-icons"></i>{{ faq.question }} </div>
+                    <div class="collapsible-body"> {{ faq.answer }} </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="fixed-action-btn">
+          <a class="btn-floating btn-large green">
+                <i class="large material-icons">contacts</i>
+          </a>
+          <ul>
+                <li><a class="btn-floating green darken-4" href="contact.html#email"><i class="material-icons">email</i></a></li>
+                <li><a class="btn-floating green darken-2" href="contact.html#phone"><i class="material-icons">phone</i></a></li>
+          </ul>
+    </div>
+
+    <div>
+        <p>Page Padding</p>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+    </div>
     <!-- Start Page Content -->
 
 {#    <section>#}
