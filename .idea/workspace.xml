@@ -1,89 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b73208aa-1f2b-4569-83d2-18fa7e8e7aed" name="Default Changelist" comment="Added materialize, commented out old code to be refactored">
-      <change afterPath="$PROJECT_DIR$/api/migrations/0006_auto_20200524_0953.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/css/materialize.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/js/anime.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/js/autocomplete.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/js/bin/materialize.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/js/bin/materialize.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/js/buttons.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/js/cards.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/js/carousel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/js/cash.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/js/characterCounter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/js/chips.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/js/collapsible.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/js/component.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/js/datepicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/js/dropdown.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/js/forms.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/js/global.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/js/materialbox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/js/modal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/js/parallax.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/js/pushpin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/js/range.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/js/scrollspy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/js/select.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/js/sidenav.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/js/slider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/js/tabs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/js/tapTarget.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/js/timepicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/js/toasts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/js/tooltip.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/js/waves.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/_style.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_badges.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_buttons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_cards.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_carousel.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_chips.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_collapsible.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_color-classes.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_color-variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_datepicker.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_dropdown.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_global.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_grid.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_icons-material-design.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_materialbox.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_modal.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_navbar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_normalize.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_preloader.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_pulse.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_sidenav.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_slider.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_table_of_contents.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_tabs.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_tapTarget.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_timepicker.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_toast.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_tooltip.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_transitions.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_typography.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_waves.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/forms/_checkboxes.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/forms/_file-input.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/forms/_forms.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/forms/_input-fields.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/forms/_radio-buttons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/forms/_range.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/forms/_select.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/forms/_switches.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/materialize.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="b73208aa-1f2b-4569-83d2-18fa7e8e7aed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/static/frontend/css/app.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/static/frontend/css/app.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/static/frontend/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/static/frontend/js/font-awesome-all.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/frontend/css/materialize.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/frontend/css/materialize.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/frontend/sass/_style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/_style.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/templates/frontend/includes/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/frontend/includes/nav.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/templates/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/frontend/index.html" afterDir="false" />
@@ -99,9 +20,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -130,7 +51,7 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.CSS" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.SCSS" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -190,7 +111,8 @@
       <workItem from="1588895983213" duration="4970000" />
       <workItem from="1588959462639" duration="20000" />
       <workItem from="1589334691431" duration="716000" />
-      <workItem from="1590334650047" duration="6025000" />
+      <workItem from="1590334650047" duration="16173000" />
+      <workItem from="1590423458910" duration="12220000" />
     </task>
     <task id="LOCAL-00001" summary="Added content form &amp; nav backend redesign">
       <created>1587357212302</created>
@@ -241,7 +163,21 @@
       <option name="project" value="LOCAL" />
       <updated>1588898656259</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added materialize, commented out old code to be refactored.">
+      <created>1590341222709</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1590341222709</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Parallax &amp; FAQ">
+      <created>1590381277739</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1590381277739</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,19 +192,21 @@
     <MESSAGE value="add FAQ to admin" />
     <MESSAGE value="remove bootstrap, fix startup script" />
     <MESSAGE value="Added materialize, commented out old code to be refactored" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added materialize, commented out old code to be refactored" />
+    <MESSAGE value="Added materialize, commented out old code to be refactored." />
+    <MESSAGE value="Parallax &amp; FAQ" />
+    <option name="LAST_COMMIT_MESSAGE" value="Parallax &amp; FAQ" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2373" y="289" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590337511605">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state x="2373" y="289" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/72.196.1608.1023/1680.0.1920.1080@1680.0.1920.1080" timestamp="1590337511605" />
-    <state x="511" y="305" width="912" height="904" key="CommitChangelistDialog2" timestamp="1590341018386">
+    <state x="511" y="305" width="912" height="904" key="CommitChangelistDialog2" timestamp="1590381277611">
       <screen x="72" y="196" width="1608" height="1023" />
     </state>
     <state x="459" y="136" width="912" height="904" key="CommitChangelistDialog2/0.27.1680.1023/1680.0.1920.1080@0.27.1680.1023" timestamp="1587945392322" />
     <state x="2205" y="115" width="860" height="847" key="CommitChangelistDialog2/0.27.1680.1023/1680.0.1920.1080@1680.0.1920.1080" timestamp="1586217262636" />
-    <state x="511" y="305" width="912" height="904" key="CommitChangelistDialog2/72.196.1608.1023/1680.0.1920.1080@72.196.1608.1023" timestamp="1590341018386" />
+    <state x="511" y="305" width="912" height="904" key="CommitChangelistDialog2/72.196.1608.1023/1680.0.1920.1080@72.196.1608.1023" timestamp="1590381277611" />
     <state x="475" y="315" width="719" height="445" key="EditFileWatcherDialog" timestamp="1587610486348">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
@@ -278,19 +216,21 @@
     </state>
     <state x="650" y="308" width="374" height="459" key="FileChooserDialogImpl/0.27.1680.1023/1680.0.1920.1080@0.27.1680.1023" timestamp="1587950597339" />
     <state x="2423" y="297" width="424" height="484" key="FileChooserDialogImpl/0.27.1680.1023/1680.0.1920.1080@1680.0.1920.1080" timestamp="1584214787626" />
-    <state x="2468" y="244" width="334" height="590" key="RollbackChangesDialog" timestamp="1586217231254">
-      <screen x="1680" y="0" width="1920" height="1080" />
+    <state x="732" y="427" width="334" height="590" key="RollbackChangesDialog" timestamp="1590351618907">
+      <screen x="72" y="196" width="1608" height="1023" />
     </state>
     <state x="2468" y="244" width="334" height="590" key="RollbackChangesDialog/0.27.1680.1023/1680.0.1920.1080@1680.0.1920.1080" timestamp="1586217231254" />
-    <state x="329" y="172" key="SettingsEditor" timestamp="1587612009837">
-      <screen x="0" y="27" width="1680" height="1023" />
+    <state x="732" y="427" key="RollbackChangesDialog/72.196.1608.1023/1680.0.1920.1080@72.196.1608.1023" timestamp="1590351618907" />
+    <state x="387" y="341" width="1022" height="737" key="SettingsEditor" timestamp="1590425582847">
+      <screen x="72" y="196" width="1608" height="1023" />
     </state>
     <state x="329" y="172" key="SettingsEditor/0.27.1680.1023/1680.0.1920.1080@0.27.1680.1023" timestamp="1587612009837" />
-    <state x="488" y="428" width="800" height="556" key="Vcs.Push.Dialog.v2" timestamp="1588900692914">
+    <state x="387" y="341" width="1022" height="737" key="SettingsEditor/72.196.1608.1023/1680.0.1920.1080@72.196.1608.1023" timestamp="1590425582847" />
+    <state x="488" y="428" width="800" height="563" key="Vcs.Push.Dialog.v2" timestamp="1590381279809">
       <screen x="72" y="196" width="1608" height="1023" />
     </state>
     <state x="435" y="259" width="800" height="556" key="Vcs.Push.Dialog.v2/0.27.1680.1023/1680.0.1920.1080@0.27.1680.1023" timestamp="1587945394029" />
-    <state x="488" y="428" key="Vcs.Push.Dialog.v2/72.196.1608.1023/1680.0.1920.1080@72.196.1608.1023" timestamp="1588900692914" />
+    <state x="488" y="428" width="800" height="563" key="Vcs.Push.Dialog.v2/72.196.1608.1023/1680.0.1920.1080@72.196.1608.1023" timestamp="1590381279809" />
     <state x="496" y="365" key="com.intellij.ide.util.TipDialog" timestamp="1586187547498">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>

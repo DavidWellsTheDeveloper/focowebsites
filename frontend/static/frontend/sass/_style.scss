@@ -1,3 +1,35 @@
+
+body {
+    font-family: "Roboto Slab", serif;
+}
+
+h1 {
+    color: $primary-color-dark;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+}
+
 .inline-icon {
-  float: left;
+    float: left;
+}
+
+.parallax-container {
+    .parallax {
+        img {
+            width: 125%;
+        }
+    }
+}
+
+section {
+    margin-bottom: 12em;
+    &#attention {
+        img {
+            margin-top: 3em;
+        }
+        p {
+            text-align: left;
+            font-size: larger;
+        }
+    }
 }

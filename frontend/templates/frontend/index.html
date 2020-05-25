@@ -3,13 +3,30 @@
 {% load static %}
 {% block body %}
 
-    <div class="parallax-container">
-        <div class="parallax">
-            <img style="width:100%" src="{% static 'frontend/img/ben-karpinski-aJAfKxscG3k-unsplash.jpg' %}" alt="" >
-        </div>
-    </div>
+    <section class="container-fluid valign-wrapper center-align" id="attention">
+        <div class="row">
+            <div class="col m12 xl4 l5">
+                <img class="responsive-img circle" src="{% static 'frontend/img/dave_bread_vertical._bw_square.jpeg' %}" alt="Dave Wells Black & White">
 
-    <div class="container">
+            </div>
+            <div class="col m12 xl8 l7">
+                <h1>Hello, I'm Dave and I'll help you build your online presence.</h1>
+                <p>Let's build something together. I'm a developer with an eye for design, and user experience. Whether you're
+                looking for a clean, crisp and informative design, or something that's a bit more flashy I will take your
+                project from conception to complete, keeping you in the look every step of the way. Let's create something
+                beautiful together.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="parallax-container">
+        <div class="parallax">
+            <img src="{% static 'frontend/img/ben-karpinski-aJAfKxscG3k-unsplash.jpg' %}" alt="" >
+        </div>
+    </section>
+
+    <section class="container">
         <h1>FAQ</h1>
         <ul class="collapsible">
             {% for faq in faqs %}
@@ -19,15 +36,15 @@
                 </li>
             {% endfor %}
         </ul>
-    </div>
+    </section>
 
     <div class="fixed-action-btn">
           <a class="btn-floating btn-large green">
                 <i class="large material-icons">contacts</i>
           </a>
           <ul>
-                <li><a class="btn-floating green darken-4" href="contact.html#email"><i class="material-icons">email</i></a></li>
-                <li><a class="btn-floating green darken-2" href="contact.html#phone"><i class="material-icons">phone</i></a></li>
+                <li><a class="btn-floating green darken-4" href="contact#email"><i class="material-icons">email</i></a></li>
+                <li><a class="btn-floating green darken-2" href="contact#phone"><i class="material-icons">phone</i></a></li>
           </ul>
     </div>
 

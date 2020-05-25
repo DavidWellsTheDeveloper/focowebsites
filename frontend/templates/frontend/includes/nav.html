@@ -3,6 +3,7 @@
 
     <div class="nav-wrapper">
         <a href="#" class="brand-logo">Logo</a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             {% for page in nav_pages %}
                 <li class="{% if page.name == active %}active{% endif %}">
@@ -12,3 +13,10 @@
         </ul>
     </div>
 </nav>
+<ul class="sidenav" id="mobile-demo">
+    {% for page in nav_pages %}
+        <li class="{% if page.name == active %}active{% endif %}">
+            <a href="{{ page.path }}"><i class="inline-icon material-icons">{{ page.icon }}</i> {{ page.name }}</a>
+        </li>
+    {% endfor %}
+</ul>
