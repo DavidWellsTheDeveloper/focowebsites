@@ -5652,9 +5652,9 @@ body.keyboard-focused .dropdown-content li:focus {
 }
 
 .collapsible {
-  border-top: 1px solid #ddd;
-  border-right: 1px solid #ddd;
-  border-left: 1px solid #ddd;
+  border-top: 1px solid #30d0c1;
+  border-right: 1px solid #30d0c1;
+  border-left: 1px solid #30d0c1;
   margin: 0.5rem 0 1rem 0;
 }
 
@@ -5664,8 +5664,8 @@ body.keyboard-focused .dropdown-content li:focus {
   -webkit-tap-highlight-color: transparent;
   line-height: 1.5;
   padding: 1rem;
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
+  background-color: #acece6;
+  border-bottom: 1px solid #30d0c1;
 }
 
 .collapsible-header:focus {
@@ -5686,7 +5686,7 @@ body.keyboard-focused .dropdown-content li:focus {
 
 .collapsible-body {
   display: none;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #30d0c1;
   box-sizing: border-box;
   padding: 2rem;
 }
@@ -5724,7 +5724,7 @@ body.keyboard-focused .dropdown-content li:focus {
 .sidenav .collapsible-body,
 .sidenav.fixed .collapsible-body {
   border: 0;
-  background-color: #fff;
+  background-color: #acece6;
 }
 
 .sidenav .collapsible-body li a,
@@ -8580,9 +8580,12 @@ body {
   font-family: "Roboto Slab", serif;
 }
 
-h1 {
+h1, h2, h3, h4 {
   color: #006875;
   font-family: 'Playfair Display', serif;
+}
+
+h1 {
   text-align: center;
 }
 
@@ -8595,14 +8598,22 @@ h1 {
 }
 
 section {
-  margin-bottom: 12em;
+  padding-bottom: 12em;
 }
 
-section#attention img {
+section img {
   margin-top: 3em;
 }
 
-section#attention p {
+section p {
   text-align: left;
   font-size: larger;
+}
+
+section h1 {
+  margin-bottom: 1em;
+}
+
+.badge {
+  margin-bottom: 1em;
 }

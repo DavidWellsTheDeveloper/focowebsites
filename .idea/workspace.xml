@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b73208aa-1f2b-4569-83d2-18fa7e8e7aed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/frontend/css/materialize.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/frontend/css/materialize.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/frontend/sass/_style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/_style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_variables.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/templates/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/frontend/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,7 +111,8 @@
       <workItem from="1588959462639" duration="20000" />
       <workItem from="1589334691431" duration="716000" />
       <workItem from="1590334650047" duration="16173000" />
-      <workItem from="1590423458910" duration="12509000" />
+      <workItem from="1590423458910" duration="12559000" />
+      <workItem from="1590464499133" duration="5798000" />
     </task>
     <task id="LOCAL-00001" summary="Added content form &amp; nav backend redesign">
       <created>1587357212302</created>
@@ -180,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590441329129</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Wording">
+      <created>1590441595970</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1590441595970</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,19 +209,20 @@
     <MESSAGE value="Added materialize, commented out old code to be refactored." />
     <MESSAGE value="Parallax &amp; FAQ" />
     <MESSAGE value="Build Introduction Section, Typography, Sidnav" />
-    <option name="LAST_COMMIT_MESSAGE" value="Build Introduction Section, Typography, Sidnav" />
+    <MESSAGE value="Wording" />
+    <option name="LAST_COMMIT_MESSAGE" value="Wording" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2373" y="289" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590337511605">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state x="2373" y="289" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/72.196.1608.1023/1680.0.1920.1080@1680.0.1920.1080" timestamp="1590337511605" />
-    <state x="511" y="305" width="912" height="904" key="CommitChangelistDialog2" timestamp="1590441328879">
+    <state x="511" y="305" width="912" height="904" key="CommitChangelistDialog2" timestamp="1590441595873">
       <screen x="72" y="196" width="1608" height="1023" />
     </state>
     <state x="459" y="136" width="912" height="904" key="CommitChangelistDialog2/0.27.1680.1023/1680.0.1920.1080@0.27.1680.1023" timestamp="1587945392322" />
     <state x="2205" y="115" width="860" height="847" key="CommitChangelistDialog2/0.27.1680.1023/1680.0.1920.1080@1680.0.1920.1080" timestamp="1586217262636" />
-    <state x="511" y="305" width="912" height="904" key="CommitChangelistDialog2/72.196.1608.1023/1680.0.1920.1080@72.196.1608.1023" timestamp="1590441328879" />
+    <state x="511" y="305" width="912" height="904" key="CommitChangelistDialog2/72.196.1608.1023/1680.0.1920.1080@72.196.1608.1023" timestamp="1590441595873" />
     <state x="475" y="315" width="719" height="445" key="EditFileWatcherDialog" timestamp="1587610486348">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
@@ -230,11 +242,11 @@
     </state>
     <state x="329" y="172" key="SettingsEditor/0.27.1680.1023/1680.0.1920.1080@0.27.1680.1023" timestamp="1587612009837" />
     <state x="387" y="341" width="1022" height="737" key="SettingsEditor/72.196.1608.1023/1680.0.1920.1080@72.196.1608.1023" timestamp="1590425582847" />
-    <state x="488" y="428" width="800" height="563" key="Vcs.Push.Dialog.v2" timestamp="1590441330465">
+    <state x="488" y="428" width="800" height="563" key="Vcs.Push.Dialog.v2" timestamp="1590441597438">
       <screen x="72" y="196" width="1608" height="1023" />
     </state>
     <state x="435" y="259" width="800" height="556" key="Vcs.Push.Dialog.v2/0.27.1680.1023/1680.0.1920.1080@0.27.1680.1023" timestamp="1587945394029" />
-    <state x="488" y="428" width="800" height="563" key="Vcs.Push.Dialog.v2/72.196.1608.1023/1680.0.1920.1080@72.196.1608.1023" timestamp="1590441330465" />
+    <state x="488" y="428" width="800" height="563" key="Vcs.Push.Dialog.v2/72.196.1608.1023/1680.0.1920.1080@72.196.1608.1023" timestamp="1590441597438" />
     <state x="496" y="365" key="com.intellij.ide.util.TipDialog" timestamp="1586187547498">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
@@ -243,10 +255,11 @@
       <screen x="72" y="196" width="1608" height="1023" />
     </state>
     <state x="647" y="622" width="458" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/72.196.1608.1023/1680.0.1920.1080@72.196.1608.1023" timestamp="1588895989635" />
-    <state x="531" y="228" width="618" height="618" key="find.popup" timestamp="1587613020268">
-      <screen x="0" y="27" width="1680" height="1023" />
+    <state x="580" y="397" width="592" height="618" key="find.popup" timestamp="1590465012762">
+      <screen x="72" y="196" width="1608" height="1023" />
     </state>
     <state x="531" y="228" width="618" height="618" key="find.popup/0.27.1680.1023/1680.0.1920.1080@0.27.1680.1023" timestamp="1587613020268" />
+    <state x="580" y="397" width="592" height="618" key="find.popup/72.196.1608.1023/1680.0.1920.1080@72.196.1608.1023" timestamp="1590465012762" />
     <state x="565" y="231" width="539" height="612" key="git4idea.branch.GitSmartOperationDialog" timestamp="1587747164550">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>

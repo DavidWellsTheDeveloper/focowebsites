@@ -3,7 +3,7 @@
 {% load static %}
 {% block body %}
 
-    <section class="container-fluid valign-wrapper center-align" id="attention">
+    <section class="container-fluid center-align" id="attention">
         <div class="row">
             <div class="col m12 xl4 l5">
                 <img class="responsive-img circle" src="{% static 'frontend/img/dave_bread_vertical._bw_square.jpeg' %}" alt="Dave Wells Black & White">
@@ -12,8 +12,8 @@
             <div class="col m12 xl8 l7">
                 <h1>Hello, I'm Dave and I build clean professional websites.</h1>
                 <p>Let's build something together. I'm a developer with an eye for design, and user experience. Whether you're
-                looking for a clean, crisp and informative design, or something that's a bit more flashy I will take your
-                project from conception to complete, keeping you in the look every step of the way. Let's create your
+                    looking for a clean, crisp and informative design, or something that's a bit more flashy I will take your
+                    project from conception to complete, keeping you in the look every step of the way. Let's create your
                     successful online presence together.</p>
             </div>
         </div>
@@ -25,6 +25,29 @@
             <img src="{% static 'frontend/img/ben-karpinski-aJAfKxscG3k-unsplash.jpg' %}" alt="" >
         </div>
     </section>
+
+
+    <section class="container">
+        <h1>EXPERIENCE</h1>
+        <h4>Technologies</h4>
+        <ul>
+            <li class="collection-item"><span class="badge red white-text">HTML5</span></li>
+            <li class="collection-item"><span class="badge cyan white-text">CSS3</span></li>
+            <li class="collection-item"><span class="badge indigo white-text">MATERIAL DESIGN</span></li>
+            <li class="collection-item"><span class="badge orange white-text">BOOTSTRAP</span></li>
+            <li class="collection-item"><span class="badge green white-text">SASS</span></li>
+            <li class="collection-item"><span class="badge blue white-text">JAVASCRIPT</span></li>
+            <li class="collection-item"><span class="badge black white-text">C#</span></li>
+            <li class="collection-item"><span class="badge purple white-text">DJANGO</span></li>
+            <li class="collection-item"><span class="badge red white-text">WORDPRESS</span></li>
+            <li class="collection-item"><span class="badge orange white-text">REACT</span></li>
+            <li class="collection-item"><span class="badge cyan white-text">MySQL</span></li>
+            <li class="collection-item"><span class="badge cyan white-text">SQL SERVER</span></li>
+            <li class="collection-item"><span class="badge cyan white-text">GOOGLE CLOUD PLATFORM</span></li>
+        </ul>
+    </section>
+
+
 
     <section class="container">
         <h1>FAQ</h1>
@@ -39,160 +62,113 @@
     </section>
 
     <div class="fixed-action-btn">
-          <a class="btn-floating btn-large green">
-                <i class="large material-icons">contacts</i>
-          </a>
-          <ul>
-                <li><a class="btn-floating green darken-4" href="contact#email"><i class="material-icons">email</i></a></li>
-                <li><a class="btn-floating green darken-2" href="contact#phone"><i class="material-icons">phone</i></a></li>
-          </ul>
-    </div>
-
-    <div>
-        <p>Page Padding</p>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
+        <a class="btn-floating btn-large green">
+            <i class="large material-icons">contacts</i>
+        </a>
+        <ul>
+            <li><a class="btn-floating green darken-4" href="contact#email"><i class="material-icons">email</i></a></li>
+            <li><a class="btn-floating green darken-2" href="contact#phone"><i class="material-icons">phone</i></a></li>
+        </ul>
     </div>
     <!-- Start Page Content -->
 
-{#    <section>#}
-{#        <div id="jumbo" class="jumbotron animated bounceInDown">#}
-{#            <div class="container-fluid">#}
-{#                <div class="row justify-content-around text-center">#}
-{#                    <div class="col">#}
-{#                        <h1>FoCo Websites</h1>#}
-{#                        <button class="btn" href="#contactform">Contact Us</button>#}
-{#                    </div>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-{#    </section>#}
+    {#    <section>#}
+    {#        <div id="jumbo" class="jumbotron animated bounceInDown">#}
+    {#            <div class="container-fluid">#}
+    {#                <div class="row justify-content-around text-center">#}
+    {#                    <div class="col">#}
+    {#                        <h1>FoCo Websites</h1>#}
+    {#                        <button class="btn" href="#contactform">Contact Us</button>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#        </div>#}
+    {#    </section>#}
 
-{#    <section>#}
-{#        <div class="parallax pb-3" style="background-image: url({% static 'frontend/img/ricardo-gomez-angel-mGpwm0TyPI8-unsplash.jpg' %}">#}
-{#            <h1 class="text-center semi-trans">Mobile First Design</h1>#}
-{#            <div class="container-fluid">#}
-{#                <div class="row justify-content-around">#}
-{#                    <div class="col-sm-12 col-lg-7 m-3 text-center">#}
-{#                        <div class="semi-trans p-5">#}
-{#                            <h3><em>Mobile internet consumption has grown over 500% since 2011.</em></h3>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                </div>#}
-{#                <div class="row justify-content-around">#}
-{#                    <div class="col-11 card semi-trans text-center p-4">#}
-{#                        <h2 class="card-title">Responsive Design</h2>#}
-{#                        <p class="card-text">In 2019 mobile devices accounted for 51% of all#}
-{#                            web traffic worldwide. You need a website that looks great for all#}
-{#                            of your visiters. If you're looking to create a new website or web#}
-{#                            application, you need to be thinking of your audience! For far too#}
-{#                            long mobile websites were an afterthought, when designing content for#}
-{#                            the web. Mobile first content should be viewed as a necessity from#}
-{#                            the begining of the design process.#}
-{#                        </p>#}
-{#                    </div>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-{#    </section>#}
-{#    <section>#}
-{#        <div class="container-fluid">#}
-{#            <div class="row mt-3 mb-4">#}
-{#                <div class="col-lg-4 attraction  animated fadeInLeft">#}
-{#                    <!-- px-3 pb-3 text-white bg-dark text-center -->#}
-{#                    <div class="card">#}
-{#                        <span><i class="fas fa-crosshairs"></i></span>#}
-{#                        <h3>Reach Your Audience</h3>#}
-{#                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>#}
-{#                    </div>#}
-{#                </div>#}
-{#                <div class="col-lg-4 attraction">#}
-{#                    <div class="card">#}
-{#                        <span style="font-size: 5em;"><i class="fas fa-universal-access"></i></span>#}
-{#                        <h3>Be Accessible</h3>#}
-{#                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>#}
-{#                    </div>#}
-{#                </div>#}
-{#                <div class="col-lg-4 attraction  animated fadeInRight">#}
-{#                    <div class="card">#}
-{#                        <span style="font-size: 5em;"><i class="fas fa-chart-line"></i></span>#}
-{#                        <h3>Attract Business</h3>#}
-{#                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>#}
-{#                    </div>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-{#    </section>#}
-{##}
-{#    <!-- Start accordion -->#}
-{#    <section>#}
-{#        <div class="accordion" id="accordionExample">#}
-{#            <h1>FAQ</h1>#}
-{#            {% for faq in faqs %}#}
-{#                <div class="card">#}
-{#                    <button class="card-header btn collapsed" type="button"  data-toggle="collapse" data-target="#collapse{{ faq.faq_id }}" aria-expanded="true" aria-controls="collapse{{ faq.faq_id }}" id="heading{{ faq.faq_id }}">#}
-{#                        {{ faq.question }}#}
-{#                    </button>#}
-{##}
-{#                    <div id="collapse{{ faq.faq_id }}" class="collapse" aria-labelledby="heading{{ faq.faq_id }}" data-parent="#accordionExample">#}
-{#                        <div class="card-body">#}
-{#                            {{ faq.answer }}#}
-{#                        </div>#}
-{#                    </div>#}
-{#                </div>#}
-{#            {% endfor %}#}
-{#        </div>#}
-{#    </section>#}
-{#    <!-- End accordion -->#}
-{##}
-{#    <section>#}
-{#        <form role="form" action="" method="post" id="contactform">#}
-{#            {% csrf_token %}#}
-{#            {{ form.as_p }}#}
-{#            <button type="submit">Submit</button>#}
-{#        </form>#}
-{#    </section>#}
+    {#    <section>#}
+    {#        <div class="parallax pb-3" style="background-image: url({% static 'frontend/img/ricardo-gomez-angel-mGpwm0TyPI8-unsplash.jpg' %}">#}
+    {#            <h1 class="text-center semi-trans">Mobile First Design</h1>#}
+    {#            <div class="container-fluid">#}
+    {#                <div class="row justify-content-around">#}
+    {#                    <div class="col-sm-12 col-lg-7 m-3 text-center">#}
+    {#                        <div class="semi-trans p-5">#}
+    {#                            <h3><em>Mobile internet consumption has grown over 500% since 2011.</em></h3>#}
+    {#                        </div>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#                <div class="row justify-content-around">#}
+    {#                    <div class="col-11 card semi-trans text-center p-4">#}
+    {#                        <h2 class="card-title">Responsive Design</h2>#}
+    {#                        <p class="card-text">In 2019 mobile devices accounted for 51% of all#}
+    {#                            web traffic worldwide. You need a website that looks great for all#}
+    {#                            of your visiters. If you're looking to create a new website or web#}
+    {#                            application, you need to be thinking of your audience! For far too#}
+    {#                            long mobile websites were an afterthought, when designing content for#}
+    {#                            the web. Mobile first content should be viewed as a necessity from#}
+    {#                            the begining of the design process.#}
+    {#                        </p>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#        </div>#}
+    {#    </section>#}
+    {#    <section>#}
+    {#        <div class="container-fluid">#}
+    {#            <div class="row mt-3 mb-4">#}
+    {#                <div class="col-lg-4 attraction  animated fadeInLeft">#}
+    {#                    <!-- px-3 pb-3 text-white bg-dark text-center -->#}
+    {#                    <div class="card">#}
+    {#                        <span><i class="fas fa-crosshairs"></i></span>#}
+    {#                        <h3>Reach Your Audience</h3>#}
+    {#                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#                <div class="col-lg-4 attraction">#}
+    {#                    <div class="card">#}
+    {#                        <span style="font-size: 5em;"><i class="fas fa-universal-access"></i></span>#}
+    {#                        <h3>Be Accessible</h3>#}
+    {#                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#                <div class="col-lg-4 attraction  animated fadeInRight">#}
+    {#                    <div class="card">#}
+    {#                        <span style="font-size: 5em;"><i class="fas fa-chart-line"></i></span>#}
+    {#                        <h3>Attract Business</h3>#}
+    {#                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#        </div>#}
+    {#    </section>#}
+    {##}
+    {#    <!-- Start accordion -->#}
+    {#    <section>#}
+    {#        <div class="accordion" id="accordionExample">#}
+    {#            <h1>FAQ</h1>#}
+    {#            {% for faq in faqs %}#}
+    {#                <div class="card">#}
+    {#                    <button class="card-header btn collapsed" type="button"  data-toggle="collapse" data-target="#collapse{{ faq.faq_id }}" aria-expanded="true" aria-controls="collapse{{ faq.faq_id }}" id="heading{{ faq.faq_id }}">#}
+    {#                        {{ faq.question }}#}
+    {#                    </button>#}
+    {##}
+    {#                    <div id="collapse{{ faq.faq_id }}" class="collapse" aria-labelledby="heading{{ faq.faq_id }}" data-parent="#accordionExample">#}
+    {#                        <div class="card-body">#}
+    {#                            {{ faq.answer }}#}
+    {#                        </div>#}
+    {#                    </div>#}
+    {#                </div>#}
+    {#            {% endfor %}#}
+    {#        </div>#}
+    {#    </section>#}
+    {#    <!-- End accordion -->#}
+    {##}
+    {#    <section>#}
+    {#        <form role="form" action="" method="post" id="contactform">#}
+    {#            {% csrf_token %}#}
+    {#            {{ form.as_p }}#}
+    {#            <button type="submit">Submit</button>#}
+    {#        </form>#}
+    {#    </section>#}
 
 
     <!-- End Page Content -->
