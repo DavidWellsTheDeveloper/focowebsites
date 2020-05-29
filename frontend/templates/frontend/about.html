@@ -2,5 +2,46 @@
 
 {% load static %}
 {% block body %}
+    <section class="container">
+        <h1>Let Me Introduce Myself...</h1>
+        <div class="row">
+
+            <div class="col m12 l5 xl4">
+                <div class="carousel carousel-slider center">
+                    <a class="carousel-item" href="#one!"><img src="{% static 'frontend/img/dave_bread.jpeg' %}" alt=""></a>
+                    <a class="carousel-item" href="#two!"><img src="{% static 'frontend/img/dave_flying.jpeg' %}" alt=""></a>
+                    <a class="carousel-item" href="#four!"><img src="{% static 'frontend/img/dave_beer.jpeg' %}" alt=""></a>
+                    <a class="carousel-item" href="#three!"><img src="{% static 'frontend/img/dave_bow_tie.jpeg' %}" alt=""></a>
+                    <a class="carousel-item" href="#four!"><img src="{% static 'frontend/img/dave_snowshoe.jpeg' %}" alt=""></a>
+                    <a class="carousel-item" href="#four!"><img src="{% static 'frontend/img/dave_painting.jpeg' %}" alt=""></a>
+                    <div class="carousel-fixed-item center">
+                        <a class="btn waves-effect white grey-text darken-text-2">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col m12 l7 xl8">
+                <h2>Dave Wells</h2>
+                <p>I am a multi-talented human being. I describe myself as a jack of all trades and am curious by nature,
+                    which lends itself well to a field with constantly evolving technology and a need for a variety of
+                    skillset. I have a very unique cross-discipline education spanning the Social Sciences, Computer
+                    Science, and Art. In 2013 I graduated from Fort Lewis College with a Bachelors in Sociology. In my
+                    time at Fort Lewis, I also devoted time to refining my artistic skills with some formal art
+                    education. After graduating I worked a in a variety of industries exploring career options, but
+                    ultimately decided that I wanted a technical career. This led me to return to school to study
+                    Computer Science at CSU.</p>
+                <p>My desire to be a lifelong learner which led me down my career path is also very prevalent
+                    throughout the rest of my life. I explore woodworking, painting, pottery & many other skill
+                    based hobbies in my free time.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="parallax-container hide-on-small-and-down">
+        <div class="parallax">
+            <img src="{% static 'frontend/img/ben-karpinski-aJAfKxscG3k-unsplash.jpg' %}" alt="" >
+        </div>
+    </section>
+
 
 {% endblock %}

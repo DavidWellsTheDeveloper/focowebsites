@@ -3038,18 +3038,18 @@ table.responsive-table td {
 
 .collection {
   margin: 0.5rem 0 1rem 0;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #26a69a;
   border-radius: 2px;
   overflow: hidden;
   position: relative;
 }
 
 .collection .collection-item {
-  background-color: #fff;
+  background-color: #00515b;
   line-height: 1.5rem;
   padding: 10px 20px;
   margin: 0;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #26a69a;
 }
 
 .collection .collection-item.avatar {
@@ -3096,7 +3096,7 @@ table.responsive-table td {
 }
 
 .collection .collection-item.active {
-  background-color: #26a69a;
+  background-color: #8ef3ff;
   color: #eafaf9;
 }
 
@@ -3111,12 +3111,12 @@ table.responsive-table td {
 }
 
 .collection a.collection-item:not(.active):hover {
-  background-color: #ddd;
+  background-color: #5bedff;
 }
 
 .collection.with-header .collection-header {
-  background-color: #fff;
-  border-bottom: 1px solid #e0e0e0;
+  background-color: #00515b;
+  border-bottom: 1px solid #26a69a;
   padding: 10px 20px;
 }
 
@@ -8597,23 +8597,48 @@ h1 {
   width: 125%;
 }
 
-section {
-  padding-bottom: 12em;
+section, .container {
+  margin-bottom: 12em;
 }
 
-section img {
+section img, .container img {
   margin-top: 3em;
 }
 
-section p {
+section p, .container p {
   text-align: left;
   font-size: larger;
 }
 
-section h1 {
+section h1, .container h1 {
   margin-bottom: 1em;
 }
 
 .badge {
   margin-bottom: 1em;
+}
+
+.icon-container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.icon-container .language-icon {
+  transition-duration: .5s;
+  font-size: 6vw;
+  line-height: 120%;
+  transition: color 0.5s cubic-bezier(0.12, 1.35, 0.41, 1.76) 0s;
+}
+
+.icon-container .language-icon:hover {
+  color: #26a69a;
+}
+
+@keyframes blue-fade-in-out {
+  from {
+    color: #fff;
+  }
+  to {
+    color: #26a69a;
+  }
 }

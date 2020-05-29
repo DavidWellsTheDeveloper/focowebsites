@@ -75,7 +75,7 @@ class ContactView(TemplateView):
 
 
 class AboutView(TemplateView):
-    template_name = "frontend/construction.html"
+    template_name = "frontend/about.html"
 
     def get(self, request):
         print(get_nav().first().icon)

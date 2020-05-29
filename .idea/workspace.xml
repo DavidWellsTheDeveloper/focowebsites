@@ -6,7 +6,10 @@
       <change beforePath="$PROJECT_DIR$/frontend/static/frontend/css/materialize.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/frontend/css/materialize.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/static/frontend/sass/_style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/_style.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/static/frontend/sass/components/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/frontend/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/frontend/about.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/templates/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +115,13 @@
       <workItem from="1589334691431" duration="716000" />
       <workItem from="1590334650047" duration="16173000" />
       <workItem from="1590423458910" duration="12559000" />
-      <workItem from="1590464499133" duration="5798000" />
+      <workItem from="1590464499133" duration="5892000" />
+      <workItem from="1590506105449" duration="601000" />
+      <workItem from="1590548872176" duration="5435000" />
+      <workItem from="1590585959574" duration="4592000" />
+      <workItem from="1590616112840" duration="13082000" />
+      <workItem from="1590685917908" duration="4327000" />
+      <workItem from="1590727858015" duration="1450000" />
     </task>
     <task id="LOCAL-00001" summary="Added content form &amp; nav backend redesign">
       <created>1587357212302</created>
@@ -191,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590441595970</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Continue working">
+      <created>1590470321759</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1590470321759</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,19 +226,20 @@
     <MESSAGE value="Parallax &amp; FAQ" />
     <MESSAGE value="Build Introduction Section, Typography, Sidnav" />
     <MESSAGE value="Wording" />
-    <option name="LAST_COMMIT_MESSAGE" value="Wording" />
+    <MESSAGE value="Continue working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Continue working" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2373" y="289" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590337511605">
       <screen x="1680" y="0" width="1920" height="1080" />
     </state>
     <state x="2373" y="289" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/72.196.1608.1023/1680.0.1920.1080@1680.0.1920.1080" timestamp="1590337511605" />
-    <state x="511" y="305" width="912" height="904" key="CommitChangelistDialog2" timestamp="1590441595873">
+    <state x="511" y="305" width="912" height="904" key="CommitChangelistDialog2" timestamp="1590470321523">
       <screen x="72" y="196" width="1608" height="1023" />
     </state>
     <state x="459" y="136" width="912" height="904" key="CommitChangelistDialog2/0.27.1680.1023/1680.0.1920.1080@0.27.1680.1023" timestamp="1587945392322" />
     <state x="2205" y="115" width="860" height="847" key="CommitChangelistDialog2/0.27.1680.1023/1680.0.1920.1080@1680.0.1920.1080" timestamp="1586217262636" />
-    <state x="511" y="305" width="912" height="904" key="CommitChangelistDialog2/72.196.1608.1023/1680.0.1920.1080@72.196.1608.1023" timestamp="1590441595873" />
+    <state x="511" y="305" width="912" height="904" key="CommitChangelistDialog2/72.196.1608.1023/1680.0.1920.1080@72.196.1608.1023" timestamp="1590470321523" />
     <state x="475" y="315" width="719" height="445" key="EditFileWatcherDialog" timestamp="1587610486348">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
@@ -242,11 +259,11 @@
     </state>
     <state x="329" y="172" key="SettingsEditor/0.27.1680.1023/1680.0.1920.1080@0.27.1680.1023" timestamp="1587612009837" />
     <state x="387" y="341" width="1022" height="737" key="SettingsEditor/72.196.1608.1023/1680.0.1920.1080@72.196.1608.1023" timestamp="1590425582847" />
-    <state x="488" y="428" width="800" height="563" key="Vcs.Push.Dialog.v2" timestamp="1590441597438">
+    <state x="488" y="428" width="800" height="563" key="Vcs.Push.Dialog.v2" timestamp="1590470323564">
       <screen x="72" y="196" width="1608" height="1023" />
     </state>
     <state x="435" y="259" width="800" height="556" key="Vcs.Push.Dialog.v2/0.27.1680.1023/1680.0.1920.1080@0.27.1680.1023" timestamp="1587945394029" />
-    <state x="488" y="428" width="800" height="563" key="Vcs.Push.Dialog.v2/72.196.1608.1023/1680.0.1920.1080@72.196.1608.1023" timestamp="1590441597438" />
+    <state x="488" y="428" width="800" height="563" key="Vcs.Push.Dialog.v2/72.196.1608.1023/1680.0.1920.1080@72.196.1608.1023" timestamp="1590470323564" />
     <state x="496" y="365" key="com.intellij.ide.util.TipDialog" timestamp="1586187547498">
       <screen x="0" y="27" width="1680" height="1023" />
     </state>
