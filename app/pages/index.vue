@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { projects } from '~/data/projects'
+import { services } from '~/data/services'
 import { vScrollReveal } from '~/composables/useScrollReveal'
 
 useSeoMeta({
@@ -10,33 +11,6 @@ useSeoMeta({
   ogDescription:
     'Custom websites that win clients and keep working. Design, build, and ongoing care for businesses around Fort Collins.',
 })
-
-const services = [
-  {
-    title: 'Custom website design',
-    blurb: 'A site designed from scratch around your business, your customers, and your goals.',
-    to: '/services/custom-website-design',
-    icon: 'mdi-pencil-ruler',
-  },
-  {
-    title: 'Website redesign',
-    blurb: 'Modernize what you already have — same brand, far better results.',
-    to: '/services/website-redesign',
-    icon: 'mdi-brush-variant',
-  },
-  {
-    title: 'Development support',
-    blurb: 'A dependable developer on call when your site needs fixing or extending.',
-    to: '/services/development-support',
-    icon: 'mdi-lifebuoy',
-  },
-  {
-    title: 'Maintenance & care plans',
-    blurb: 'Updates, security, and peace of mind — so your site never quietly rots.',
-    to: '/services/maintenance-care-plans',
-    icon: 'mdi-shield-check',
-  },
-]
 
 const featured = projects.slice(0, 3)
 </script>

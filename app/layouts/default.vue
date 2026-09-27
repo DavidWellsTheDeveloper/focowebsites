@@ -1,7 +1,13 @@
 <script setup lang="ts">
 import { useTheme } from 'vuetify'
+import { useRoute } from 'vue-router'
+import Footer from '~/components/Footer.vue'
+import NavBar from '~/components/NavBar.vue'
+import ThemeToggle from '~/components/ThemeToggle.vue'
+import MobileDrawer from '~/components/MobileDrawer.vue'
 
 const theme = useTheme()
+const route = useRoute()
 
 const drawer = ref(false)
 
@@ -26,11 +32,17 @@ const navItems: NavItem[] = [
   { label: 'FAQ', to: '/faq' },
 ]
 
-function activeClasses(item: { to?: string }) {
+function activeClasses(item: NavItem) {
+  const active = isActive(item)
   return [
     'font-weight-medium',
-    'text-body',
-  ].join(' ')
+    active ? 'text-primary' : 'text-body',
+    active ? 'bg-primary-lighten-5' : '',
+  ].filter(Boolean).join(' ')
+}
+
+function isActive(item: NavItem) {
+  return item.exact ? route.path === item.to : route.path.startsWith(item.to ?? '')
 }
 
 const currentYear = new Date().getFullYear()
@@ -52,34 +64,8 @@ const currentYear = new Date().getFullYear()
 
       <template #append>
         <div class="d-none d-md-flex align-center ga-1 mr-2">
-          <VBtn
-            v-for="item in navItems"
-            :key="item.label"
-            :to="item.to"
-            variant="text"
-            :class="activeClasses(item)"
-            aria-current="page"
-          >
-            {{ item.label }}
-          </VBtn>
-
-          <VBtn
-            v-if="!isDark"
-            icon="mdi-white-balance-sunny"
-            variant="text"
-            aria-label="Switch to dark theme"
-            @click="toggleTheme"
-            class="theme-toggle-btn"
-          />
-          <VBtn
-            v-else
-            icon="mdi-weather-night"
-            variant="text"
-            aria-label="Switch to light theme"
-            @click="toggleTheme"
-            class="theme-toggle-btn"
-          />
-
+          <NavBar :items="navItems" />
+          <ThemeToggle :isDark="isDark" @toggle="toggleTheme" />
           <VBtn to="/start-a-project" color="accent" class="mr-2 d-none d-md-inline-flex">
             Start a project
           </VBtn>
@@ -93,49 +79,12 @@ const currentYear = new Date().getFullYear()
       </template>
     </VAppBar>
 
-    <VNavigationDrawer v-model="drawer" temporary location="right">
-      <VList nav>
-        <VListItem
-          v-for="item in navItems"
-          :key="item.label"
-          :to="item.to"
-          :title="item.label"
-          @click="drawer = false"
-        />
-        <VListItem to="/start-a-project" title="Start a project" @click="drawer = false" />
-      </VList>
-    </VNavigationDrawer>
+    <MobileDrawer :items="navItems" v-model="drawer" @close="drawer = false" />
 
     <VMain>
       <slot />
     </VMain>
 
-    <VFooter class="border-t" color="background">
-      <VContainer class="py-8">
-        <VRow justify="space-between" align="center" class="ga-4 ga-md-0">
-          <VCol cols="12" md="auto" class="text-center text-md-left">
-            <span class="font-display font-weight-semibold text-h6">
-              FoCo Websites
-            </span>
-            <p class="text-body-2 text-medium-emphasis mt-1 mb-0">
-              Custom websites for businesses around Northern Colorado.
-            </p>
-          </VCol>
-          <VCol cols="12" md="auto" class="text-center text-md-right">
-            <div class="d-flex flex-wrap justify-center justify-md-end ga-2">
-              <VBtn variant="text" size="small" :to="{ path: '/start-a-project' }">
-                Start a project
-              </VBtn>
-              <VBtn variant="text" size="small" href="mailto:hello@focowebsites.com">
-                hello@focowebsites.com
-              </VBtn>
-            </div>
-            <p class="text-caption text-medium-emphasis mt-2 mb-0">
-              © {{ currentYear }} FoCo Websites
-            </p>
-          </VCol>
-        </VRow>
-      </VContainer>
-    </VFooter>
+    <Footer :currentYear="currentYear" />
   </VApp>
 </template>

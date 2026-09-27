@@ -4,6 +4,7 @@ import { vScrollReveal } from '~/composables/useScrollReveal'
 
 const route = useRoute()
 const slug = computed(() => {
+  // Guard for SSR/prerender where route params might not be available
   const params = route?.params ?? {}
   return String(params.projectname ?? params['project-name'] ?? '')
 })
