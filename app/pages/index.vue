@@ -53,7 +53,7 @@ const featured = projects.slice(0, 3)
         class="my-16"
         height="500"
       >
-        <template #default="{ background }">
+        <template #default>
           <VContainer class="fill-height d-flex align-center justify-center">
             <VCard class="pa-8 mx-auto" max-width="700" color="surface-variant">
               <h3 class="font-display text-h4 font-weight-medium mb-4 text-center">
