@@ -2,6 +2,7 @@
 import { projects } from '~/data/projects'
 import { services } from '~/data/services'
 import { vScrollReveal } from '~/composables/useScrollReveal'
+import { VParallax } from 'vuetify/components'
 
 useSeoMeta({
   title: 'Custom Websites & Web Development in Northern Colorado',
@@ -41,34 +42,31 @@ const featured = projects.slice(0, 3)
           </VBtn>
         </div>
       </div>
-</VContainer>
+    </VContainer>
 
-    <!-- Vertical Parallax Section (simple CSS-based) -->
-    <section class="parallax-section my-16" style="height: 400px; position: relative; overflow: hidden;">
-      <div
-        class="parallax-bg"
-        style="
-          position: absolute;
-          inset: 0;
-          background-image: url('https://picsum.photos/seed/foco-parallax/1920/1080');
-          background-size: cover;
-          background-position: center;
-          background-attachment: fixed;
-          transform: translateZ(0);
-          will-change: transform;
-        "
-      />
-      <VContainer class="fill-height d-flex align-center justify-center relative" style="z-index: 1;">
-        <VCard class="pa-8 mx-auto" max-width="700" color="surface-variant">
-          <h3 class="font-display text-h4 font-weight-medium mb-4 text-center">
-            Built for the Rockies
-          </h3>
-          <p class="text-body-1 text-medium-emphasis text-center">
-            Websites built for businesses that thrive in the mountains — fast, resilient, and built to scale.
-          </p>
-        </VCard>
-      </VContainer>
-    </section>
+    <!-- Vertical Parallax Section using VParallax (client-only) -->
+    <ClientOnly>
+      <VParallax
+        src="https://picsum.photos/seed/foco-parallax/1920/1080"
+        alt="Fort Collins mountains"
+        :scale="0.3"
+        class="my-16"
+        height="500"
+      >
+        <template #default="{ background }">
+          <VContainer class="fill-height d-flex align-center justify-center">
+            <VCard class="pa-8 mx-auto" max-width="700" color="surface-variant">
+              <h3 class="font-display text-h4 font-weight-medium mb-4 text-center">
+                Built for the Rockies
+              </h3>
+              <p class="text-body-1 text-medium-emphasis text-center">
+                Websites built for businesses that thrive in the mountains — fast, resilient, and built to scale.
+              </p>
+            </VCard>
+          </VContainer>
+        </template>
+      </VParallax>
+    </ClientOnly>
 
     <!-- Proof / selected work strip -->
     <VContainer v-if="featured.length" class="py-4 pb-10">
@@ -92,7 +90,7 @@ const featured = projects.slice(0, 3)
               <VCardText>
                 <h3 class="font-display text-h6 font-weight-medium mb-1">{{ p.client }}</h3>
                 <p class="text-body-2 text-medium-emphasis mb-0">{{ p.summary }}</p>
-              </VCardText>>
+              </VCardText>
             </VCard>
           </NuxtLink>
         </VCol>
