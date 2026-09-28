@@ -57,6 +57,7 @@ export default defineNuxtConfig({
         prefersColorScheme: true,
         prefersColorSchemeOptions: { cookieName: 'foco-scheme' },
       },
+      labComponents: true,
     },
     vuetifyOptions: {
       icons: { defaultSet: 'mdi' },
