@@ -440,24 +440,38 @@ HOME
 
 ---
 
-## Future Enhancements (Post-Scaffold Experiments)
+## Visual Experiments (Feature-Flagged)
 
-These are visual/interaction experiments to prototype **after** initial scaffold + content are live. Each should be built as a removable feature flag.
+Decorative/interaction experiments. Each sits behind a flag in `app/composables/useVisualExperiments.ts` so one that does not earn its place can be switched off in a single place instead of being unpicked from templates, styles and composables.
 
-| Idea | Description | Effort | Priority |
-|------|-------------|--------|----------|
-| **Layered Parallax Depth** | 3–4 semi-transparent layers (gradients, noise, shapes) moving at different scroll speeds via CSS custom properties. "Rockies layers" metaphor. | Low (~80 LOC) | High |
-| **Scroll-Progress Line** | Fixed top accent line (`#B45309`) drawing horizontally as scroll progresses. Site-wide in layout. | Very Low (~30 LOC) | High |
-| **Staggered Directional Entrance** | Cards enter from left (odd) / right (even) with rotation+scale, staggered 80ms. Extends `vScrollReveal`. | Low (~60 LOC) | Medium |
-| **Ambient Canvas Background** | Low-opacity particles or gradient blobs in `<canvas>` behind hero; reacts to mouse drift + scroll speed. `ClientOnly`, respects reduced motion. | Medium (~150 LOC) | Low |
+| Idea | Status | Description |
+|------|--------|-------------|
+| **Layered Parallax Depth** | **Shipped** | 4 photographic layers in the home hero moving at different scroll speeds. See "Hero depth" below. |
+| **Scroll-Progress Line** | Idea | Fixed top accent line (`#B45309`) drawing horizontally as scroll progresses. Site-wide in layout. ~30 LOC. |
+| **Staggered Directional Entrance** | **Shipped** | Cards enter from left (odd) / right (even), staggered. Extends `vScrollReveal`. |
+| **Ambient Canvas Background** | Idea | Low-opacity particles or gradient blobs in `<canvas>` behind hero; reacts to mouse drift + scroll speed. `ClientOnly`, respects reduced motion. ~150 LOC. |
 
 **Excluded**: Magnetic CTA button (cursor attraction on "Start a project" button).
 
+### Hero depth
+
+`app/data/parallax.ts` holds the layer stack, `app/composables/useParallax.ts` drives it.
+
+Each layer is a full-bleed background moved by a `--parallax-y-n` custom property written from one shared rAF-throttled scroll listener. Writing a custom property rather than a transform keeps the styling in the stylesheet and lets CSS consume the value.
+
+Three things that are load-bearing and easy to break:
+
+- **`oversize` must exceed the travel.** Layers are grown past the hero's edges so a layer never runs out of image mid-scroll. `oversize` sits at roughly 1.2x the furthest a layer's `depth` can take it.
+- **Progress is measured from the hero's resting position**, not from the point it leaves the viewport. Anchoring to the viewport leaves every layer partway through its travel on page load, because the part of the range below `scrollY: 0` is unreachable.
+- **Copy legibility comes from `--hero-scrim-*`**, which is theme-aware (separate values for light and dark). Measured worst case behind the hero copy is 13.4:1 in light and 16.5:1 in dark.
+
+Imaging is static WebP with no image pipeline in the project; see `public/images/parallax/ATTRIBUTION.md` for sourcing, the two-crop reasoning, and how to regenerate.
+
 **Implementation Notes**:
 - All behind a `useVisualExperiments()` composable with feature flags
-- `prefers-reduced-motion` = instant/none for all
-- `ClientOnly` for canvas; SSR-safe
-- Test on mobile performance before shipping
+- `prefers-reduced-motion` = instant/none (the listener is never attached, so layers stay at rest)
+- `will-change: transform` is desktop only; a promoted layer per image is not worth its memory on mobile
+- Mobile: no horizontal overflow, 51KB of layer imagery, median scroll frame 16.7ms
 
 ---
 
