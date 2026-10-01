@@ -25,51 +25,49 @@ function close() {
 </script>
 
 <template>
-  <Teleport to="body">
-    <div v-if="isOpen" class="mobile-drawer-overlay" @click="close" aria-hidden="true" />
-    <aside
-      v-show="isOpen"
-      class="mobile-drawer"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Navigation menu"
-    >
-      <div class="mobile-drawer__header">
-        <span class="mobile-drawer__title">Menu</span>
-        <button
-          class="mobile-drawer__close"
-          @click="close"
-          aria-label="Close menu"
-        >
-          <span class="mdi mdi-close" aria-hidden="true"></span>
-        </button>
-      </div>
-      <nav class="mobile-drawer__nav" aria-label="Main navigation">
-        <ul class="mobile-drawer__list">
-          <li v-for="item in props.items" :key="item.label">
-            <NuxtLink
-              v-if="item.to"
-              :to="item.to"
-              class="mobile-drawer__link"
-              :class="{ 'mobile-drawer__link--active': isActive(item) }"
-              @click="close"
-            >
-              {{ item.label }}
-            </NuxtLink>
-          </li>
-          <li>
-            <NuxtLink
-              to="/start-a-project"
-              class="mobile-drawer__link mobile-drawer__link--cta"
-              @click="close"
-            >
-              Start a project
-            </NuxtLink>
-          </li>
-        </ul>
-      </nav>
-    </aside>
-  </Teleport>
+  <div v-if="isOpen" class="mobile-drawer-overlay" @click="close" aria-hidden="true" />
+  <aside
+    v-show="isOpen"
+    class="mobile-drawer"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Navigation menu"
+  >
+    <div class="mobile-drawer__header">
+      <span class="mobile-drawer__title">Menu</span>
+      <button
+        class="mobile-drawer__close"
+        @click="close"
+        aria-label="Close menu"
+      >
+        <span class="mdi mdi-close" aria-hidden="true"></span>
+      </button>
+    </div>
+    <nav class="mobile-drawer__nav" aria-label="Main navigation">
+      <ul class="mobile-drawer__list">
+        <li v-for="item in props.items" :key="item.label">
+          <NuxtLink
+            v-if="item.to"
+            :to="item.to"
+            class="mobile-drawer__link"
+            :class="{ 'mobile-drawer__link--active': isActive(item) }"
+            @click="close"
+          >
+            {{ item.label }}
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink
+            to="/start-a-project"
+            class="mobile-drawer__link mobile-drawer__link--cta"
+            @click="close"
+          >
+            Start a project
+          </NuxtLink>
+        </li>
+      </ul>
+    </nav>
+</aside>
 </template>
 
 <style scoped>
