@@ -48,6 +48,9 @@ export default defineNuxtConfig({
           href: 'https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap',
         },
       ],
+      script: [
+        { src: 'https://web3forms.com/client/script.js', async: true, defer: true },
+      ],
     },
   },
 
@@ -100,7 +103,6 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       web3formsAccessKey: '',
-      recaptchaSiteKey: '',
     },
   },
 
@@ -130,7 +132,6 @@ export default defineNuxtConfig({
   components: [
     { path: '~/components/ui', pathPrefix: false },
     { path: '~/components/layout', pathPrefix: false },
-    { path: '~/components/features', pathPrefix: false },
   ],
 
   vite: {
