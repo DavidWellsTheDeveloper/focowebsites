@@ -2,7 +2,6 @@
 import { services } from '~/data/services'
 import { vScrollReveal } from '~/composables/useScrollReveal'
 import BaseCard from '~/components/ui/BaseCard.vue'
-import BaseIcon from '~/components/ui/BaseIcon.vue'
 import BaseButton from '~/components/ui/BaseButton.vue'
 
 useSeoMeta({
@@ -40,11 +39,11 @@ definePageMeta({
             }"
           >
             <BaseCard variant="default" hover class="service-card">
-              <BaseIcon :name="s.icon" size="xl" color="var(--color-primary)" aria-hidden="true" />
+              <VIcon :icon="s.icon" size="3rem" color="var(--color-primary)" />
               <h2 class="service-card__title">{{ s.title }}</h2>
               <p class="service-card__blurb">{{ s.blurb }}</p>
 <BaseButton variant="ghost" size="sm" class="service-card__cta">
-  Explore <span class="mdi mdi-arrow-right" aria-hidden="true"></span>
+  Explore <VIcon icon="mdi-arrow-right" size="1em" />
 </BaseButton>
             </BaseCard>
           </NuxtLink>
@@ -137,7 +136,7 @@ definePageMeta({
   height: 100%;
 }
 
-.service-card :global(.mdi) {
+.service-card .v-icon {
   margin-bottom: var(--space-3);
 }
 

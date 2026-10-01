@@ -40,7 +40,7 @@ function close() {
         @click="close"
         aria-label="Close menu"
       >
-        <span class="mdi mdi-close" aria-hidden="true"></span>
+        <VIcon icon="mdi-close" size="1em" />
       </button>
     </div>
     <nav class="mobile-drawer__nav" aria-label="Main navigation">

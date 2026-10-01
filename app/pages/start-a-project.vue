@@ -7,7 +7,6 @@ import { vScrollReveal } from '~/composables/useScrollReveal'
 import BaseCard from '~/components/ui/BaseCard.vue'
 import BaseInput from '~/components/ui/BaseInput.vue'
 import BaseButton from '~/components/ui/BaseButton.vue'
-import BaseIcon from '~/components/ui/BaseIcon.vue'
 
 useSeoMeta({
   title: 'Start a Project',
@@ -89,13 +88,13 @@ function hasCaptchaToken() {
       <div class="container">
         <BaseCard variant="default" class="form-section__card" v-scroll-reveal="{ direction: 'up' }">
           <div v-if="success" class="form-section__success" role="status">
-            <BaseIcon name="mdi-check-circle" size="xl" color="var(--color-accent)" aria-hidden="true" />
+            <VIcon icon="mdi-check-circle" size="3rem" color="var(--color-accent)" />
             <h2 class="form-section__success-title">Thanks — message sent.</h2>
             <p class="form-section__success-body">I&apos;ll reply within a day or two.</p>
           </div>
 
           <div v-if="error && !success" class="form-section__error" role="alert">
-            <BaseIcon name="mdi-alert-circle" size="xl" color="var(--color-accent)" aria-hidden="true" />
+            <VIcon icon="mdi-alert-circle" size="3rem" color="var(--color-accent)" />
             <p>{{ error }}</p>
             <p v-if="!error.includes(CONTACT_EMAIL)" class="form-section__error-alt">
               Or email <a :href="`mailto:${CONTACT_EMAIL}`">{{ CONTACT_EMAIL }}</a> directly.
@@ -266,7 +265,7 @@ function hasCaptchaToken() {
   color: var(--color-accent);
 }
 
-.form-section__error :global(.mdi) {
+.form-section__error .v-icon {
   flex-shrink: 0;
   margin-top: 0.125rem;
 }

@@ -2,7 +2,6 @@
 import { vScrollReveal } from '~/composables/useScrollReveal'
 import BaseCard from '~/components/ui/BaseCard.vue'
 import BaseButton from '~/components/ui/BaseButton.vue'
-import BaseIcon from '~/components/ui/BaseIcon.vue'
 
 useSeoMeta({
   title: 'Pricing',
@@ -78,7 +77,7 @@ const factorRows = [
               <p class="model-card__body">{{ m.body }}</p>
 <div class="model-card__cta">
   <BaseButton variant="ghost" size="sm">
-    See details <span class="mdi mdi-arrow-right" aria-hidden="true"></span>
+    See details <VIcon icon="mdi-arrow-right" size="1em" />
   </BaseButton>
 </div>
             </BaseCard>
@@ -97,7 +96,7 @@ const factorRows = [
           <div class="factors-section__list">
             <div v-for="f in factorRows" :key="f.factor" class="factor-item">
               <div class="factor-item__icon">
-                <BaseIcon name="mdi-cog-outline" size="md" color="var(--color-primary)" aria-hidden="true" />
+                <VIcon icon="mdi-cog-outline" size="1.5rem" color="var(--color-primary)" />
               </div>
               <div class="factor-item__content">
                 <div class="factor-item__factor">{{ f.factor }}</div>

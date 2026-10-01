@@ -7,7 +7,6 @@ import { useParallax } from '~/composables/useParallax'
 import { useVisualExperiments } from '~/composables/useVisualExperiments'
 import BaseButton from '~/components/ui/BaseButton.vue'
 import BaseCard from '~/components/ui/BaseCard.vue'
-import BaseIcon from '~/components/ui/BaseIcon.vue'
 
 useSeoMeta({
   title: 'Custom Websites & Web Development in Northern Colorado',
@@ -117,7 +116,7 @@ const processSteps = [
         <div class="section__header">
           <h2 class="section__title">Selected work</h2>
           <NuxtLink to="/work" class="section__link">
-            All work <span class="mdi mdi-arrow-right" aria-hidden="true"></span>
+            All work <VIcon icon="mdi-arrow-right" size="1em" />
           </NuxtLink>
         </div>
         <div class="work-section__grid">
@@ -165,12 +164,12 @@ const processSteps = [
           >
             <BaseCard variant="default" hover class="service-card">
               <div class="service-card__icon">
-                <BaseIcon :name="s.icon" size="lg" />
+                <VIcon :icon="s.icon" size="2rem" />
               </div>
               <h3 class="service-card__title">{{ s.title }}</h3>
               <p class="service-card__blurb">{{ s.blurb }}</p>
               <div class="service-card__cta">
-                Learn more <span class="mdi mdi-arrow-right" aria-hidden="true"></span>
+                Learn more <VIcon icon="mdi-arrow-right" size="1em" />
               </div>
             </BaseCard>
           </NuxtLink>

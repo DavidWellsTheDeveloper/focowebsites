@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { vScrollReveal } from '~/composables/useScrollReveal'
 import BaseCard from '~/components/ui/BaseCard.vue'
-import BaseIcon from '~/components/ui/BaseIcon.vue'
 import BaseButton from '~/components/ui/BaseButton.vue'
 
 useSeoMeta({
@@ -49,7 +48,7 @@ const includes = [
               delay: i * 90,
             }"
           >
-            <BaseIcon :name="item.icon" size="xl" color="var(--color-primary)" aria-hidden="true" />
+            <VIcon :icon="item.icon" size="3rem" color="var(--color-primary)" />
             <h3 class="include-card__title">{{ item.title }}</h3>
             <p class="include-card__body">{{ item.body }}</p>
           </BaseCard>
@@ -164,7 +163,7 @@ const includes = [
   text-align: left;
 }
 
-.include-card :global(.mdi) {
+.include-card .v-icon {
   margin-bottom: var(--space-3);
 }
 

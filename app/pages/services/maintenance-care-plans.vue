@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { vScrollReveal } from '~/composables/useScrollReveal'
 import BaseCard from '~/components/ui/BaseCard.vue'
-import BaseIcon from '~/components/ui/BaseIcon.vue'
 import BaseButton from '~/components/ui/BaseButton.vue'
 
 useSeoMeta({
@@ -18,7 +17,7 @@ const included = [
   { icon: 'mdi-puzzle', title: 'Updates & refreshes', body: 'Framework, dependency, and content updates handled on a schedule — you&apos;re never on a ticking bomb.' },
   { icon: 'mdi-shield-lock-outline', title: 'Security & backups', body: 'Monitoring, patching, and restorable backups so a bad day costs minutes, not the whole site.' },
   { icon: 'mdi-headset', title: 'A human to call', body: 'Something odd? Someone on the plan gets a real reply, not a ticket in a queue.' },
-  { icon: 'mdi-chart-arrow-up', title: 'Quiet improvements', body: 'Small performance and SEO wins bundled in — the site keeps getting better while you&apos;re busy.' },
+  { icon: 'mdi-trending-up', title: 'Quiet improvements', body: 'Small performance and SEO wins bundled in — the site keeps getting better while you&apos;re busy.' },
   { icon: 'mdi-account-clock-outline', title: 'Predictable spend', body: 'A flat monthly cost. No surprise invoices when months pass with nothing needed.' },
   { icon: 'mdi-handshake-outline', title: 'Long-term partner', body: 'You have someone who knows the site&apos;s history when it&apos;s time for the next big step.' },
 ]
@@ -47,7 +46,7 @@ const included = [
               delay: i * 90,
             }"
           >
-            <BaseIcon :name="item.icon" size="xl" color="var(--color-primary)" aria-hidden="true" />
+            <VIcon :icon="item.icon" size="3rem" color="var(--color-primary)" />
             <h3 class="included-card__title">{{ item.title }}</h3>
             <p class="included-card__body">{{ item.body }}</p>
           </BaseCard>
@@ -152,7 +151,7 @@ const included = [
   padding: var(--space-6);
 }
 
-.included-card :global(.mdi) {
+.included-card .v-icon {
   margin-bottom: var(--space-3);
 }
 

@@ -66,7 +66,7 @@ const faqs = [
               <details class="faq-item__details">
                 <summary class="faq-item__summary">
                   {{ f.q }}
-                  <span class="mdi mdi-chevron-down" aria-hidden="true"></span>
+                  <VIcon icon="mdi-chevron-down" size="1em" class="faq-item__chevron" />
                 </summary>
                 <div class="faq-item__answer">{{ f.a }}</div>
               </details>
@@ -159,12 +159,12 @@ const faqs = [
   display: none;
 }
 
-.faq-item__summary :global(.mdi) {
+.faq-item__chevron {
   transition: transform var(--transition-fast);
   color: var(--color-primary);
 }
 
-.faq-item__details[open] .faq-item__summary :global(.mdi) {
+.faq-item__details[open] .faq-item__chevron {
   transform: rotate(180deg);
 }
 

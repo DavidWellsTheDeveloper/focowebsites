@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import BaseIcon from '~/components/ui/BaseIcon.vue'
-
 const { isDark, toggle } = useThemeToggle()
 </script>
 
@@ -11,17 +9,15 @@ const { isDark, toggle } = useThemeToggle()
     :aria-label="isDark ? 'Switch to light theme' : 'Switch to dark theme'"
     :title="isDark ? 'Switch to light theme' : 'Switch to dark theme'"
   >
-    <BaseIcon
+    <VIcon
       v-if="!isDark"
-      name="mdi-white-balance-sunny"
-      size="lg"
-      aria-hidden="true"
+      icon="mdi-white-balance-sunny"
+      size="2rem"
     />
-    <BaseIcon
+    <VIcon
       v-else
-      name="mdi-weather-night"
-      size="lg"
-      aria-hidden="true"
+      icon="mdi-weather-night"
+      size="2rem"
     />
   </button>
 </template>

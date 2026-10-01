@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { vScrollReveal } from '~/composables/useScrollReveal'
 import BaseCard from '~/components/ui/BaseCard.vue'
-import BaseIcon from '~/components/ui/BaseIcon.vue'
 import BaseButton from '~/components/ui/BaseButton.vue'
 
 useSeoMeta({
@@ -18,7 +17,7 @@ const values = [
   { icon: 'mdi-bullseye-arrow', title: 'Websites must work', body: 'Pretty is table stakes. Every page needs a job, and results are the measure.' },
   { icon: 'mdi-message-text-outline', title: 'Plain talk', body: 'No jargon, no vanishing. You get straight answers and honest timelines.' },
   { icon: 'mdi-hand-heart-outline', title: 'This is a practice', body: 'Small by choice. I take on fewer projects so each one gets the attention it deserves.' },
-  { icon: 'mdi-lock-clock-outline', title: 'Built to last', body: 'Sites are maintained, not abandoned. What ships today still runs in five years.' },
+  { icon: 'mdi-lock-check-outline', title: 'Built to last', body: 'Sites are maintained, not abandoned. What ships today still runs in five years.' },
 ]
 
 const reasons = [
@@ -68,7 +67,7 @@ const reasons = [
               <h2 class="about-section__why-title">Why work with a freelancer</h2>
               <ul class="about-section__reasons">
                 <li v-for="r in reasons" :key="r" class="about-section__reason">
-                  <BaseIcon name="mdi-check" size="sm" color="var(--color-accent)" aria-hidden="true" />
+                  <VIcon icon="mdi-check" size="1rem" color="var(--color-accent)" />
                   <span>{{ r }}</span>
                 </li>
               </ul>
@@ -85,7 +84,7 @@ const reasons = [
         </div>
         <div class="values-section__grid" v-scroll-reveal="{ direction: 'up' }">
           <BaseCard v-for="v in values" :key="v.title" variant="default" class="value-card" v-scroll-reveal="{ direction: 'up' }">
-            <BaseIcon :name="v.icon" size="xl" color="var(--color-primary)" aria-hidden="true" />
+            <VIcon :icon="v.icon" size="3rem" color="var(--color-primary)" />
             <h3 class="value-card__title">{{ v.title }}</h3>
             <p class="value-card__body">{{ v.body }}</p>
           </BaseCard>
@@ -273,7 +272,7 @@ const reasons = [
   text-align: center;
 }
 
-.value-card :global(.mdi) {
+.value-card .v-icon {
   margin-bottom: var(--space-4);
 }
 

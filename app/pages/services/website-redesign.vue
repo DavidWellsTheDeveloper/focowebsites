@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { vScrollReveal } from '~/composables/useScrollReveal'
 import BaseCard from '~/components/ui/BaseCard.vue'
-import BaseIcon from '~/components/ui/BaseIcon.vue'
 import BaseButton from '~/components/ui/BaseButton.vue'
 
 useSeoMeta({
@@ -48,7 +47,7 @@ const signals = [
               delay: i * 90,
             }"
           >
-            <BaseIcon name="mdi-checkbox-marked-circle-outline" size="lg" color="var(--color-primary)" aria-hidden="true" />
+            <VIcon icon="mdi-checkbox-marked-circle-outline" size="2rem" color="var(--color-primary)" />
             <span>{{ s.text }}</span>
           </div>
         </div>
@@ -163,7 +162,7 @@ const signals = [
   color: var(--color-on-background);
 }
 
-.signal-item :global(.mdi) {
+.signal-item .v-icon {
   flex-shrink: 0;
   margin-top: 0.125rem;
 }

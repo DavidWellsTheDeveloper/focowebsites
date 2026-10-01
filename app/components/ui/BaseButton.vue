@@ -74,12 +74,12 @@ function handleClick(event: MouseEvent) {
         </circle>
       </svg>
     </span>
-    <span v-else-if="icon && iconPosition === 'start'" class="base-button__icon" aria-hidden="true">
-      <span class="mdi" :class="icon"></span>
+    <span v-else-if="icon && iconPosition === 'start'" class="base-button__icon">
+      <VIcon :icon="icon" size="1em" />
     </span>
     <span class="base-button__text"><slot /></span>
-    <span v-if="icon && iconPosition === 'end'" class="base-button__icon" aria-hidden="true">
-      <span class="mdi" :class="icon"></span>
+    <span v-if="icon && iconPosition === 'end'" class="base-button__icon">
+      <VIcon :icon="icon" size="1em" />
     </span>
   </component>
 </template>

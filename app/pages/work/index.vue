@@ -81,7 +81,7 @@ const visible = computed(() =>
               </div>
 <div class="work-card__cta">
   <BaseButton variant="ghost" size="sm">
-    Read the case study <span class="mdi mdi-arrow-right" aria-hidden="true"></span>
+    Read the case study <VIcon icon="mdi-arrow-right" size="1em" />
   </BaseButton>
 </div>
             </BaseCard>

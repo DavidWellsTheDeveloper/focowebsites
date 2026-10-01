@@ -56,7 +56,7 @@ const currentYear = new Date().getFullYear()
             aria-label="Open menu"
             :aria-expanded="drawer"
           >
-            <span class="mdi mdi-menu" aria-hidden="true"></span>
+            <VIcon icon="mdi-menu" size="1em" />
           </button>
         </div>
       </div>

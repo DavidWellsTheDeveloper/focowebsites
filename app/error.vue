@@ -23,7 +23,7 @@ const is404 = computed(() => props.error?.statusCode === 404)
     <div class="container">
       <div class="error-page__inner">
         <span class="error-page__icon" aria-hidden="true">
-          <span class="mdi mdi-waves"></span>
+          <VIcon icon="mdi-waves" size="1em" />
         </span>
         <p class="error-page__code">{{ is404 ? '404' : 'Error' }}</p>
         <h1 class="error-page__title">

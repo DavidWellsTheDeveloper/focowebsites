@@ -35,7 +35,7 @@ const others = computed(() => projects.filter((p: Project) => p.slug !== slug.va
       <div class="container">
         <div class="case-study__back" v-scroll-reveal="{ direction: 'left' }">
           <NuxtLink to="/work" class="case-study__back-link">
-            <span class="mdi mdi-arrow-left" aria-hidden="true"></span>
+            <VIcon icon="mdi-arrow-left" size="1em" />
             All work
           </NuxtLink>
         </div>
@@ -50,7 +50,7 @@ const others = computed(() => projects.filter((p: Project) => p.slug !== slug.va
             <BaseChip v-for="t in projectData.tags" :key="t" variant="tonal">{{ t }}</BaseChip>
             <a v-if="projectData.liveUrl" :href="projectData.liveUrl" target="_blank" rel="noopener noreferrer" class="case-study__visit">
               <BaseButton variant="outline" size="sm">
-                Visit the site <span class="mdi mdi-open-in-new" aria-hidden="true"></span>
+                Visit the site <VIcon icon="mdi-open-in-new" size="1em" />
               </BaseButton>
             </a>
           </div>
@@ -71,7 +71,7 @@ const others = computed(() => projects.filter((p: Project) => p.slug !== slug.va
           <h2 class="case-study__results-title">Results</h2>
           <div class="case-study__results-list">
             <div v-for="r in projectData.results" :key="r" class="case-study__result">
-              <span class="mdi mdi-check-circle" aria-hidden="true"></span>
+              <VIcon icon="mdi-check-circle" size="1em" />
               <span>{{ r }}</span>
             </div>
           </div>
@@ -257,7 +257,7 @@ const others = computed(() => projects.filter((p: Project) => p.slug !== slug.va
   color: var(--color-on-primary);
 }
 
-.case-study__result :global(.mdi) {
+.case-study__result .v-icon {
   color: var(--color-accent);
   flex-shrink: 0;
   margin-top: 0.125rem;
