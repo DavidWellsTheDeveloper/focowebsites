@@ -433,7 +433,7 @@ HOME
 - ARIA labels on icon-only buttons (theme toggle, mobile menu)
 - Form labels + validation messages
 - Alt text on images (parallax, project cards)
-- Color contrast: Primary teal on white meets WCAG AA; verify accent orange on white
+- Color contrast: Primary teal on white and golden amber (`#B45309`) with white text both meet WCAG AA
 - Skip links: Not currently implemented — consider adding
 
 ---
@@ -445,7 +445,7 @@ These are visual/interaction experiments to prototype **after** initial scaffold
 | Idea | Description | Effort | Priority |
 |------|-------------|--------|----------|
 | **Layered Parallax Depth** | 3–4 semi-transparent layers (gradients, noise, shapes) moving at different scroll speeds via CSS custom properties. "Rockies layers" metaphor. | Low (~80 LOC) | High |
-| **Scroll-Progress Line** | Fixed top accent line (`#F97316`) drawing horizontally as scroll progresses. Site-wide in layout. | Very Low (~30 LOC) | High |
+| **Scroll-Progress Line** | Fixed top accent line (`#B45309`) drawing horizontally as scroll progresses. Site-wide in layout. | Very Low (~30 LOC) | High |
 | **Staggered Directional Entrance** | Cards enter from left (odd) / right (even) with rotation+scale, staggered 80ms. Extends `vScrollReveal`. | Low (~60 LOC) | Medium |
 | **Ambient Canvas Background** | Low-opacity particles or gradient blobs in `<canvas>` behind hero; reacts to mouse drift + scroll speed. `ClientOnly`, respects reduced motion. | Medium (~150 LOC) | Low |
 
