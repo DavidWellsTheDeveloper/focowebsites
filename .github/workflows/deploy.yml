@@ -14,7 +14,12 @@ env:
   AWS_REGION: us-east-1
   S3_BUCKET: focowebsites.com
   CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
-  NUXT_PUBLIC_WEB3FORMS_ACCESS_KEY: ${{ secrets.NUXT_PUBLIC_WEB3FORMS_ACCESS_KEY }}
+  # web3forms access keys are public by design and are guarded by hCaptcha plus
+  # rate limiting, not by secrecy. Nuxt inlines runtimeConfig.public into the client
+  # bundle at generate time, so this value is readable in the shipped JS whether it
+  # comes from a secret or from here. Declaring it avoids a second copy that can
+  # drift out of sync with the dashboard.
+  NUXT_PUBLIC_WEB3FORMS_ACCESS_KEY: 8018aaea-c7d9-4e7c-89e5-68a035e51da9
 
 jobs:
   build:
@@ -27,7 +32,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version-file: '.nvmrc'
           cache: 'npm'
 
       - name: Install dependencies
@@ -68,21 +73,30 @@ jobs:
           role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
           role-session-name: GitHubActionsDeploy
 
-      - name: Sync to S3
+      - name: Sync hashed build assets to S3
         run: |
           aws s3 sync .output/public/ s3://${{ env.S3_BUCKET }}/ \
             --delete \
             --cache-control "public, max-age=31536000, immutable" \
-            --exclude "*.html" \
-            --exclude "*.xml" \
-            --exclude "*.json" \
-            --exclude "robots.txt"
+            --exclude "*" \
+            --include "_nuxt/*"
+
+      - name: Sync unhashed static files to S3
+        run: |
+          aws s3 sync .output/public/ s3://${{ env.S3_BUCKET }}/ \
+            --delete \
+            --cache-control "public, max-age=86400" \
+            --exclude "*" \
+            --include "images/*" \
+            --include "favicon.ico" \
+            --include "__sitemap__/*"
 
       - name: Sync HTML/XML/JSON with no-cache
         run: |
           aws s3 sync .output/public/ s3://${{ env.S3_BUCKET }}/ \
             --delete \
             --cache-control "public, max-age=0, must-revalidate" \
+            --exclude "*" \
             --include "*.html" \
             --include "*.xml" \
             --include "*.json" \
