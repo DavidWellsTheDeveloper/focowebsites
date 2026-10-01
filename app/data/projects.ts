@@ -1,7 +1,8 @@
 /**
  * Case studies shown on /work and /work/[project-name].
  *
- * Real projects first; any remaining placeholder entries are marked.
+ * Every entry is a real shipped project. `accent` is the card header bar colour —
+ * stay on the site palette (teal tints, or the brand amber) so the grid reads as one set.
  */
 
 export interface Project {
@@ -68,25 +69,28 @@ export const projects: Project[] = [
     accent: '#14B8A6',
   },
   {
-    slug: 'project-three',
-    client: 'Client Three',
-    headline: 'At vero eos et accusamus et iusto odio dignissimos ducimus',
-    year: 2025,
-    services: ['Custom website design', 'Development support'],
-    tags: ['Creative', 'Portfolio'],
+    slug: 'davidwellsthedeveloper',
+    client: 'David T. Wells',
+    headline: 'A digital resume that shows how I work — not just what I shipped',
+    year: 2026,
+    services: ['Custom website design', 'Website build', 'Development support'],
+    tags: ['Portfolio', 'Web development', 'Digital resume'],
     summary:
-      'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.',
+      'My own professional portfolio: a fast, accessible, single-page digital resume — a shareable alternative to a static PDF.',
     challenge:
-      'Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.',
+      'A PDF resume flattens eight years of data-platform and full-stack work into a handful of bullets, and it goes stale the moment I ship something new. It also cannot show how I actually work — the architecture, the performance discipline, or the design decisions sitting behind the numbers. I wanted a portfolio that stays current, loads instantly, and works as a single link I can send anywhere a PDF attachment would go.',
     solution:
-      'Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.',
+      'I designed and built it: a prerendered single-page digital resume carrying my full work history, key achievements, skills by category, and contact details — with the PDF kept alongside for the applications that still ask for one. It is entirely static, so there is no server, no database, and no runtime to patch. Every section is deep-linkable, the markup is semantic and works with a keyboard and screen reader, and every technology on the page is one I have shipped in production.',
     results: [
-      'At vero eos et accusamus et iusto odio dignissimos ducimus',
-      'Quis autem vel eum iure reprehenderit qui in ea voluptate',
-      'Temporibus autem quibusdam et aut officiis debitis',
+      'One shareable link that works anywhere a PDF attachment would — email signature, job application, or LinkedIn',
+      'Prerendered to static HTML, so there is no server or runtime to maintain, patch, or pay for',
+      'A downloadable PDF kept in step with the page for applications that still require an attachment',
+      'Semantic markup, ARIA landmarks, and labeled controls — fully navigable by keyboard and screen reader',
+      'Deep-linkable sections, so I can point straight at the work or the skills instead of making anyone scroll',
+      'Every skill listed is one I have shipped and supported in production, not something I read about once',
     ],
-    liveUrl: 'https://example.com/project-three',
-    accent: '#99F6E4',
+    liveUrl: 'https://davidwellsthedeveloper.com',
+    accent: '#B45309',
   },
 ]
 

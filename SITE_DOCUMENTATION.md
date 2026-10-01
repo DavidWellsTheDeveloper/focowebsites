@@ -56,7 +56,7 @@
 | `/work` | Filterable portfolio grid (by tag) + CTA |
 | `/work/andrews-accounting` | Case study: challenge/solution/results + related work |
 | `/work/pantry-to-store` | Case study: challenge/solution/results + related work |
-| `/work/project-three` | Case study: challenge/solution/results + related work |
+| `/work/davidwellsthedeveloper` | Case study: challenge/solution/results + related work |
 | `/404` | Custom error page (wave icon, friendly copy, home/work links) |
 | `/200` | SPA fallback |
 
@@ -184,7 +184,7 @@ interface Project {
 **Current Projects (3)**:
 1. `andrews-accounting` — Andrews Accounting LLC (2026) — primary: #0F766E
 2. `pantry-to-store` — Pantry To Store (2026) — secondary: #14B8A6
-3. `project-three` — Client Three (2025) — aqua: #99F6E4 (placeholder)
+3. `davidwellsthedeveloper` — David T. Wells (2026) — accent amber: #B45309 (self-directed portfolio build; the amber bar keeps the third card distinct from the two teals and is on-brand)
 
 ### Service
 ```typescript
@@ -329,7 +329,6 @@ These tokens should be defined in `assets/styles/tokens.css` as CSS custom prope
 | Area | Status | Notes |
 |------|--------|-------|
 | Testimonials | Placeholder | 2 example quotes marked "[Placeholder — replace with real testimonials]" |
-| Project 3 | Placeholder | Lorem ipsum content, example.com URL |
 | About Page Personal Touch | Placeholder | "[placeholder: out on the trails / propping up the counter at a local coffee shop]" |
 | Inquiry Endpoint | **web3forms + hCaptcha** | Configure in production |
 | Inbound reciprocal links | **Missing** | Client sites do not yet link back to focowebsites.com; request and track per project |

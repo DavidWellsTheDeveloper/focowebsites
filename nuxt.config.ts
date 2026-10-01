@@ -119,7 +119,7 @@ export default defineNuxtConfig({
         '/work',
         '/work/andrews-accounting',
         '/work/pantry-to-store',
-        '/work/project-three',
+        '/work/davidwellsthedeveloper',
         '/process',
         '/pricing',
         '/about',
