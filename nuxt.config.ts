@@ -5,7 +5,7 @@ export default defineNuxtConfig({
 
   css: [
     '@mdi/font/css/materialdesignicons.css',
-    '~/assets/css/main.css',
+    '~/assets/styles/globals.css',
   ],
 
   modules: [
@@ -24,7 +24,7 @@ export default defineNuxtConfig({
     head: {
       htmlAttrs: { lang: 'en' },
       titleTemplate: '%s · FoCo Websites',
-      defaultTitle:
+      title:
         'FoCo Websites — Custom Websites & Web Development in Northern Colorado',
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -55,9 +55,8 @@ export default defineNuxtConfig({
     moduleOptions: {
       ssrClientHints: {
         prefersColorScheme: true,
-        prefersColorSchemeOptions: { cookieName: 'foco-scheme' },
+        prefersColorSchemeOptions: { cookie: { name: 'foco-scheme' } },
       },
-      labComponents: true,
     },
     vuetifyOptions: {
       icons: { defaultSet: 'mdi' },
@@ -100,9 +99,8 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      // Set to a Formspree (or similar) endpoint to enable server-side form
-      // delivery. When empty, the enquiry form falls back to pre-filling an email.
-      inquiryEndpoint: '',
+      web3formsAccessKey: '',
+      recaptchaSiteKey: '',
     },
   },
 
@@ -127,5 +125,24 @@ export default defineNuxtConfig({
         '/start-a-project',
       ],
     },
+  },
+
+  components: [
+    { path: '~/components/ui', pathPrefix: false },
+    { path: '~/components/layout', pathPrefix: false },
+    { path: '~/components/features', pathPrefix: false },
+  ],
+
+  vite: {
+    css: {
+      modules: {
+        localsConvention: 'camelCaseOnly',
+      },
+    },
+  },
+
+  typescript: {
+    strict: true,
+    typeCheck: true,
   },
 })

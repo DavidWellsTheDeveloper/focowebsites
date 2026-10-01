@@ -32,12 +32,19 @@ export function useScrollReveal() {
     prefersReducedMotionLocal.value = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   })
 
-  function observe(el: HTMLElement) {
+  function observe(el: HTMLElement, options?: { direction?: 'left' | 'right' | 'up' | 'down'; delay?: number }) {
     if (prefersReducedMotionLocal.value) {
       el.classList.add('is-revealed')
       return
     }
-    el.classList.add('reveal-item')
+
+    const direction = options?.direction || 'up'
+    const delay = options?.delay || 0
+
+    el.classList.add('reveal-item', `reveal-item--${direction}`)
+    if (delay) {
+      el.style.setProperty('--reveal-delay', `${delay}ms`)
+    }
     getObserver().observe(el)
   }
 
@@ -53,10 +60,10 @@ export function useScrollReveal() {
 }
 
 export const vScrollReveal = {
-  mounted(el: HTMLElement) {
+  mounted(el: HTMLElement, binding: { value?: { direction?: 'left' | 'right' | 'up' | 'down'; delay?: number } }) {
     if (import.meta.client) {
       const { observe } = useScrollReveal()
-      observe(el)
+      observe(el, binding.value)
     }
   },
   unmounted(el: HTMLElement) {

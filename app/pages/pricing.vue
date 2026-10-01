@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { vScrollReveal } from '~/composables/useScrollReveal'
+import BaseCard from '~/components/ui/BaseCard.vue'
+import BaseButton from '~/components/ui/BaseButton.vue'
+import BaseIcon from '~/components/ui/BaseIcon.vue'
 
 useSeoMeta({
   title: 'Pricing',
@@ -45,62 +48,232 @@ const factorRows = [
 
 <template>
   <div>
-    <PageHero
-      eyebrow="Pricing"
-      title="No prices on the wall, no surprises on the invoice"
-      lede="Every project is different, so I won't fake a rate card. Here's how pricing actually works — the models, the factors, and what moves the number."
-    />
-
-    <VContainer class="pb-10">
-      <div class="text-center mx-auto mb-8" style="max-width: 640px" v-scroll-reveal>
-        <h2 class="font-display text-h4 font-weight-medium mb-2">Ways we engage</h2>
-        <p class="text-body-1 text-medium-emphasis mb-0">Pick a lane or mix and match.</p>
+    <section class="page-hero" v-scroll-reveal="{ direction: 'up' }">
+      <div class="container">
+        <span class="page-hero__eyebrow">Pricing</span>
+        <h1 class="page-hero__title">No prices on the wall, no surprises on the invoice</h1>
+        <p class="page-hero__lede">Every project is different, so I won&apos;t fake a rate card. Here&apos;s how pricing actually works — the models, the factors, and what moves the number.</p>
       </div>
-      <VRow class="reveal-stagger" v-scroll-reveal>
-        <VCol v-for="m in models" :key="m.title" cols="12" sm="6" class="d-flex">
-          <NuxtLink :to="m.to" class="text-decoration-none w-100">
-            <VCard class="h-100" hover>
-              <VCardText class="pa-6">
-                <h3 class="font-display text-h6 font-weight-medium mb-2">{{ m.title }}</h3>
-                <p class="text-body-2 text-medium-emphasis mb-0">{{ m.body }}</p>
-              </VCardText>
-              <VCardActions>
-                <VBtn variant="text" color="primary" size="small" class="text-none">
-                  See details <VIcon end size="small">mdi-arrow-right</VIcon>
-                </VBtn>
-              </VCardActions>
-            </VCard>
+    </section>
+
+    <section class="section models-section" v-scroll-reveal="{ direction: 'up' }">
+      <div class="container">
+        <div class="section__header" v-scroll-reveal="{ direction: 'up' }">
+          <h2 class="section__title">Ways we engage</h2>
+          <p class="section__lede">Pick a lane or mix and match.</p>
+        </div>
+        <div class="models-section__grid" v-scroll-reveal="{ direction: 'up' }">
+          <NuxtLink v-for="m in models" :key="m.title" :to="m.to" class="model-card-link">
+            <BaseCard variant="default" hover class="model-card">
+              <h3 class="model-card__title">{{ m.title }}</h3>
+              <p class="model-card__body">{{ m.body }}</p>
+<div class="model-card__cta">
+  <BaseButton variant="ghost" size="sm">
+    See details <span class="mdi mdi-arrow-right" aria-hidden="true"></span>
+  </BaseButton>
+</div>
+            </BaseCard>
           </NuxtLink>
-        </VCol>
-      </VRow>
-    </VContainer>
-
-    <VContainer class="pb-4">
-      <div class="text-center mx-auto mb-8" style="max-width: 640px" v-scroll-reveal>
-        <h2 class="font-display text-h4 font-weight-medium mb-2">What moves the number</h2>
-        <p class="text-body-1 text-medium-emphasis mb-0">These factors do more to set the price than anything else.</p>
+        </div>
       </div>
-      <VCard color="background" variant="flat" rounded="xl" v-scroll-reveal>
-        <div class="space-y-3">
-          <div v-for="f in factorRows" :key="f.factor" class="d-flex ga-3 align-start">
-            <VAvatar color="primary" rounded="lg" class="text-white shrink-0" size="36">
-              <VIcon size="small">mdi-cog-outline</VIcon>
-            </VAvatar>
-            <div>
-              <div class="font-weight-medium text-body-1">{{ f.factor }}</div>
-              <div class="text-body-2 text-medium-emphasis">{{ f.detail }}</div>
+    </section>
+
+    <section class="section factors-section" v-scroll-reveal="{ direction: 'up' }">
+      <div class="container">
+        <div class="section__header" v-scroll-reveal="{ direction: 'up' }">
+          <h2 class="section__title">What moves the number</h2>
+          <p class="section__lede">These factors do more to set the price than anything else.</p>
+        </div>
+        <BaseCard variant="flat" class="factors-section__card" v-scroll-reveal="{ direction: 'up' }">
+          <div class="factors-section__list">
+            <div v-for="f in factorRows" :key="f.factor" class="factor-item">
+              <div class="factor-item__icon">
+                <BaseIcon name="mdi-cog-outline" size="md" color="var(--color-primary)" aria-hidden="true" />
+              </div>
+              <div class="factor-item__content">
+                <div class="factor-item__factor">{{ f.factor }}</div>
+                <div class="factor-item__detail">{{ f.detail }}</div>
+              </div>
             </div>
           </div>
+        </BaseCard>
+        <div class="factors-section__cta" v-scroll-reveal="{ direction: 'up' }">
+          <p class="factors-section__note">Better than a rate card: tell me what you&apos;re building and I&apos;ll quote the real thing.</p>
+          <BaseButton variant="accent" size="xl" to="/start-a-project" icon="mdi-arrow-right" iconPosition="end">
+            Get a straight answer
+          </BaseButton>
         </div>
-      </VCard>
-      <div class="text-center mt-6" v-scroll-reveal>
-        <p class="text-body-2 text-medium-emphasis mb-2">
-          Better than a rate card: tell me what you're building and I'll quote the real thing.
-        </p>
-        <VBtn color="accent" size="x-large" to="/start-a-project" class="text-white">
-          Get a straight answer
-        </VBtn>
       </div>
-    </VContainer>
+    </section>
   </div>
 </template>
+
+<style module>
+.page-hero {
+  padding: var(--space-10) 0 var(--space-14);
+  text-align: center;
+}
+
+.page-hero__eyebrow {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary);
+  background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-4);
+}
+
+.page-hero__title {
+  margin-bottom: var(--space-4);
+}
+
+.page-hero__lede {
+  font-size: var(--font-size-lg);
+  color: var(--color-on-background);
+  opacity: 0.8;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.section {
+  padding: var(--space-12) 0;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: var(--space-16) 0;
+  }
+}
+
+.section__header {
+  max-width: 640px;
+  margin: 0 auto var(--space-8);
+  text-align: center;
+}
+
+.section__title {
+  margin: 0 0 var(--space-2);
+}
+
+.section__lede {
+  color: var(--color-on-background);
+  opacity: 0.8;
+  margin: 0;
+}
+
+.models-section__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .models-section__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .models-section__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.model-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.model-card {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.model-card__title {
+  font-family: var(--font-display);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  margin: 0 0 var(--space-2);
+}
+
+.model-card__body {
+  font-size: var(--font-size-sm);
+  color: var(--color-on-background);
+  opacity: 0.7;
+  margin: 0 0 var(--space-4);
+  flex: 1;
+}
+
+.model-card__cta {
+  margin-top: auto;
+}
+
+.factors-section__card {
+  padding: var(--space-6);
+  margin-bottom: var(--space-8);
+  border-radius: var(--radius-xl);
+}
+
+@media (min-width: 768px) {
+  .factors-section__card {
+    padding: var(--space-8);
+  }
+}
+
+.factors-section__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.factor-item {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.factor-item__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
+  color: var(--color-primary);
+  border-radius: var(--radius-lg);
+  flex-shrink: 0;
+}
+
+.factor-item__content {
+  flex: 1;
+}
+
+.factor-item__factor {
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  color: var(--color-on-background);
+}
+
+.factor-item__detail {
+  font-size: var(--font-size-sm);
+  color: var(--color-on-background);
+  opacity: 0.7;
+  margin-top: var(--space-1);
+}
+
+.factors-section__cta {
+  text-align: center;
+}
+
+.factors-section__note {
+  font-size: var(--font-size-sm);
+  color: var(--color-on-background);
+  opacity: 0.7;
+  margin: 0 0 var(--space-4);
+}
+</style>

@@ -27,7 +27,7 @@ export const projects: Project[] = [
     slug: 'andrews-accounting',
     client: 'Andrews Accounting LLC',
     headline: 'A clean, trustworthy site for a growing local accounting firm',
-    year: 2025,
+    year: 2026,
     services: ['Custom website design', 'Website build', 'CMS setup & training'],
     tags: ['Professional services', 'Local business', 'CMS'],
     summary:
@@ -36,7 +36,7 @@ export const projects: Project[] = [
       'The client, a sole proprietor, had a domain but no website. They needed a simple, professional site to send prospects to, with clear service info and an easy way to get in touch. They wanted it built quickly and affordably, with very low ongoing costs, and the ability to update content themselves without calling a developer.',
     solution:
       'I built a fast, secure static site with a friendly content editor (CMS) that lets the client update pages, services, and business info themselves — no developer needed. The contact form includes spam protection and sends messages straight to their inbox. The site is hosted on low-cost static infrastructure that costs pennies per month.',
-results: [
+    results: [
       'Page loads in under a second on mobile',
       'Hosting costs just pennies per month',
       'The client updates content themselves via a simple browser-based editor — no developer needed',
@@ -50,7 +50,7 @@ results: [
     slug: 'pantry-to-store',
     client: 'Pantry To Store',
     headline: 'An inviting e-commerce site for a specialty food retailer',
-    year: 2024,
+    year: 2026,
     services: ['Custom website design', 'Development support'],
     tags: ['E-commerce', 'Retail'],
     summary:

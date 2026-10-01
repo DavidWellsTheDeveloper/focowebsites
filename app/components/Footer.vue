@@ -15,7 +15,7 @@ const year = props.currentYear ?? new Date().getFullYear()
             FoCo Websites
           </span>
           <p class="text-body-2 text-medium-emphasis mt-1 mb-0">
-            Custom websites for businesses around Northern Colorado.
+            Custom websites for businesses around Northern Colorado;
           </p>
         </VCol>
         <VCol cols="12" md="auto" class="text-center text-md-right">

@@ -2,7 +2,9 @@
 import { projects } from '~/data/projects'
 import { services } from '~/data/services'
 import { vScrollReveal } from '~/composables/useScrollReveal'
-import { VParallax } from 'vuetify/components'
+import BaseButton from '~/components/ui/BaseButton.vue'
+import BaseCard from '~/components/ui/BaseCard.vue'
+import BaseIcon from '~/components/ui/BaseIcon.vue'
 
 useSeoMeta({
   title: 'Custom Websites & Web Development in Northern Colorado',
@@ -14,166 +16,462 @@ useSeoMeta({
 })
 
 const featured = projects.slice(0, 3)
+
+const processSteps = [
+  'Discovery',
+  'Proposal',
+  'Design',
+  'Build',
+  'Launch',
+  'Support',
+]
 </script>
 
 <template>
   <div>
     <!-- Hero -->
-    <VContainer class="py-12 py-md-16">
-      <div class="text-center mx-auto" style="max-width: 800px" v-scroll-reveal>
-        <VChip color="primary" variant="tonal" size="small" class="mb-6" label>
-          Northern Colorado web development
-        </VChip>
-        <h1 class="font-display text-h3 text-md-h1 font-weight-medium mb-5 text-pretty">
-          Let's build a website that
-          <span class="text-primary">actually earns</span> its keep.
+    <section class="hero" v-scroll-reveal="{ direction: 'up' }">
+      <div class="container hero__inner">
+        <span class="hero__eyebrow">Northern Colorado web development</span>
+        <h1 class="hero__title">
+          Let&apos;s build a website that
+          <span class="hero__highlight">actually earns</span> its keep;
         </h1>
-        <p class="text-h6 font-weight-regular text-medium-emphasis text-pretty mb-8" style="max-width: 600px; margin-inline: auto">
+        <p class="hero__lede">
           I design and build custom websites for businesses that want to look sharp,
-          load fast, and turn visitors into paying customers — then I stick around.
+          load fast, and turn visitors into paying customers — then I stick around;
         </p>
-        <div class="d-flex flex-wrap justify-center ga-3" v-scroll-reveal>
-          <VBtn color="accent" size="x-large" to="/start-a-project" class="text-white">
+        <div class="hero__actions">
+          <BaseButton variant="accent" size="xl" to="/start-a-project" icon="mdi-arrow-right" iconPosition="end">
             Start a project
-            <VIcon end>mdi-arrow-right</VIcon>
-          </VBtn>
-          <VBtn color="primary" variant="tonal" size="x-large" to="/work">
+          </BaseButton>
+          <BaseButton variant="outline" size="xl" to="/work">
             See my work
-          </VBtn>
+          </BaseButton>
         </div>
       </div>
-    </VContainer>
+    </section>
 
-    <!-- Vertical Parallax Section using VParallax (client-only) -->
-    <ClientOnly>
-      <VParallax
-        src="https://picsum.photos/seed/foco-parallax/1920/1080"
-        alt="Fort Collins mountains"
-        :scale="0.3"
-        class="my-16"
-        height="500"
-      >
-        <template #default>
-          <VContainer class="fill-height d-flex align-center justify-center">
-            <VCard class="pa-8 mx-auto" max-width="700" color="surface-variant">
-              <h3 class="font-display text-h4 font-weight-medium mb-4 text-center">
-                Built for the Rockies
-              </h3>
-              <p class="text-body-1 text-medium-emphasis text-center">
-                Websites built for businesses that thrive in the mountains — fast, resilient, and built to scale.
-              </p>
-            </VCard>
-          </VContainer>
-        </template>
-      </VParallax>
-    </ClientOnly>
-
-    <!-- Proof / selected work strip -->
-    <VContainer v-if="featured.length" class="py-4 pb-10">
-      <div class="d-flex align-center justify-space-between mb-4" v-scroll-reveal>
-        <h2 class="font-display text-h5 font-weight-medium mb-0">
-          Selected work
-        </h2>
-        <VBtn to="/work" variant="text" color="primary" class="text-none">
-          All work <VIcon end size="small">mdi-arrow-right</VIcon>
-        </VBtn>
-      </div>
-      <VRow class="reveal-stagger" v-scroll-reveal>
-        <VCol v-for="p in featured" :key="p.slug" cols="12" md="4">
-          <NuxtLink :to="`/work/${p.slug}/`" class="text-decoration-none">
-            <VCard class="h-100" hover>
-              <div class="pa-6 pb-2" :style="{ background: p.accent }">
-                <span class="text-caption font-weight-bold" :class="p.accent === '#99F6E4' ? 'text-primary' : 'text-white'">
-                  {{ p.year }} · {{ p.services[0] }}
-                </span>
-              </div>
-              <VCardText>
-                <h3 class="font-display text-h6 font-weight-medium mb-1">{{ p.client }}</h3>
-                <p class="text-body-2 text-medium-emphasis mb-0">{{ p.summary }}</p>
-              </VCardText>
-            </VCard>
+    <!-- Selected Work -->
+    <section class="section work-section" v-scroll-reveal="{ direction: 'up' }">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Selected work</h2>
+          <NuxtLink to="/work" class="section__link">
+            All work <span class="mdi mdi-arrow-right" aria-hidden="true"></span>
           </NuxtLink>
-        </VCol>
-      </VRow>
-    </VContainer>
+        </div>
+        <div class="work-section__grid" v-scroll-reveal="{ direction: 'up' }">
+          <NuxtLink v-for="p in featured" :key="p.slug" :to="`/work/${p.slug}/`" class="work-card">
+            <BaseCard variant="default" hover class="work-card__inner">
+              <div class="work-card__accent" :style="{ background: p.accent }">
+                <span class="work-card__meta">{{ p.year }} · {{ p.services[0] }}</span>
+              </div>
+              <div class="work-card__content">
+                <h3 class="work-card__client">{{ p.client }}</h3>
+                <p class="work-card__summary">{{ p.summary }}</p>
+              </div>
+            </BaseCard>
+          </NuxtLink>
+        </div>
+      </div>
+    </section>
 
     <!-- Services -->
-    <VContainer class="py-10 py-md-12">
-      <div class="text-center mx-auto mb-8" style="max-width: 640px" v-scroll-reveal>
-        <h2 class="font-display text-h3 font-weight-medium mb-3">
-          One developer, the whole job
-        </h2>
-        <p class="text-body-1 text-medium-emphasis mb-0 text-pretty">
-          Design, build, launch, and the ongoing care a site needs after go-live.
-          No handoffs, no agencies, no mystery.
-        </p>
-      </div>
-      <VRow class="reveal-stagger" v-scroll-reveal>
-        <VCol v-for="s in services" :key="s.to" cols="12" sm="6" lg="3" class="d-flex">
-          <NuxtLink :to="s.to" class="text-decoration-none w-100">
-            <VCard class="h-100" hover>
-              <VCardItem>
-                <VCardTitle>
-                  <VIcon color="primary" size="small" start>{{ s.icon }}</VIcon>
-                  {{ s.title }}
-                </VCardTitle>
-              </VCardItem>
-              <VCardText class="text-body-2 text-medium-emphasis">
-                {{ s.blurb }}
-              </VCardText>
-              <VCardActions>
-                <VBtn variant="text" color="primary" size="small" class="text-none">
-                  Learn more <VIcon end size="small">mdi-arrow-right</VIcon>
-                </VBtn>
-              </VCardActions>
-            </VCard>
+    <section class="section services-section" v-scroll-reveal="{ direction: 'up' }">
+      <div class="container">
+        <div class="section__header" v-scroll-reveal="{ direction: 'up' }">
+          <h2 class="section__title">One developer, the whole job</h2>
+          <p class="section__lede">Design, build, launch, and the ongoing care a site needs after go-live. No handoffs, no agencies, no mystery.</p>
+        </div>
+        <div class="services-section__grid" v-scroll-reveal="{ direction: 'up' }">
+          <NuxtLink v-for="s in services" :key="s.to" :to="s.to" class="service-card-link">
+            <BaseCard variant="default" hover class="service-card">
+              <div class="service-card__icon">
+                <BaseIcon :name="s.icon" size="lg" />
+              </div>
+              <h3 class="service-card__title">{{ s.title }}</h3>
+              <p class="service-card__blurb">{{ s.blurb }}</p>
+              <div class="service-card__cta">
+                Learn more <span class="mdi mdi-arrow-right" aria-hidden="true"></span>
+              </div>
+            </BaseCard>
           </NuxtLink>
-        </VCol>
-      </VRow>
-    </VContainer>
+        </div>
+      </div>
+    </section>
 
-    <!-- Process teaser -->
-    <VContainer class="py-10 py-md-12">
-      <VCard color="background" variant="flat" class="pa-6 pa-md-10" rounded="xl">
-        <VRow align="center">
-          <VCol cols="12" md="6" v-scroll-reveal>
-            <VChip color="accent" variant="tonal" size="small" class="mb-4" label>
-              How it works
-            </VChip>
-            <h2 class="font-display text-h3 font-weight-medium mb-3">
-              A process that keeps surprises on the table, not in the invoice.
-            </h2>
-            <p class="text-body-1 text-medium-emphasis mb-6 text-pretty">
-              Discovery → Proposal → Design → Build → Launch → Support. You'll know
-              where the project is at every step, and nothing ships without your sign-off.
-            </p>
-            <VBtn color="primary" variant="tonal" to="/process">
-              See the full process
-            </VBtn>
-          </VCol>
-          <VCol cols="12" md="6" v-scroll-reveal>
-            <VTimeline density="comfortable" side="end">
-              <VTimelineItem
-                v-for="(step, i) in ['Discovery', 'Proposal', 'Design', 'Build', 'Launch', 'Support']"
-                :key="step"
-                dot-color="primary"
-                size="x-small"
-              >
-                <span class="text-body-2">
-                  <strong class="mr-1">{{ i + 1 }}.</strong>
-                  {{ step }}
-                </span>
-              </VTimelineItem>
-            </VTimeline>
-          </VCol>
-        </VRow>
-      </VCard>
-    </VContainer>
+    <!-- Process Teaser -->
+    <section class="section process-teaser" v-scroll-reveal="{ direction: 'up' }">
+      <div class="container">
+        <BaseCard variant="flat" class="process-teaser__card">
+          <div class="process-teaser__grid">
+            <div class="process-teaser__content" v-scroll-reveal="{ direction: 'left' }">
+              <span class="process-teaser__eyebrow">How it works</span>
+              <h2 class="process-teaser__title">A process that keeps surprises on the table, not in the invoice.</h2>
+              <p class="process-teaser__lede">
+                Discovery → Proposal → Design → Build → Launch → Support. You&apos;ll know
+                where the project is at every step, and nothing ships without your sign-off;
+              </p>
+              <BaseButton variant="outline" size="lg" to="/process">
+                See the full process
+              </BaseButton>
+            </div>
+            <div class="process-teaser__timeline" v-scroll-reveal="{ direction: 'right' }">
+              <ol class="timeline">
+                <li v-for="(step, i) in processSteps" :key="step" class="timeline__item">
+                  <span class="timeline__number">0{{ i + 1 }}</span>
+                  <span class="timeline__step">{{ step }}</span>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </BaseCard>
+      </div>
+    </section>
 
-    <CtaBand
-      title="Have a project in mind?"
-      body="Tell me what you're building and where it's stuck. I'll reply with an honest take and a clear next step — no obligation."
-      cta-label="Start the conversation"
-    />
+    <!-- CTA Band -->
+    <section class="cta-band" v-scroll-reveal="{ direction: 'up' }">
+      <div class="container">
+        <BaseCard variant="default" class="cta-band__card" style="background: var(--color-primary); color: var(--color-on-primary);">
+          <h2 class="cta-band__title">Have a project in mind?</h2>
+          <p class="cta-band__body">Tell me what you&apos;re building and where it&apos;s stuck. I&apos;ll reply with an honest take and a clear next step — no obligation.</p>
+          <BaseButton variant="accent" size="xl" to="/start-a-project" icon="mdi-arrow-right" iconPosition="end">
+            Start the conversation
+          </BaseButton>
+        </BaseCard>
+      </div>
+    </section>
   </div>
 </template>
+
+<style module>
+.hero {
+  padding: var(--space-12) 0 var(--space-16);
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: var(--space-16) 0 var(--space-20);
+  }
+}
+
+.hero__inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero__eyebrow {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary);
+  background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-4);
+}
+
+.hero__title {
+  margin-bottom: var(--space-4);
+}
+
+.hero__highlight {
+  color: var(--color-primary);
+}
+
+.hero__lede {
+  font-size: var(--font-size-lg);
+  color: var(--color-on-background);
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto var(--space-8);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+.section {
+  padding: var(--space-12) 0;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: var(--space-16) 0;
+  }
+}
+
+.section__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.section__title {
+  margin: 0;
+}
+
+.section__lede {
+  max-width: 640px;
+  margin: 0 auto var(--space-8);
+  text-align: center;
+  color: var(--color-on-background);
+  opacity: 0.8;
+}
+
+.section__link {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.section__link:hover {
+  color: var(--color-primary-hover);
+}
+
+.work-section__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .work-section__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .work-section__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.work-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.work-card__inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.work-card__accent {
+  padding: var(--space-4);
+  margin: calc(var(--space-6) * -1) calc(var(--space-6) * -1) 0;
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.work-card__meta {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-on-primary);
+}
+
+.work-card__content {
+  padding: var(--space-4);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.work-card__client {
+  font-family: var(--font-display);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  margin: 0 0 var(--space-2);
+  color: var(--color-on-background);
+}
+
+.work-card__summary {
+  font-size: var(--font-size-sm);
+  color: var(--color-on-background);
+  opacity: 0.7;
+  margin: 0;
+  flex: 1;
+}
+
+.services-section__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 640px) {
+  .services-section__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .services-section__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.service-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  height: 100%;
+}
+
+.service-card__icon {
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+}
+
+.service-card__title {
+  font-family: var(--font-display);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  margin: 0 0 var(--space-2);
+  color: var(--color-on-background);
+}
+
+.service-card__blurb {
+  font-size: var(--font-size-sm);
+  color: var(--color-on-background);
+  opacity: 0.7;
+  margin: 0 0 var(--space-4);
+  flex: 1;
+}
+
+.service-card__cta {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--font-size-sm);
+}
+
+.process-teaser__card {
+  padding: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .process-teaser__card {
+    padding: var(--space-10);
+  }
+}
+
+.process-teaser__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .process-teaser__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.process-teaser__eyebrow {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-accent);
+  background-color: color-mix(in srgb, var(--color-accent) 10%, transparent);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-3);
+}
+
+.process-teaser__title {
+  margin: 0 0 var(--space-3);
+}
+
+.process-teaser__lede {
+  color: var(--color-on-background);
+  opacity: 0.8;
+  margin-bottom: var(--space-6);
+}
+
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.timeline__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--font-size-sm);
+  color: var(--color-on-background);
+  opacity: 0.8;
+}
+
+.timeline__number {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  min-width: 2.5rem;
+}
+
+.cta-band {
+  padding: var(--space-10) 0 var(--space-12);
+}
+
+.cta-band__card {
+  padding: var(--space-6);
+  text-align: center;
+  border-radius: var(--radius-xl);
+}
+
+@media (min-width: 768px) {
+  .cta-band__card {
+    padding: var(--space-10);
+  }
+}
+
+.cta-band__title {
+  font-family: var(--font-display);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-medium);
+  margin: 0 0 var(--space-3);
+  color: var(--color-on-primary);
+}
+
+@media (min-width: 768px) {
+  .cta-band__title {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+.cta-band__body {
+  color: var(--color-on-primary);
+  opacity: 0.9;
+  max-width: 560px;
+  margin: 0 auto var(--space-6);
+}
+
+.cta-band__card :global(.base-button) {
+  --color-accent: var(--color-accent);
+}
+</style>
