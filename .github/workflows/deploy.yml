@@ -91,6 +91,12 @@ jobs:
             --include "favicon.ico" \
             --include "__sitemap__/*"
 
+      # The trailing --exclude "_nuxt/*" must stay AFTER the --include flags.
+      # aws s3 filter rules are evaluated in command-line order and the last
+      # matching rule wins. Placed before them, "*.json" would re-include
+      # _nuxt/builds/latest.json and _nuxt/builds/meta/*.json, which the
+      # immutable group above already owns, making the final Cache-Control
+      # depend on sync order instead of on file type.
       - name: Sync HTML/XML/JSON with no-cache
         run: |
           aws s3 sync .output/public/ s3://${{ env.S3_BUCKET }}/ \
@@ -100,7 +106,8 @@ jobs:
             --include "*.html" \
             --include "*.xml" \
             --include "*.json" \
-            --include "robots.txt"
+            --include "robots.txt" \
+            --exclude "_nuxt/*"
 
       - name: Invalidate CloudFront
         run: |
