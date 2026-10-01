@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { projects } from '~/data/projects'
 import { services } from '~/data/services'
+import { heroParallaxLayers } from '~/data/parallax'
 import { vScrollReveal } from '~/composables/useScrollReveal'
+import { useParallax } from '~/composables/useParallax'
+import { useVisualExperiments } from '~/composables/useVisualExperiments'
 import BaseButton from '~/components/ui/BaseButton.vue'
 import BaseCard from '~/components/ui/BaseCard.vue'
 import BaseIcon from '~/components/ui/BaseIcon.vue'
@@ -17,6 +20,19 @@ useSeoMeta({
 
 const featured = projects.slice(0, 3)
 
+const { isEnabled } = useVisualExperiments()
+const parallaxEnabled = isEnabled('heroParallax')
+
+const heroEl = ref<HTMLElement | null>(null)
+const parallaxSpecs = heroParallaxLayers.map((layer, index) => ({
+  index,
+  depth: layer.depth,
+}))
+
+if (parallaxEnabled) {
+  useParallax(heroEl, parallaxSpecs)
+}
+
 const processSteps = [
   'Discovery',
   'Proposal',
@@ -30,7 +46,50 @@ const processSteps = [
 <template>
   <div>
     <!-- Hero -->
-    <section class="hero" v-scroll-reveal="{ direction: 'up' }">
+    <section
+      v-if="!parallaxEnabled"
+      class="hero"
+      v-scroll-reveal="{ direction: 'up' }"
+    >
+      <div class="container hero__inner">
+        <span class="hero__eyebrow">Northern Colorado web development</span>
+        <h1 class="hero__title">
+          Let&apos;s build a website that
+          <span class="hero__highlight">actually earns</span> its keep;
+        </h1>
+        <p class="hero__lede">
+          I design and build custom websites for businesses that want to look sharp,
+          load fast, and turn visitors into paying customers — then I stick around;
+        </p>
+        <div class="hero__actions">
+          <BaseButton variant="accent" size="xl" to="/start-a-project" icon="mdi-arrow-right" iconPosition="end">
+            Start a project
+          </BaseButton>
+          <BaseButton variant="outline" size="xl" to="/work">
+            See my work
+          </BaseButton>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hero with layered depth; see app/data/parallax.ts for the layer stack -->
+    <section v-else ref="heroEl" class="hero hero--depth" v-scroll-reveal="{ direction: 'up' }">
+      <div class="hero__layers" aria-hidden="true">
+        <div
+          v-for="(layer, index) in heroParallaxLayers"
+          :key="layer.id"
+          class="hero__layer"
+          :class="`hero__layer--${layer.id}`"
+          :style="{
+            '--layer-src': `url(${layer.src})`,
+            '--layer-src-mobile': `url(${layer.mobileSrc})`,
+            '--layer-oversize': `${layer.oversize}%`,
+            '--layer-opacity': layer.opacity,
+            '--layer-tone': layer.tone,
+            '--parallax-y': `var(--parallax-y-${index}, 0px)`,
+          }"
+        />
+      </div>
       <div class="container hero__inner">
         <span class="hero__eyebrow">Northern Colorado web development</span>
         <h1 class="hero__title">
@@ -174,7 +233,76 @@ const processSteps = [
   }
 }
 
+/* Layered depth hero. The section clips the layers, which are deliberately oversized so
+   they can travel without exposing an edge, and the content sits above them. */
+.hero--depth {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  min-height: clamp(520px, 88vh, 940px);
+  padding: var(--space-16) 0 var(--space-20);
+}
+
+.hero__layers {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero__layer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(var(--layer-oversize) * -1);
+  height: calc(100% + var(--layer-oversize) * 2);
+  background-color: var(--layer-tone);
+  background-image: var(--layer-src);
+  background-size: cover;
+  background-position: center;
+  opacity: var(--layer-opacity);
+  transform: translate3d(0, var(--parallax-y), 0);
+  will-change: transform;
+}
+
+/* Below 768px the hero is much taller than it is wide, so a 3:2 landscape scaled to cover
+   would crop away most of its width and turn the ridgelines into a blur. The portrait
+   crops keep the ridges readable. */
+@media (max-width: 767px) {
+  .hero__layer {
+    background-image: var(--layer-src-mobile);
+    will-change: auto;
+  }
+}
+
+/* Scrim. The layers sit under the copy, so the backdrop behind the headline and lede has
+   to stay close enough to the page background for the existing text colours to keep
+   their contrast. */
+.hero__layers::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      75% 60% at 50% 40%,
+      var(--hero-scrim-inner) 0%,
+      var(--hero-scrim-mid) 40%,
+      var(--hero-scrim-outer) 100%
+    );
+}
+
+/* The fog layer is the one that reads as haze rather than as a ridge, so it is pushed
+   further back and softened rather than simply stacked. */
+.hero__layer--fog {
+  background-position: center 40%;
+  filter: blur(1px);
+}
+
 .hero__inner {
+  position: relative;
+  z-index: 1;
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
