@@ -38,7 +38,7 @@ function toggle() {
   </button>
 </template>
 
-<style module>
+<style scoped>
 .theme-toggle {
   display: flex;
   align-items: center;

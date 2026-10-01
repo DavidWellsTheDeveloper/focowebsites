@@ -47,7 +47,7 @@ const is404 = computed(() => props.error?.statusCode === 404)
   </div>
 </template>
 
-<style module>
+<style scoped>
 .error-page {
   display: flex;
   align-items: center;

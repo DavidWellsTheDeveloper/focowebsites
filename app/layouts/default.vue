@@ -41,7 +41,7 @@ const currentYear = new Date().getFullYear()
       <div class="container layout__header-inner">
         <NuxtLink to="/" class="layout__logo" aria-label="FoCo Websites - Home">
           <span class="layout__logo-mark" aria-hidden="true">
-            <span class="layout__logo-text">Fo</span>
+            <span class="layout__logo-mark-text">Fo</span>
           </span>
           <span class="layout__logo-text">FoCo Websites</span>
         </NuxtLink>
@@ -83,7 +83,7 @@ const currentYear = new Date().getFullYear()
   </div>
 </template>
 
-<style module>
+<style scoped>
 .layout {
   display: flex;
   flex-direction: column;

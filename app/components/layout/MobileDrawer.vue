@@ -13,9 +13,7 @@ const props = defineProps<{
 }>()
 
 const route = useRoute()
-const isOpen = ref(false)
-
-defineModel<boolean>()
+const isOpen = defineModel<boolean>({ default: false })
 
 function isActive(item: NavItem) {
   if (!item.to) return false
@@ -75,7 +73,7 @@ function close() {
   </Teleport>
 </template>
 
-<style module>
+<style scoped>
 .mobile-drawer-overlay {
   position: fixed;
   inset: 0;

@@ -26,7 +26,7 @@ const year = props.currentYear ?? new Date().getFullYear()
   </footer>
 </template>
 
-<style module>
+<style scoped>
 .footer {
   border-top: 1px solid var(--color-outline);
   background-color: var(--color-background);

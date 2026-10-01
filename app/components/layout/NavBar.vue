@@ -1,9 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import { useRoute } from 'vue-router'
-import { useTheme } from 'vuetify'
-import BaseButton from '~/components/ui/BaseButton.vue'
-import ThemeToggle from '~/components/layout/ThemeToggle.vue'
 
 interface NavItem {
   label: string
@@ -16,8 +12,6 @@ const props = defineProps<{
 }>()
 
 const route = useRoute()
-const theme = useTheme()
-const isDark = computed(() => theme.global.current.value.dark)
 
 function isActive(item: NavItem) {
   if (!item.to) return false
@@ -51,21 +45,10 @@ function activeClasses(item: NavItem) {
         </span>
       </li>
     </ul>
-    <div class="nav-bar__actions">
-      <ThemeToggle :isDark="isDark" />
-      <BaseButton
-        variant="accent"
-        size="lg"
-        to="/start-a-project"
-        class="nav-bar__cta"
-      >
-        Start a project
-      </BaseButton>
-    </div>
   </nav>
 </template>
 
-<style module>
+<style scoped>
 .nav-bar {
   display: flex;
   align-items: center;
