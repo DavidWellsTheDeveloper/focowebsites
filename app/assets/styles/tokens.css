@@ -81,6 +81,11 @@
   --reveal-distance: 3rem;
   --reveal-distance-x: 8rem;
 
+  /* Hero depth scrim, tinted to the page background so the hero copy keeps its contrast */
+  --hero-scrim-inner: rgb(250 250 249 / 0.88);
+  --hero-scrim-mid: rgb(250 250 249 / 0.66);
+  --hero-scrim-outer: rgb(250 250 249 / 0.2);
+
   /* Z-index scale */
   --z-dropdown: 100;
   --z-sticky: 200;
@@ -127,4 +132,8 @@
   --color-on-aqua: #051F1C;
   --color-outline: #1C1917;
   --color-outline-hover: #2D2A27;
+
+  --hero-scrim-inner: rgb(5 31 28 / 0.93);
+  --hero-scrim-mid: rgb(5 31 28 / 0.8);
+  --hero-scrim-outer: rgb(5 31 28 / 0.48);
 }
