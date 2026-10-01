@@ -150,9 +150,11 @@
   - Timeline (select: ASAP / 1–2 months / 3+ months / Just exploring)
   - Goals (textarea, required, auto-grow, counter)
   - Submit button (accent, loading state)
+- **hCaptcha** (Web3Forms zero-config): `.h-captcha` div + `https://web3forms.com/client/script.js`, re-triggered on mount because the script scans before the SPA renders
 - **Success State**: Green alert "Thanks — message sent. I'll reply within a day or two."
-- **Error State**: Red alert with error message
-- **Fallback**: mailto:hello@focowebsites.com if no endpoint configured
+- **Error State**: Red alert with the error message plus the contact address to email directly
+- **No silent fallback**: a missing access key surfaces an error rather than opening a mail draft and reporting success
+- **Contact address**: `dave1.t.wells@gmail.com` (`app/data/site.ts`), single source for form and footer
 
 ---
 
@@ -307,7 +309,7 @@ These tokens should be defined in `assets/styles/tokens.css` as CSS custom prope
 - **Sitemap** — Auto-generated via `@nuxtjs/sitemap` with explicit routes list
 
 ### Forms / Interaction
-- **Inquiry Form** — 5 fields (name, email, budget, timeline, goals), client-side validation, **web3forms + reCAPTCHA** submission
+- **Inquiry Form** — 5 fields (name, email, budget, timeline, goals), client-side validation, **web3forms + hCaptcha** submission
 - **No CMS** — All content in TypeScript data files (`app/data/*.ts`)
 
 ### Performance / Technical
@@ -326,7 +328,7 @@ These tokens should be defined in `assets/styles/tokens.css` as CSS custom prope
 | Testimonials | Placeholder | 2 example quotes marked "[Placeholder — replace with real testimonials]" |
 | Project 3 | Placeholder | Lorem ipsum content, example.com URL |
 | About Page Personal Touch | Placeholder | "[placeholder: out on the trails / propping up the counter at a local coffee shop]" |
-| Inquiry Endpoint | **web3forms + reCAPTCHA** | Configure in production |
+| Inquiry Endpoint | **web3forms + hCaptcha** | Configure in production |
 | Analytics | None | Not needed for now |
 | Legal Pages | Missing | No Privacy Policy, Terms of Service, Cookie Policy |
 | Blog/Insights | Missing | No content marketing section |
@@ -339,7 +341,7 @@ These tokens should be defined in `assets/styles/tokens.css` as CSS custom prope
 - All 17 static routes + dynamic `/work/[slug]` — **verify Nuxt 4 dynamic route syntax in docs**
 - Project data structure (slug-based, supports future additions)
 - Service data structure (icon + route + blurb)
-- Inquiry form fields (name, email, budget, timeline, goals) and **web3forms + reCAPTCHA** submission
+- Inquiry form fields (name, email, budget, timeline, goals) and **web3forms + hCaptcha** submission
 - SEO meta per page
 - Theme toggle with cookie persistence
 - Scroll reveal (accessibility-compliant)
@@ -350,7 +352,7 @@ These tokens should be defined in `assets/styles/tokens.css` as CSS custom prope
 - **Analytics** — **Not needed for now**
 - **Legal Pages** — Add Privacy Policy, Terms of Service, Cookie Policy
 - **Blog/Insights** — Add `/insights` or `/blog` for SEO/content marketing
-- **Contact Form Backend** — **web3forms with reCAPTCHA** (replaces mailto fallback)
+- **Contact Form Backend** — **web3forms with hCaptcha** (replaces mailto fallback)
 - **Error Monitoring** — Not needed
 - **Performance Budget** — Define and enforce
 
@@ -359,7 +361,7 @@ These tokens should be defined in `assets/styles/tokens.css` as CSS custom prope
 2. **Styling**: **CSS Modules / Scoped Vue Styles** + global style tokens; **Vuetify included but selective** — only where it fits (forms, complex components like data tables, dialogs); no Tailwind (repetition concern)
 3. **Content**: File-based (TS data files + Markdown for future blog) — no CMS
 4. **Hosting**: **AWS S3 bucket + CloudFront + ACM certificates + Route 53** (matches your other sites)
-5. **Forms**: **web3forms + reCAPTCHA** — serverless, no backend needed
+5. **Forms**: **web3forms + hCaptcha** — serverless, no backend needed
 6. **Analytics**: **None for now**
 7. **Testing**: **Skip for now**
 8. **Type Safety**: TypeScript strict mode — no runtime schema validation (Zod/Valibot) unless needed later
