@@ -62,8 +62,17 @@ const factorRows = [
           <h2 class="section__title">Ways we engage</h2>
           <p class="section__lede">Pick a lane or mix and match.</p>
         </div>
-        <div class="models-section__grid" v-scroll-reveal="{ direction: 'up' }">
-          <NuxtLink v-for="m in models" :key="m.title" :to="m.to" class="model-card-link">
+        <div class="models-section__grid">
+          <NuxtLink
+            v-for="(m, i) in models"
+            :key="m.title"
+            :to="m.to"
+            class="model-card-link"
+            v-scroll-reveal="{
+              direction: i % 2 === 0 ? 'left' : 'right',
+              delay: i * 90,
+            }"
+          >
             <BaseCard variant="default" hover class="model-card">
               <h3 class="model-card__title">{{ m.title }}</h3>
               <p class="model-card__body">{{ m.body }}</p>

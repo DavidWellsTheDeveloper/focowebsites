@@ -55,8 +55,17 @@ const visible = computed(() =>
           </BaseChip>
         </div>
 
-        <div class="work-section__grid" v-scroll-reveal="{ direction: 'up' }">
-          <NuxtLink v-for="p in visible" :key="p.slug" :to="`/work/${p.slug}/`" class="work-card">
+        <div class="work-section__grid">
+          <NuxtLink
+            v-for="(p, i) in visible"
+            :key="p.slug"
+            :to="`/work/${p.slug}/`"
+            class="work-card"
+            v-scroll-reveal="{
+              direction: i % 2 === 0 ? 'left' : 'right',
+              delay: i * 90,
+            }"
+          >
             <BaseCard variant="default" hover class="work-card__inner">
               <div class="work-card__accent" :style="{ background: p.accent }">
                 <span class="work-card__meta">{{ p.year }} · {{ p.services.join(' · ') }}</span>

@@ -54,7 +54,15 @@ const faqs = [
       <div class="container">
         <BaseCard variant="flat" class="faq-section__accordion" v-scroll-reveal="{ direction: 'up' }">
           <div class="faq-section__list">
-            <div v-for="f in faqs" :key="f.q" class="faq-item" v-scroll-reveal="{ direction: 'up' }">
+            <div
+              v-for="(f, i) in faqs"
+              :key="f.q"
+              class="faq-item"
+              v-scroll-reveal="{
+                direction: i % 2 === 0 ? 'left' : 'right',
+                delay: i * 90,
+              }"
+            >
               <details class="faq-item__details">
                 <summary class="faq-item__summary">
                   {{ f.q }}

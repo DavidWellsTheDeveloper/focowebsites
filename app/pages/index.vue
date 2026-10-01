@@ -61,8 +61,17 @@ const processSteps = [
             All work <span class="mdi mdi-arrow-right" aria-hidden="true"></span>
           </NuxtLink>
         </div>
-        <div class="work-section__grid" v-scroll-reveal="{ direction: 'up' }">
-          <NuxtLink v-for="p in featured" :key="p.slug" :to="`/work/${p.slug}/`" class="work-card">
+        <div class="work-section__grid">
+          <NuxtLink
+            v-for="(p, i) in featured"
+            :key="p.slug"
+            :to="`/work/${p.slug}/`"
+            class="work-card"
+            v-scroll-reveal="{
+              direction: i % 2 === 0 ? 'left' : 'right',
+              delay: i * 90,
+            }"
+          >
             <BaseCard variant="default" hover class="work-card__inner">
               <div class="work-card__accent" :style="{ background: p.accent }">
                 <span class="work-card__meta">{{ p.year }} · {{ p.services[0] }}</span>
@@ -84,8 +93,17 @@ const processSteps = [
           <h2 class="section__title">One developer, the whole job</h2>
           <p class="section__lede">Design, build, launch, and the ongoing care a site needs after go-live. No handoffs, no agencies, no mystery.</p>
         </div>
-        <div class="services-section__grid" v-scroll-reveal="{ direction: 'up' }">
-          <NuxtLink v-for="s in services" :key="s.to" :to="s.to" class="service-card-link">
+        <div class="services-section__grid">
+          <NuxtLink
+            v-for="(s, i) in services"
+            :key="s.to"
+            :to="s.to"
+            class="service-card-link"
+            v-scroll-reveal="{
+              direction: i % 2 === 0 ? 'left' : 'right',
+              delay: i * 90,
+            }"
+          >
             <BaseCard variant="default" hover class="service-card">
               <div class="service-card__icon">
                 <BaseIcon :name="s.icon" size="lg" />

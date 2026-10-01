@@ -38,8 +38,16 @@ const signals = [
           <h2 class="section__title">Sound familiar?</h2>
           <p class="section__lede">Any one of these is a good reason to talk:</p>
         </div>
-        <div class="signals-section__list" v-scroll-reveal="{ direction: 'up' }">
-          <div v-for="s in signals" :key="s.text" class="signal-item">
+        <div class="signals-section__list">
+          <div
+            v-for="(s, i) in signals"
+            :key="s.text"
+            class="signal-item"
+            v-scroll-reveal="{
+              direction: i % 2 === 0 ? 'left' : 'right',
+              delay: i * 90,
+            }"
+          >
             <BaseIcon name="mdi-checkbox-marked-circle-outline" size="lg" color="var(--color-primary)" aria-hidden="true" />
             <span>{{ s.text }}</span>
           </div>

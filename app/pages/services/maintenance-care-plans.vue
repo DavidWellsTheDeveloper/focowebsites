@@ -36,8 +36,17 @@ const included = [
 
     <section class="section included-section" v-scroll-reveal="{ direction: 'up' }">
       <div class="container">
-        <div class="included-section__grid" v-scroll-reveal="{ direction: 'up' }">
-          <BaseCard v-for="item in included" :key="item.title" variant="default" class="included-card" v-scroll-reveal="{ direction: 'up' }">
+        <div class="included-section__grid">
+          <BaseCard
+            v-for="(item, i) in included"
+            :key="item.title"
+            variant="default"
+            class="included-card"
+            v-scroll-reveal="{
+              direction: i % 2 === 0 ? 'left' : 'right',
+              delay: i * 90,
+            }"
+          >
             <BaseIcon :name="item.icon" size="xl" color="var(--color-primary)" aria-hidden="true" />
             <h3 class="included-card__title">{{ item.title }}</h3>
             <p class="included-card__body">{{ item.body }}</p>

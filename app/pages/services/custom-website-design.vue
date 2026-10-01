@@ -38,8 +38,17 @@ const includes = [
           <h2 class="section__title">What you get</h2>
           <p class="section__lede">A full design-and-build package, from the first sketch to the launch day.</p>
         </div>
-        <div class="includes-section__grid" v-scroll-reveal="{ direction: 'up' }">
-          <BaseCard v-for="item in includes" :key="item.title" variant="default" class="include-card" v-scroll-reveal="{ direction: 'up' }">
+        <div class="includes-section__grid">
+          <BaseCard
+            v-for="(item, i) in includes"
+            :key="item.title"
+            variant="default"
+            class="include-card"
+            v-scroll-reveal="{
+              direction: i % 2 === 0 ? 'left' : 'right',
+              delay: i * 90,
+            }"
+          >
             <BaseIcon :name="item.icon" size="xl" color="var(--color-primary)" aria-hidden="true" />
             <h3 class="include-card__title">{{ item.title }}</h3>
             <p class="include-card__body">{{ item.body }}</p>

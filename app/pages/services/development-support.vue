@@ -34,8 +34,17 @@ const capabilities = [
 
     <section class="section capabilities-section" v-scroll-reveal="{ direction: 'up' }">
       <div class="container">
-        <div class="capabilities-section__grid" v-scroll-reveal="{ direction: 'up' }">
-          <BaseCard v-for="cap in capabilities" :key="cap.title" variant="default" class="capability-card" v-scroll-reveal="{ direction: 'up' }">
+        <div class="capabilities-section__grid">
+          <BaseCard
+            v-for="(cap, i) in capabilities"
+            :key="cap.title"
+            variant="default"
+            class="capability-card"
+            v-scroll-reveal="{
+              direction: i % 2 === 0 ? 'left' : 'right',
+              delay: i * 90,
+            }"
+          >
             <BaseIcon :name="cap.icon" size="xl" color="var(--color-primary)" aria-hidden="true" />
             <h3 class="capability-card__title">{{ cap.title }}</h3>
             <p class="capability-card__body">{{ cap.body }}</p>

@@ -28,8 +28,17 @@ definePageMeta({
 
     <section class="section services-grid" v-scroll-reveal="{ direction: 'up' }">
       <div class="container">
-        <div class="services-grid__list" v-scroll-reveal="{ direction: 'up' }">
-          <NuxtLink v-for="s in services" :key="s.to" :to="s.to" class="service-card-link">
+        <div class="services-grid__list">
+          <NuxtLink
+            v-for="(s, i) in services"
+            :key="s.to"
+            :to="s.to"
+            class="service-card-link"
+            v-scroll-reveal="{
+              direction: i % 2 === 0 ? 'left' : 'right',
+              delay: i * 90,
+            }"
+          >
             <BaseCard variant="default" hover class="service-card">
               <BaseIcon :name="s.icon" size="xl" color="var(--color-primary)" aria-hidden="true" />
               <h2 class="service-card__title">{{ s.title }}</h2>
