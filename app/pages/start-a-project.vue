@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useInquiry, type InquiryPayload } from '~/composables/useInquiry'
+import { CONTACT_EMAIL } from '~/data/site'
+import { useWeb3FormsCaptcha } from '~/composables/useWeb3FormsCaptcha'
 import { vScrollReveal } from '~/composables/useScrollReveal'
 import BaseCard from '~/components/ui/BaseCard.vue'
 import BaseInput from '~/components/ui/BaseInput.vue'
@@ -29,6 +31,8 @@ const submitted = ref(false)
 
 const { submitting, error, success, submit } = useInquiry()
 
+useWeb3FormsCaptcha()
+
 const budgetOptions = [
   { value: 'under-2000', label: 'Under $2k' },
   { value: '2k-5k', label: '$2k – $5k' },
@@ -52,9 +56,22 @@ function isValidEmail(value: string) {
 
 async function onSubmit() {
   submitted.value = true
+
   const isValid = formModel.name && isValidEmail(formModel.email) && formModel.goals
   if (!isValid) return
+
+  if (!hasCaptchaToken()) {
+    error.value = `Please complete the captcha so we know you are not a robot. If it will not load, email ${CONTACT_EMAIL} directly.`
+    return
+  }
+
   await submit({ ...formModel })
+}
+
+function hasCaptchaToken() {
+  if (!import.meta.client) return true
+  const token = document.querySelector<HTMLTextAreaElement>('textarea[name="h-captcha-response"]')?.value
+  return Boolean(token)
 }
 </script>
 
@@ -80,9 +97,12 @@ async function onSubmit() {
           <div v-if="error && !success" class="form-section__error" role="alert">
             <BaseIcon name="mdi-alert-circle" size="xl" color="var(--color-accent)" aria-hidden="true" />
             <p>{{ error }}</p>
+            <p v-if="!error.includes(CONTACT_EMAIL)" class="form-section__error-alt">
+              Or email <a :href="`mailto:${CONTACT_EMAIL}`">{{ CONTACT_EMAIL }}</a> directly.
+            </p>
           </div>
 
-          <form v-if="!success" @submit.prevent="onSubmit" class="form-section__form">
+          <form v-if="!success" id="inquiry-form" @submit.prevent="onSubmit" class="form-section__form">
             <div class="form-section__fields">
               <BaseInput
                 v-model="formModel.name"
@@ -99,7 +119,7 @@ async function onSubmit() {
                 placeholder="jane@company.com"
                 autocomplete="email"
                 required
-                :error="!formModel.email && submitted ? 'Email is required' : (formModel.email && !/.+@.+\..+/.test(formModel.email) ? 'Enter a valid email address' : undefined)"
+                :error="!formModel.email && submitted ? 'Email is required' : (formModel.email && !isValidEmail(formModel.email) ? 'Enter a valid email address' : undefined)"
               />
               <div class="form-section__select-wrapper">
                 <label class="form-section__label">Rough budget range</label>
@@ -132,6 +152,14 @@ async function onSubmit() {
                 required
                 :error="!formModel.goals && submitted ? 'Tell me about your project' : undefined"
               />
+            </div>
+            <div class="form-section__captcha">
+              <ClientOnly>
+                <div class="h-captcha" data-captcha="true" data-theme="light"></div>
+                <template #fallback>
+                  <div class="form-section__captcha-loading" aria-hidden="true"></div>
+                </template>
+              </ClientOnly>
             </div>
             <div class="form-section__footer">
               <p class="form-section__note">No spam, no fax machines. Replies go to your inbox.</p>
@@ -241,6 +269,29 @@ async function onSubmit() {
 .form-section__error :global(.mdi) {
   flex-shrink: 0;
   margin-top: 0.125rem;
+}
+.form-section__error p {
+  margin: 0;
+}
+.form-section__error-alt {
+  color: var(--color-on-surface);
+  font-size: var(--font-size-sm);
+}
+.form-section__error-alt a {
+  color: var(--color-accent);
+  font-weight: var(--font-weight-medium);
+  text-decoration: underline;
+}
+.form-section__captcha {
+  margin-bottom: var(--space-6);
+  min-height: 78px;
+}
+.form-section__captcha :global(.h-captcha) {
+  display: flex;
+  justify-content: center;
+}
+.form-section__captcha-loading {
+  min-height: 78px;
 }
 
 .form-section__fields {

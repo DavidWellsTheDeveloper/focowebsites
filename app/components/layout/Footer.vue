@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { CONTACT_EMAIL } from '~/data/site'
+
 const props = defineProps<{
   currentYear?: number
 }>()
@@ -17,8 +19,8 @@ const year = props.currentYear ?? new Date().getFullYear()
         <BaseButton variant="ghost" size="sm" to="/start-a-project">
           Start a project
         </BaseButton>
-        <a href="mailto:hello@focowebsites.com" class="footer__email">
-          hello@focowebsites.com
+        <a :href="`mailto:${CONTACT_EMAIL}`" class="footer__email">
+          {{ CONTACT_EMAIL }}
         </a>
       </div>
       <p class="footer__copyright">© {{ year }} FoCo Websites</p>
