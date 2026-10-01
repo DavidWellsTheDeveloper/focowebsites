@@ -1,7 +1,7 @@
 # FoCo Websites — Site Documentation
 
 > **Purpose**: Document all content, features, sitemap, and slug pages for a fresh infrastructure rebuild.
-> **Scope**: Big-picture features and content only — no implementation details.
+> **Scope**: Big-picture features and content only — no implementation details. Hosting, caching, and CI/CD mechanics are out of scope; the deploy pipeline lives in `.github/workflows/deploy.yml`.
 
 ---
 
@@ -14,6 +14,9 @@
 | **Domain** | focowebsites.com |
 | **Location** | Northern Colorado (Fort Collins area) |
 | **Business Model** | Solo freelance web developer — design, build, launch, and ongoing care |
+| **Audience** | Prospective clients actively considering hiring a developer for a custom website — local (Fort Collins / "FoCo") and/or small-to-medium businesses |
+| **Primary Goal** | Land paying clients for custom website projects. Visitors arrive warm (already somewhat interested), so the site's job is converting interest into inquiries rather than building top-of-funnel awareness |
+| **Success Metrics** | Deferred — to be revisited post-launch |
 
 ---
 
@@ -329,6 +332,7 @@ These tokens should be defined in `assets/styles/tokens.css` as CSS custom prope
 | Project 3 | Placeholder | Lorem ipsum content, example.com URL |
 | About Page Personal Touch | Placeholder | "[placeholder: out on the trails / propping up the counter at a local coffee shop]" |
 | Inquiry Endpoint | **web3forms + hCaptcha** | Configure in production |
+| Inbound reciprocal links | **Missing** | Client sites do not yet link back to focowebsites.com; request and track per project |
 | Analytics | None | Not needed for now |
 | Legal Pages | Missing | No Privacy Policy, Terms of Service, Cookie Policy |
 | Blog/Insights | Missing | No content marketing section |
@@ -361,6 +365,8 @@ These tokens should be defined in `assets/styles/tokens.css` as CSS custom prope
 2. **Styling**: **CSS Modules / Scoped Vue Styles** + global style tokens; **Vuetify included but selective** — only where it fits (forms, complex components like data tables, dialogs); no Tailwind (repetition concern)
 3. **Content**: File-based (TS data files + Markdown for future blog) — no CMS
 4. **Hosting**: **AWS S3 bucket + CloudFront + ACM certificates + Route 53** (matches your other sites)
+   - **Cost ceiling**: total AWS spend excluding the Route 53 hosted zone ($0.50/mo) must stay well under **$1.00/mo**. Any feature expected to land above that band is checked with the owner first.
+   - **WAF — excluded for launch**: a minimal useful Web ACL runs ~$8–13/mo (Web ACL + rules + per-request inspection), which breaks the ceiling, and a fully static site with no dynamic endpoints has little app-layer attack surface. Revisit only if traffic or abuse pressure materially changes.
 5. **Forms**: **web3forms + hCaptcha** — serverless, no backend needed
 6. **Analytics**: **None for now**
 7. **Testing**: **Skip for now**
@@ -425,9 +431,15 @@ HOME
 - `theme-color`: #0F766E
 - Canonical URLs via sitemap + Nuxt SEO
 
+**Reciprocal Links** (a stated SEO requirement, not just a nicety):
+- Outbound: each case study links to the client's live site through `liveUrl`, and every project should ship with one.
+- Inbound: a link back to focowebsites.com from each client site. This half has to be requested per project and tracked — see the Content Gaps table.
+
 ---
 
 ## Accessibility Notes
+
+WCAG AA is the acceptance target. Current status and known gaps:
 
 - Semantic HTML (h1-h3 hierarchy, landmarks)
 - Focus-visible styles via Vuetify
@@ -486,6 +498,8 @@ Imaging is static WebP with no image pipeline in the project; see `public/images
 7. **Search**: Site search needed? (Algolia, Pagefind, or none)
 8. **Legal Compliance**: GDPR/CCPA considerations for forms/analytics?
 
+9. **Uptime / Availability Target**: What availability is expected of a static site behind CloudFront, and who watches it? (Not a functional requirement — a deployment expectation.)
+
 ---
 
-*Document generated from codebase audit — 2026-09-30*
+*Content audit of the codebase — see `git log --oneline -- SITE_DOCUMENTATION.md` for change history.*
