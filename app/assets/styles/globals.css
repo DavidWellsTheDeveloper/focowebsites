@@ -157,3 +157,29 @@ input, textarea, select {
   .md\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
   .md\:grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
 }
+
+.reveal-item {
+  opacity: 0;
+  transition:
+    opacity var(--transition-slow) cubic-bezier(0.22, 1, 0.36, 1),
+    transform var(--transition-slow) cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal-item--up { transform: translate3d(0, var(--space-6), 0); }
+.reveal-item--down { transform: translate3d(0, calc(var(--space-6) * -1), 0); }
+.reveal-item--left { transform: translate3d(calc(var(--space-8) * -1), 0, 0); }
+.reveal-item--right { transform: translate3d(var(--space-8), 0, 0); }
+
+.reveal-item.is-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
