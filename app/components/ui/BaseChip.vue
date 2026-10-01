@@ -14,12 +14,15 @@ const props = withDefaults(defineProps<Props>(), {
 
 const emit = defineEmits<{ click: [event: MouseEvent] }>()
 
-const classes = computed(() => [
-  'base-chip',
-  `base-chip--${props.variant}`,
-  `base-chip--${props.size}`,
-  { 'base-chip--active': props.active },
-].filter(Boolean).join(' '))
+const classes = computed(() => {
+  const list = [
+    'base-chip',
+    `base-chip--${props.variant}`,
+    `base-chip--${props.size}`,
+  ]
+  if (props.active) list.push('base-chip--active')
+  return list.join(' ')
+})
 
 const chipStyle = computed(() => {
   if (props.color) {
@@ -41,7 +44,7 @@ const chipStyle = computed(() => {
   </button>
 </template>
 
-<style module>
+<style scoped>
 .base-chip {
   display: inline-flex;
   align-items: center;

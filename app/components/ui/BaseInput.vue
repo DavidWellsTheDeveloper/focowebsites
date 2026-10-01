@@ -93,7 +93,7 @@ function handleBlur(event: FocusEvent) {
   </div>
 </template>
 
-<style module>
+<style scoped>
 .base-input-wrapper {
   display: flex;
   flex-direction: column;

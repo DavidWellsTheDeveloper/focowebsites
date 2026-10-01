@@ -27,14 +27,17 @@ const emit = defineEmits<{ click: [event: MouseEvent] }>()
 const isLink = computed(() => !!props.href || !!props.to)
 const Component = isLink ? (props.to ? 'NuxtLink' : 'a') : 'button'
 
-const classes = computed(() => [
-  'base-button',
-  `base-button--${props.variant}`,
-  `base-button--${props.size}`,
-  { 'base-button--disabled': props.disabled || props.loading },
-  { 'base-button--full-width': props.fullWidth },
-  { 'base-button--with-icon': props.icon },
-].filter(Boolean).join(' '))
+const classes = computed(() => {
+  const list = [
+    'base-button',
+    `base-button--${props.variant}`,
+    `base-button--${props.size}`,
+  ]
+  if (props.disabled || props.loading) list.push('base-button--disabled')
+  if (props.fullWidth) list.push('base-button--full-width')
+  if (props.icon) list.push('base-button--with-icon')
+  return list.join(' ')
+})
 
 function handleClick(event: MouseEvent) {
   if (!props.disabled && !props.loading) {
@@ -71,7 +74,7 @@ function handleClick(event: MouseEvent) {
   </component>
 </template>
 
-<style module>
+<style scoped>
 .base-button {
   display: inline-flex;
   align-items: center;
