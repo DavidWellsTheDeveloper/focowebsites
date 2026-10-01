@@ -83,21 +83,20 @@ const steps = [
   </div>
 </template>
 
-<style module>
+<style scoped>
 .page-hero {
   padding: var(--space-10) 0 var(--space-14);
   text-align: center;
 }
 
 .page-hero__eyebrow {
-  display: inline-block;
-  padding: var(--space-1) var(--space-3);
+  display: block;
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-semibold);
   color: var(--color-primary);
-  background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
-  border-radius: var(--radius-full);
-  margin-bottom: var(--space-4);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: var(--space-3);
 }
 
 .page-hero__title {

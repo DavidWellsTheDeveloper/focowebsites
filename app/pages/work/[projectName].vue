@@ -104,7 +104,7 @@ const others = computed(() => projects.filter((p: Project) => p.slug !== slug.va
   </div>
 </template>
 
-<style module>
+<style scoped>
 .case-study {
   padding: var(--space-10) 0 var(--space-16);
 }

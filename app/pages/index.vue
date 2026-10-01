@@ -145,7 +145,7 @@ const processSteps = [
   </div>
 </template>
 
-<style module>
+<style scoped>
 .hero {
   padding: var(--space-12) 0 var(--space-16);
 }
@@ -163,14 +163,13 @@ const processSteps = [
 }
 
 .hero__eyebrow {
-  display: inline-block;
-  padding: var(--space-1) var(--space-3);
+  display: block;
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-semibold);
   color: var(--color-primary);
-  background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
-  border-radius: var(--radius-full);
-  margin-bottom: var(--space-4);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: var(--space-3);
 }
 
 .hero__title {
@@ -390,13 +389,12 @@ const processSteps = [
 }
 
 .process-teaser__eyebrow {
-  display: inline-block;
-  padding: var(--space-1) var(--space-3);
+  display: block;
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-semibold);
   color: var(--color-accent);
-  background-color: color-mix(in srgb, var(--color-accent) 10%, transparent);
-  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
   margin-bottom: var(--space-3);
 }
 
@@ -469,9 +467,5 @@ const processSteps = [
   opacity: 0.9;
   max-width: 560px;
   margin: 0 auto var(--space-6);
-}
-
-.cta-band__card :global(.base-button) {
-  --color-accent: var(--color-accent);
 }
 </style>
