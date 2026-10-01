@@ -25,7 +25,11 @@ const props = withDefaults(defineProps<Props>(), {
 
 const emit = defineEmits<{ 'update:modelValue': [value: string]; blur: [event: FocusEvent] }>()
 
-const inputId = computed(() => props.id || `input-${props.name || Math.random().toString(36).slice(2)}`)
+// Vue's useId() returns a value that matches between server and client render,
+// which Math.random() did not.
+const uid = useId()
+
+const inputId = computed(() => props.id || (props.name ? `input-${props.name}` : `input-${uid}`))
 const describedBy = computed(() => {
   const ids = []
   if (props.error) ids.push(`${inputId.value}-error`)
