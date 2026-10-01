@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { getProject, projects, type Project } from '~/data/projects'
 import { vScrollReveal } from '~/composables/useScrollReveal'
@@ -47,7 +47,7 @@ const others = computed(() => projects.filter((p: Project) => p.slug !== slug.va
           <h1 class="case-study__client">{{ projectData.client }}</h1>
           <p class="case-study__headline">{{ projectData.headline }}</p>
           <div class="case-study__tags">
-            <BaseChip v-for="t in projectData.tags" :key="t" variant="tonal" label>{{ t }}</BaseChip>
+            <BaseChip v-for="t in projectData.tags" :key="t" variant="tonal">{{ t }}</BaseChip>
             <a v-if="projectData.liveUrl" :href="projectData.liveUrl" target="_blank" rel="noopener noreferrer" class="case-study__visit">
               <BaseButton variant="outline" size="sm">
                 Visit the site <span class="mdi mdi-open-in-new" aria-hidden="true"></span>

@@ -44,9 +44,15 @@ const timelineOptions = [
   { value: 'just-exploring', label: 'Just exploring' },
 ]
 
+function isValidEmail(value: string) {
+  const [local, domain, ...rest] = value.split('@')
+  if (!local || !domain || rest.length > 0) return false
+  return domain.includes('.') && !domain.startsWith('.') && !domain.endsWith('.')
+}
+
 async function onSubmit() {
   submitted.value = true
-  const isValid = formModel.name && formModel.email && /.+@.+\..+/.test(formModel.email) && formModel.goals
+  const isValid = formModel.name && isValidEmail(formModel.email) && formModel.goals
   if (!isValid) return
   await submit({ ...formModel })
 }

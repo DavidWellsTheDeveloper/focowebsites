@@ -62,7 +62,7 @@ const currentYear = new Date().getFullYear()
       </div>
     </header>
 
-    <MobileDrawer :items="navItems" v-model="drawer" @close="drawer = false" />
+    <MobileDrawer :items="navItems" v-model="drawer" />
 
     <main class="layout__main" id="main-content">
       <slot />

@@ -7,7 +7,7 @@ interface NavItem {
   exact?: boolean
 }
 
-const props = defineProps<{
+defineProps<{
   items: NavItem[]
 }>()
 

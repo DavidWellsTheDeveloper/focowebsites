@@ -1,4 +1,3 @@
-const prefersReducedMotion = ref(false)
 const observer = shallowRef<IntersectionObserver | null>(null)
 
 function initObserver() {

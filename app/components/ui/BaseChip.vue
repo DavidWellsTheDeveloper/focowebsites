@@ -36,7 +36,7 @@ const chipStyle = computed(() => {
   <button
     :class="classes"
     :style="chipStyle"
-    @click="$emit('click', $event)"
+    @click="emit('click', $event)"
     type="button"
     :aria-pressed="active !== undefined ? active : undefined"
   >

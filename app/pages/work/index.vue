@@ -41,7 +41,6 @@ const visible = computed(() =>
             :active="activeTag === null"
             variant="tonal"
             @click="activeTag = null"
-            label
           >
             All
           </BaseChip>
@@ -51,7 +50,6 @@ const visible = computed(() =>
             :active="activeTag === tag"
             variant="tonal"
             @click="activeTag = tag"
-            label
           >
             {{ tag }}
           </BaseChip>

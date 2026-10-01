@@ -68,8 +68,8 @@ export function useInquiry() {
       window.location.href = `mailto:hello@focowebsites.com?subject=${encodeURIComponent('Project inquiry from the website')}&body=${encodeURIComponent(body)}`
       success.value = true
       return true
-    } catch (e: any) {
-      error.value = e?.message || 'Something went wrong. Please email hello@focowebsites.com directly.'
+    } catch (e) {
+      error.value = e instanceof Error ? e.message : 'Something went wrong. Please email hello@focowebsites.com directly.'
       return false
     } finally {
       submitting.value = false

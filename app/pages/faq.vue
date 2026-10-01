@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { vScrollReveal } from '~/composables/useScrollReveal'
 import BaseCard from '~/components/ui/BaseCard.vue'
-import BaseButton from '~/components/ui/BaseButton.vue'
 
 useSeoMeta({
   title: 'FAQ',

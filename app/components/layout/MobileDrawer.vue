@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
-import BaseButton from '~/components/ui/BaseButton.vue'
 
 interface NavItem {
   label: string
