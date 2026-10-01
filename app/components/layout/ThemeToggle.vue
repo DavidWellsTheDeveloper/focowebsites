@@ -1,19 +1,7 @@
 <script setup lang="ts">
-import { useTheme } from 'vuetify'
 import BaseIcon from '~/components/ui/BaseIcon.vue'
 
-const props = defineProps<{
-  isDark: boolean
-}>()
-
-const emit = defineEmits<{ toggle: [] }>()
-
-const theme = useTheme()
-
-function toggle() {
-  theme.global.name.value = props.isDark ? 'light' : 'dark'
-  emit('toggle')
-}
+const { isDark, toggle } = useThemeToggle()
 </script>
 
 <template>

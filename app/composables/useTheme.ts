@@ -5,6 +5,16 @@ export function useThemeToggle() {
 
   const isDark = computed(() => theme.global.current.value.dark)
 
+  watch(
+    isDark,
+    (dark) => {
+      if (import.meta.client) {
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light')
+      }
+    },
+    { immediate: true },
+  )
+
   function toggle() {
     theme.global.name.value = isDark.value ? 'light' : 'dark'
   }
