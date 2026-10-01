@@ -1,21 +1,10 @@
 <script setup lang="ts">
-import { useTheme } from 'vuetify'
-import { useRoute } from 'vue-router'
 import NavBar from '~/components/layout/NavBar.vue'
 import Footer from '~/components/layout/Footer.vue'
 import ThemeToggle from '~/components/layout/ThemeToggle.vue'
 import MobileDrawer from '~/components/layout/MobileDrawer.vue'
 
-const theme = useTheme()
-const route = useRoute()
-
 const drawer = ref(false)
-
-const isDark = computed(() => theme.global.current.value.dark)
-
-function toggleTheme() {
-  theme.global.name.value = isDark.value ? 'light' : 'dark'
-}
 
 interface NavItem {
   label: string
@@ -51,7 +40,7 @@ const currentYear = new Date().getFullYear()
         </nav>
 
         <div class="layout__actions">
-          <ThemeToggle :isDark="isDark" @toggle="toggleTheme" />
+          <ThemeToggle />
           <BaseButton
             variant="accent"
             size="lg"
@@ -65,7 +54,7 @@ const currentYear = new Date().getFullYear()
             class="layout__menu-btn"
             @click="drawer = true"
             aria-label="Open menu"
-            aria-expanded="false"
+            :aria-expanded="drawer"
           >
             <span class="mdi mdi-menu" aria-hidden="true"></span>
           </button>

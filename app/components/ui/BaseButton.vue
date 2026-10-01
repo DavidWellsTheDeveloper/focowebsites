@@ -25,7 +25,14 @@ const props = withDefaults(defineProps<Props>(), {
 const emit = defineEmits<{ click: [event: MouseEvent] }>()
 
 const isLink = computed(() => !!props.href || !!props.to)
-const Component = isLink ? (props.to ? 'NuxtLink' : 'a') : 'button'
+const isInactive = computed(() => props.disabled || props.loading)
+const nuxtLink = resolveComponent('NuxtLink')
+
+const component = computed(() => {
+  if (props.to) return nuxtLink
+  if (props.href) return 'a'
+  return 'button'
+})
 
 const classes = computed(() => {
   const list = [
@@ -40,19 +47,22 @@ const classes = computed(() => {
 })
 
 function handleClick(event: MouseEvent) {
-  if (!props.disabled && !props.loading) {
-    emit('click', event)
+  if (isInactive.value) {
+    event.preventDefault()
+    return
   }
+  emit('click', event)
 }
 </script>
 
 <template>
   <component
-    :is="Component"
+    :is="component"
     :href="href"
     :to="to"
     :type="isLink ? undefined : type"
-    :disabled="disabled || loading"
+    :disabled="isLink ? undefined : isInactive"
+    :aria-disabled="isLink && isInactive ? 'true' : undefined"
     :aria-busy="loading"
     :class="classes"
     @click="handleClick"
