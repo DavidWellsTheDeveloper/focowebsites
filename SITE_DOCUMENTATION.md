@@ -217,7 +217,7 @@ interface InquiryPayload {
 - **Scroll Reveal Animations** — IntersectionObserver-based, respects `prefers-reduced-motion`
 - **Responsive Breakpoints** — Vuetify grid (xs/sm/md/lg/xl)
 - **Typography** — Fraunces (display/headings) + Inter (body) via Google Fonts
-- **Color System** — Primary teal (#0F766E), Secondary teal (#14B8A6), Accent orange (#F97316), Aqua (#99F6E4)
+- **Color System** — Primary teal (#0F766E), Secondary teal (#14B8A6), Accent golden amber (#B45309, hover #92400E), Aqua (#99F6E4)
 
 ### Design Tokens (from `nuxt.config.ts`)
 
@@ -226,7 +226,8 @@ interface InquiryPayload {
 |-------|-----|-------|
 | `--color-primary` | `#0F766E` | Primary actions, links, focus rings |
 | `--color-secondary` | `#14B8A6` | Secondary actions, hover states |
-| `--color-accent` | `#F97316` | CTAs, highlights, accent borders |
+| `--color-accent` | `#B45309` | CTAs, highlights, accent borders |
+| `--color-accent-hover` | `#92400E` | CTA hover states |
 | `--color-aqua` | `#99F6E4` | Subtle backgrounds, project card accents |
 | `--color-surface` | `#FFFFFF` | Card backgrounds, elevated surfaces |
 | `--color-background` | `#FAFAF9` | Page background |
