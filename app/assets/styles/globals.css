@@ -225,6 +225,14 @@ html .page :where(h1, h2, h3, p, li, a, blockquote, span):not(
   text-shadow: var(--wash-halo);
 }
 
+/* text-shadow inherits, so a card reached through a transparent wrapper that does
+   match the rule above — `a.work-card`, `a.service-card` — hands the halo down to
+   its own titles anyway. The card paints an opaque ground of its own, so clear it
+   at the card rather than trying to un-match the wrapper. */
+html .page .base-card {
+  text-shadow: none;
+}
+
 html .page .page-hero__lede,
 html .page .hero__lede,
 html .page .section__lede {
