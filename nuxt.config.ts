@@ -71,7 +71,7 @@ export default defineNuxtConfig({
         VTextarea: { variant: 'outlined' },
       },
       theme: {
-        defaultTheme: 'light',
+        defaultTheme: 'dark',
         themes: {
           light: {
             dark: false,
