@@ -183,3 +183,50 @@ input, textarea, select {
     transition: none;
   }
 }
+/* -----------------------------------------------------------------------------
+   Copy sitting directly on the page wash
+
+   The wash runs behind every section on the site, so page heroes, section headers and
+   hero copy all take their contrast from it. Two rules keep that legible without
+   flattening the art, and both are applied site-wide so a new page inherits them
+   instead of having to remember them:
+
+   - a halo in the page background colour. The wash is low frequency — smooth gradients
+     with no fine detail — so a blur wider than its local variation restores contrast
+     that a heavier global scrim would otherwise have to steal from the layers.
+   - full-strength body copy. Opacity on text over a wash costs real contrast; measured
+     worst case it is enough on its own to drop a passing ratio to a failing one.
+
+   Cards and buttons carry their own opaque backgrounds, so their text is excluded —
+   a halo there would read as a glow around the label rather than as cushioning.
+   -------------------------------------------------------------------------- */
+
+/* Primary used as text on the wash takes the darker cut. Inheritance is the whole
+   mechanism: it is redefined on `.page`, which covers every accent-colored element
+   on the wash without having to know their class names, and restored inside the
+   opaque surfaces that do not have the problem. */
+html .page {
+  --color-primary: var(--color-primary-wash);
+  --color-primary-hover: var(--color-primary-wash-hover);
+}
+
+html .page :is(
+  .base-card, .base-card *,
+  .base-button, .base-button *,
+  .base-chip, .base-chip *
+) {
+  --color-primary: var(--color-primary-card);
+  --color-primary-hover: var(--color-primary-card-hover);
+}
+
+html .page :where(h1, h2, h3, p, li, a, blockquote, span):not(
+    :is(.base-card, .base-card *, .base-button, .base-button *, .base-chip, .base-chip *)
+  ) {
+  text-shadow: var(--wash-halo);
+}
+
+html .page .page-hero__lede,
+html .page .hero__lede,
+html .page .section__lede {
+  opacity: 1;
+}

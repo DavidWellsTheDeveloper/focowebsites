@@ -6,12 +6,15 @@
  * of being unpicked from templates, styles and composables.
  */
 export interface VisualExperimentFlags {
-  /** Layered depth in the home hero, driven by scroll position. */
-  heroParallax: boolean
+  /**
+   * Abstract layers pinned behind the whole home page and driven by scroll
+   * position, replacing the photographic hero depth stack.
+   */
+  pageParallax: boolean
 }
 
 const flags: VisualExperimentFlags = {
-  heroParallax: true,
+  pageParallax: true,
 }
 
 export function useVisualExperiments() {

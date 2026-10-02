@@ -445,8 +445,9 @@ WCAG AA is the acceptance target. Current status and known gaps:
 - `prefers-reduced-motion` respected in scroll reveal
 - ARIA labels on icon-only buttons (theme toggle, mobile menu)
 - Form labels + validation messages
-- Alt text on images (parallax, project cards)
+- Alt text on images (project cards); page-wash layers are decorative and `aria-hidden`
 - Color contrast: Primary teal on white and golden amber (`#B45309`) with white text both meet WCAG AA
+- Page wash contrast, measured on real renders: **light 4.54:1 / dark 6.48:1 worst case**, both passing AA's 4.5:1. Body copy and headings sit at ≥8.0:1 light and ≥6.5:1 dark. See "Page wash"
 - Skip links: Not currently implemented — consider adding
 
 ---
@@ -457,32 +458,66 @@ Decorative/interaction experiments. Each sits behind a flag in `app/composables/
 
 | Idea | Status | Description |
 |------|--------|-------------|
-| **Layered Parallax Depth** | **Shipped** | 4 photographic layers in the home hero moving at different scroll speeds. See "Hero depth" below. |
+| **Page Ambient Wash** | **Shipped** | 3 abstract gradient layers pinned behind every page via the layout, each at its own scroll speed. Replaced the photographic hero depth stack. See "Page wash" below. |
 | **Scroll-Progress Line** | Idea | Fixed top accent line (`#B45309`) drawing horizontally as scroll progresses. Site-wide in layout. ~30 LOC. |
 | **Staggered Directional Entrance** | **Shipped** | Cards enter from left (odd) / right (even), staggered. Extends `vScrollReveal`. |
 | **Ambient Canvas Background** | Idea | Low-opacity particles or gradient blobs in `<canvas>` behind hero; reacts to mouse drift + scroll speed. `ClientOnly`, respects reduced motion. ~150 LOC. |
 
 **Excluded**: Magnetic CTA button (cursor attraction on "Start a project" button).
 
-### Hero depth
+### Page wash
 
-`app/data/parallax.ts` holds the layer stack, `app/composables/useParallax.ts` drives it.
+`app/data/parallax.ts` holds the layer stack, `app/composables/useParallax.ts` drives it, and the markup plus its CSS live in `app/layouts/default.vue` so every route gets it.
+
+The scene element is the **content area** (`.page` inside `<main>`), not any one section. One scroll position drives every layer from the top of the document down, and because `.page` ends where the footer begins, the wash terminates exactly at the footer.
+
+**Speed is page-independent.** Progress is measured against `REFERENCE_VIEWPORTS` (3 viewport heights) in `useParallax`, not against the scene's own height. Scene height would make speed `depth * viewportHeight / pageHeight`, so a short page would race and a long one would crawl — one `depth` table producing a different effect on every route. The cost of the fixed reference is that a page taller than three viewports runs out of travel and then holds still. Those three things — constant speed, full-page duration, bounded layer boxes — are mutually exclusive; this picks constant speed.
 
 Each layer is a full-bleed background moved by a `--parallax-y-n` custom property written from one shared rAF-throttled scroll listener. Writing a custom property rather than a transform keeps the styling in the stylesheet and lets CSS consume the value.
 
-Three things that are load-bearing and easy to break:
+Things that are load-bearing and easy to break:
 
-- **`oversize` must exceed the travel.** Layers are grown past the hero's edges so a layer never runs out of image mid-scroll. `oversize` sits at roughly 1.2x the furthest a layer's `depth` can take it.
-- **Progress is measured from the hero's resting position**, not from the point it leaves the viewport. Anchoring to the viewport leaves every layer partway through its travel on page load, because the part of the range below `scrollY: 0` is unreachable.
-- **Copy legibility comes from `--hero-scrim-*`**, which is theme-aware (separate values for light and dark). Measured worst case behind the hero copy is 13.4:1 in light and 16.5:1 in dark.
+- **`oversize` must exceed the travel.** Layers are grown past the viewport's edges so a layer never runs out of image mid-scroll. `oversize` sits at roughly 1.2x the furthest a layer's `depth` can take it, which is why raising `depth` always means raising `oversize` with it — a taller box costs upscale and raster memory, and that half does not go away.
+- **Progress is measured from the scene's resting position**, not from the point it leaves the viewport. Anchoring to the viewport leaves every layer partway through its travel on page load, because the part of the range below `scrollY: 0` is unreachable.
+- **The scene is re-measured by a `ResizeObserver`.** A client-side navigation replaces the page's content without firing a window resize, so a mount-only measurement goes stale and every layer then computes progress from the wrong starting point. The observer also catches late font and image loads that shift the layout. It is registered behind the motion gate, so `prefers-reduced-motion` never gets a travel value written by a listener that was never attached.
+- **The wash is pinned with `position: sticky`, not `position: fixed`.** `top: 0; height: 100vh; margin-bottom: -100vh` keeps it under the viewport for the length of the document: sticky avoids fixed positioning's mobile keyboard and scrollbar jank. The negative bottom margin cancels the height it takes in flow, so the sections start exactly where they would have anyway.
+- **Two ancestors of `.page` would silently kill it.** Any ancestor with an `overflow` other than `visible` makes the browser stick the wash to *that* box instead of the viewport — and that box does not scroll, so the background just rides up and away. Any ancestor with `transform`, `filter`, `perspective`, `backdrop-filter`, `will-change: transform` or `contain: paint` redefines where position is measured from, so it pins in the wrong place. Neither throws an error; the wash simply stops working on that one page. Do not wrap `<slot />` in a transformed or clipped container. `isolation: isolate` is none of those and is safe — it only creates the stacking context.
+- **`.page` needs `isolation: isolate`.** The wash sits at `z-index: -1`. Isolation gives the page its own stacking context, so the wash lands behind the copy but above the body background; remove it and the wash falls behind the page entirely and disappears.
+- **The scrim is a flat veil, not a radial.** `--page-scrim` is theme-aware. A radial pinned to the viewport would leave the top and bottom of each screen scrimmed only lightly, and text sits at both.
+- **Layer opacity is in CSS, not in the data.** `--wash-opacity-far/deep/near` are theme tokens because each theme needs a different balance: light has to keep the dark layer quiet so the composite never falls below the contrast floor, dark has to do the reverse.
 
-Imaging is static WebP with no image pipeline in the project; see `public/images/parallax/ATTRIBUTION.md` for sourcing, the two-crop reasoning, and how to regenerate.
+**Contrast.** Three mechanisms, all site-wide (see the block at the end of `globals.css`):
+
+1. Theme-aware `--page-scrim` plus theme-aware `--wash-opacity-*`.
+2. A halo in the page background colour (`--wash-halo`) under headings, ledes, list items, spans and links that sit on the wash. The wash is low frequency, so a blur wider than its local variation buys back contrast that a heavier global scrim would otherwise have to take out of the art.
+3. Full-strength body copy — `opacity` is overridden to `1` for `.page-hero__lede`, `.hero__lede` and `.section__lede`, because 0.8 opacity alone was enough to drop a passing ratio to a failing one in the worst sampled spot.
+
+Text inside `.base-card` and `.base-button` is excluded from the halo: those carry their own opaque backgrounds, so a halo there would read as a glow around the label rather than as cushioning.
+
+**Measured, on real renders** (1440x900, seven frames across home / faq / about in both themes; worst case = 10th/90th percentile of the pixels 3–8px around each glyph, so a single stray pixel cannot swing the number, and the halo's benefit is included):
+
+| Text | Light | Dark |
+|------|-------|------|
+| Body copy and headings (`#1C1917` / `#FAFAF9`) | ≥8.0:1 | ≥6.5:1 |
+| Accent on the wash | 5.18:1 | ≥6.5:1 |
+| **Worst case anywhere sampled** | **4.54:1** | **6.48:1** |
+
+Both themes pass AA's 4.5:1. The light worst case is the active nav pill in the header — brand teal on its near-white chip, which is outside `.page`, unrelated to the wash, and pre-existing.
+
+**The fourth mechanism: a darker cut of the primary on the wash.** The halo and full-strength copy are not enough on their own for accent text. `--color-primary: #0F766E` was chosen for the near-white page background, where it scores 5.2:1; the wash under it is only ~0.41 luminance and the composite's floor is 0.30, which drops it to 1.8–2.6:1 — well under half the requirement, and a background-coloured halo cannot close a gap that wide because the glyph-adjacent background would have to reach ~0.81 luminance, i.e. essentially the page background itself.
+
+So the primary gets a second cut, `--color-primary-wash` (`#0A3E3B`, same 176° hue, luminance 0.038 instead of 0.142), swapped in by redefining `--color-primary` on `.page`. That covers every accent-colored element on the wash without knowing their class names — eyebrows, section links, hero highlights, and any added later. `--color-primary-card` restores the brand value inside `.base-card`, `.base-button` and `.base-chip`, which sit on opaque backgrounds and never had the problem. The dark theme defines all four tokens as the brand value because it passes at that value already.
+
+If `--page-scrim`, `--wash-opacity-*`, `--wash-halo` or the layer set changes, the ground luminance changes and `--color-primary-wash` has to be re-checked — the raw composite floor is 0.30, and the cut was sized to clear 4.5:1 against a ground of 0.41 with headroom to ~0.36.
+
+Imaging is static WebP with no image pipeline in the project; see `public/images/wash/ATTRIBUTION.md` for sourcing, the hazy-to-dark ordering that makes the stack read as distance, why the fourth layer was cut, the two-crop reasoning, and how to regenerate. The photographic hero stack it replaced is left in `public/images/parallax/` until the replacement is approved.
 
 **Implementation Notes**:
-- All behind a `useVisualExperiments()` composable with feature flags
+- All behind a `useVisualExperiments()` composable with feature flags; `pageParallax` now means site-wide
 - `prefers-reduced-motion` = instant/none (the listener is never attached, so layers stay at rest)
 - `will-change: transform` is desktop only; a promoted layer per image is not worth its memory on mobile
-- Mobile: no horizontal overflow, 51KB of layer imagery, median scroll frame 16.7ms
+- Mobile: no horizontal overflow, 33KB of layer imagery, median scroll frame 16.7ms
+- Raster cost is roughly 42MB desktop for the three layers; it scales with layer box height, not with source resolution
 
 ---
 
