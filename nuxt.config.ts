@@ -16,6 +16,7 @@ export default defineNuxtConfig({
   site: {
     url: 'https://focowebsites.com',
     name: 'FoCo Websites',
+    trailingSlash: true,
     description:
       'Custom websites for businesses that value design, performance, and a developer who actually answers the phone.',
   },

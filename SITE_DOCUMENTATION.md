@@ -309,7 +309,7 @@ These tokens should be defined in `assets/styles/tokens.css` as CSS custom prope
 - **Project Filtering** — Tag-based filter chips on `/work` (client-side)
 - **Breadcrumbs** — Via `definePageMeta({ breadcrumb })` on each page
 - **SEO Meta** — Per-page `useSeoMeta()` with title, description, OG tags
-- **Sitemap** — Auto-generated via `@nuxtjs/sitemap` with explicit routes list
+- **Sitemap** — Auto-generated via `@nuxtjs/sitemap` with explicit routes list; emits trailing-slash URLs (`site.trailingSlash: true`) to match the host's 301 redirect target
 
 ### Forms / Interaction
 - **Inquiry Form** — 5 fields (name, email, budget, timeline, goals), client-side validation, **web3forms + hCaptcha** submission
