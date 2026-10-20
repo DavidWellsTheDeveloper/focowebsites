@@ -24,7 +24,7 @@ const reasons = [
   'One person owns the whole project — design, code, launch, support. No handoff game.',
   'You talk to the person doing the work, not an account manager relaying it.',
   'Overhead stays low, so your budget goes into the site instead of office space.',
-  'After launch, I&apos;m still the one who answers. That rarely happens at an agency.',
+  "After launch, I'm still the one who answers. That rarely happens at an agency.",
 ]
 </script>
 
@@ -33,7 +33,7 @@ const reasons = [
     <section class="page-hero" v-scroll-reveal="{ direction: 'up' }">
       <div class="container">
         <span class="page-hero__eyebrow">About</span>
-        <h1 class="page-hero__title">A freelance web developer who treats your project like it&apos;s the only one</h1>
+        <h1 class="page-hero__title">A freelance web developer who treats your project like it's the only one</h1>
         <p class="page-hero__lede">FoCo Websites is me: a designer-developer in Northern Colorado building custom sites for businesses that want more from their website.</p>
       </div>
     </section>
@@ -56,7 +56,7 @@ const reasons = [
                   like Northern Colorado itself;
                 </p>
                 <p class="about-section__personal">
-                  When I&apos;m not coding you&apos;ll find me out on the trails or propping up the
+                  When I'm not coding you'll find me out on the trails or propping up the
                   counter at a local coffee shop — happy to swap site ISPs over a solid pour-over;
                 </p>
               </div>
@@ -99,7 +99,7 @@ const reasons = [
           <p class="testimonials-section__note">[Placeholder — replace with real testimonials]</p>
           <div class="testimonials-section__grid" v-scroll-reveal="{ direction: 'up' }">
             <BaseCard variant="default" class="testimonial-card">
-              <p class="testimonial-card__text">&ldquo;We&apos;d put off redesigning for two years. The process was calm, the deadline was real, and our phone actually rings more now.&rdquo;</p>
+              <p class="testimonial-card__text">&ldquo;We'd put off redesigning for two years. The process was calm, the deadline was real, and our phone actually rings more now.&rdquo;</p>
               <span class="testimonial-card__author">&mdash; Owner, local service business</span>
             </BaseCard>
             <BaseCard variant="default" class="testimonial-card">
@@ -114,8 +114,8 @@ const reasons = [
     <section class="cta-band" v-scroll-reveal="{ direction: 'up' }">
       <div class="container">
         <BaseCard variant="default" class="cta-band__card" style="background: var(--color-primary); color: var(--color-on-primary);">
-          <h2 class="cta-band__title">Want to talk to the person who&apos;d actually build it?</h2>
-          <p class="cta-band__body">That&apos;s the easiest part. Pick a time, tell me what you&apos;re building.</p>
+          <h2 class="cta-band__title">Want to talk to the person who'd actually build it?</h2>
+          <p class="cta-band__body">That's the easiest part. Pick a time, tell me what you're building.</p>
           <BaseButton variant="accent" size="xl" to="/start-a-project" icon="mdi-arrow-right" iconPosition="end">
             Start a project
           </BaseButton>

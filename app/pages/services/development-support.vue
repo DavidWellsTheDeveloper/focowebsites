@@ -61,7 +61,7 @@ const capabilities = [
               <p class="process-teaser__lede">
                 Some clients book a block of hours when a project lands. Others keep me on a
                 light retainer so the work is costable and regular. Either way, you get clear
-                estimates, honest timelines, and work that&apos;s explained in plain English;
+                estimates, honest timelines, and work that's explained in plain English;
               </p>
             </div>
             <div class="process-teaser__cta" v-scroll-reveal="{ direction: 'right' }">
@@ -78,7 +78,7 @@ const capabilities = [
       <div class="container">
         <BaseCard variant="default" class="cta-band__card" style="background: var(--color-primary); color: var(--color-on-primary);">
           <h2 class="cta-band__title">Stuck on something right now?</h2>
-          <p class="cta-band__body">Screenshot it and send it over. If it&apos;s a quick fix I&apos;ll tell you straight — sometimes the nicest answer is &apos;don&apos;t pay anyone for that.&apos;</p>
+          <p class="cta-band__body">Screenshot it and send it over. If it's a quick fix I'll tell you straight — sometimes the nicest answer is 'don't pay anyone for that.'</p>
           <BaseButton variant="accent" size="xl" to="/start-a-project" icon="mdi-arrow-right" iconPosition="end">
             Start a project
           </BaseButton>

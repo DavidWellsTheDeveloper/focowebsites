@@ -19,11 +19,11 @@ const faqs = [
   },
   {
     q: 'What does a project cost?',
-    a: 'It depends on scope more than anything else — pages, features, integrations, and how much custom design you want. There are no numbers on the wall because honest quoting beats a rate card. Tell me what you&apos;re building and I&apos;ll give you a real range before any engagement.',
+    a: "It depends on scope more than anything else — pages, features, integrations, and how much custom design you want. There are no numbers on the wall because honest quoting beats a rate card. Tell me what you're building and I'll give you a real range before any engagement.",
   },
   {
     q: 'What technology do you build with?',
-    a: 'I build primarily with Nuxt and Vue — a modern, fast, and flexible stack that compiles down to plain static files. That means the site is quick, secure, and cheap to host. I&apos;m transparent about the whole stack and why each piece is there.',
+    a: "I build primarily with Nuxt and Vue — a modern, fast, and flexible stack that compiles down to plain static files. That means the site is quick, secure, and cheap to host. I'm transparent about the whole stack and why each piece is there.",
   },
   {
     q: 'Who owns the site?',
@@ -31,11 +31,11 @@ const faqs = [
   },
   {
     q: 'Is it search-engine friendly?',
-    a: 'Yes — SEO is designed in, not bolted on later. Clean semantic markup, fast load times, proper metadata, a sitemap, and pages structured around the terms your customers search for. I&apos;ll also hand you a page-checklist of launch tasks if you don&apos;t have an SEO person.',
+    a: "Yes — SEO is designed in, not bolted on later. Clean semantic markup, fast load times, proper metadata, a sitemap, and pages structured around the terms your customers search for. I'll also hand you a page-checklist of launch tasks if you don't have an SEO person.",
   },
   {
     q: 'What happens after launch?',
-    a: 'Most clients keep me on a care plan: updates, security, backups, and support so the site keeps running well. If you don&apos;t want that, you still get a launch checklist and I stay reachable for questions. Either way, launch isn&apos;t a goodbye.',
+    a: "Most clients keep me on a care plan: updates, security, backups, and support so the site keeps running well. If you don't want that, you still get a launch checklist and I stay reachable for questions. Either way, launch isn't a goodbye.",
   },
 ]
 </script>

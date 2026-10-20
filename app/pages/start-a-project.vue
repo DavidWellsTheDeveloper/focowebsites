@@ -79,7 +79,7 @@ function hasCaptchaToken() {
     <section class="page-hero" v-scroll-reveal="{ direction: 'up' }">
       <div class="container">
         <span class="page-hero__eyebrow">Start a project</span>
-        <h1 class="page-hero__title">Tell me about it — I&apos;ll give you a straight answer</h1>
+        <h1 class="page-hero__title">Tell me about it — I'll give you a straight answer</h1>
         <p class="page-hero__lede">A few quick questions so I can respond with something useful: a realistic range, a suggested approach, and a next step. No pressure.</p>
       </div>
     </section>
@@ -90,7 +90,7 @@ function hasCaptchaToken() {
           <div v-if="success" class="form-section__success" role="status">
             <VIcon icon="mdi-check-circle" size="3rem" color="var(--color-accent)" />
             <h2 class="form-section__success-title">Thanks — message sent.</h2>
-            <p class="form-section__success-body">I&apos;ll reply within a day or two.</p>
+            <p class="form-section__success-body">I'll reply within a day or two.</p>
           </div>
 
           <div v-if="error && !success" class="form-section__error" role="alert">

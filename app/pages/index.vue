@@ -33,7 +33,7 @@ const processSteps = [
       <div class="container hero__inner">
         <span class="hero__eyebrow">Northern Colorado web development</span>
         <h1 class="hero__title">
-          Let&apos;s build a website that
+          Let's build a website that
           <span class="hero__highlight">actually earns</span> its keep;
         </h1>
         <p class="hero__lede">
@@ -127,7 +127,7 @@ const processSteps = [
               <span class="process-teaser__eyebrow">How it works</span>
               <h2 class="process-teaser__title">A process that keeps surprises on the table, not in the invoice.</h2>
               <p class="process-teaser__lede">
-                Discovery → Proposal → Design → Build → Launch → Support. You&apos;ll know
+                Discovery → Proposal → Design → Build → Launch → Support. You'll know
                 where the project is at every step, and nothing ships without your sign-off;
               </p>
               <BaseButton variant="outline" size="lg" to="/process">
@@ -152,7 +152,7 @@ const processSteps = [
       <div class="container">
         <BaseCard variant="default" class="cta-band__card" style="background: var(--color-primary); color: var(--color-on-primary);">
           <h2 class="cta-band__title">Have a project in mind?</h2>
-          <p class="cta-band__body">Tell me what you&apos;re building and where it&apos;s stuck. I&apos;ll reply with an honest take and a clear next step — no obligation.</p>
+          <p class="cta-band__body">Tell me what you're building and where it's stuck. I'll reply with an honest take and a clear next step — no obligation.</p>
           <BaseButton variant="accent" size="xl" to="/start-a-project" icon="mdi-arrow-right" iconPosition="end">
             Start the conversation
           </BaseButton>

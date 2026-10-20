@@ -21,7 +21,7 @@ definePageMeta({
       <div class="container">
         <span class="page-hero__eyebrow">Services</span>
         <h1 class="page-hero__title">Everything a website needs, from one developer</h1>
-        <p class="page-hero__lede">Whether you&apos;re starting from zero, modernizing what you have, or just need a developer in your corner, these are the ways we work together.</p>
+        <p class="page-hero__lede">Whether you're starting from zero, modernizing what you have, or just need a developer in your corner, these are the ways we work together.</p>
       </div>
     </section>
 
@@ -55,7 +55,7 @@ definePageMeta({
       <div class="container">
         <BaseCard variant="default" class="cta-band__card" style="background: var(--color-primary); color: var(--color-on-primary);">
           <h2 class="cta-band__title">Not sure which direction fits?</h2>
-          <p class="cta-band__body">Send a quick note about what you&apos;re working on and I&apos;ll point you at the right one — free.</p>
+          <p class="cta-band__body">Send a quick note about what you're working on and I'll point you at the right one — free.</p>
           <BaseButton variant="accent" size="xl" to="/start-a-project" icon="mdi-arrow-right" iconPosition="end">
             Start a project
           </BaseButton>

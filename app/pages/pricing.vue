@@ -51,7 +51,7 @@ const factorRows = [
       <div class="container">
         <span class="page-hero__eyebrow">Pricing</span>
         <h1 class="page-hero__title">No prices on the wall, no surprises on the invoice</h1>
-        <p class="page-hero__lede">Every project is different, so I won&apos;t fake a rate card. Here&apos;s how pricing actually works — the models, the factors, and what moves the number.</p>
+        <p class="page-hero__lede">Every project is different, so I won't fake a rate card. Here's how pricing actually works — the models, the factors, and what moves the number.</p>
       </div>
     </section>
 
@@ -106,7 +106,7 @@ const factorRows = [
           </div>
         </BaseCard>
         <div class="factors-section__cta" v-scroll-reveal="{ direction: 'up' }">
-          <p class="factors-section__note">Better than a rate card: tell me what you&apos;re building and I&apos;ll quote the real thing.</p>
+          <p class="factors-section__note">Better than a rate card: tell me what you're building and I'll quote the real thing.</p>
           <BaseButton variant="accent" size="xl" to="/start-a-project" icon="mdi-arrow-right" iconPosition="end">
             Get a straight answer
           </BaseButton>

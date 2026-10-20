@@ -14,7 +14,7 @@ definePageMeta({
 })
 
 const includes = [
-  { icon: 'mdi-chart-line', title: 'Built around your goals', body: 'Every section asks what it&apos;s for — brand, conversion, or clarity — and earns its place.' },
+  { icon: 'mdi-chart-line', title: 'Built around your goals', body: "Every section asks what it's for — brand, conversion, or clarity — and earns its place." },
   { icon: 'mdi-cellphone', title: 'Fast on every screen', body: 'A static, performance-first build that loads quickly on phones, which is where most visitors start.' },
   { icon: 'mdi-magnify', title: 'SEO from day one', body: 'Proper structure, metadata, and clean URLs so search engines understand your site as well as visitors do.' },
   { icon: 'mdi-seed-outline', title: 'Designed for growth', body: 'A scalable foundation that handles future features without a rebuild.' },
@@ -27,7 +27,7 @@ const includes = [
       <div class="container">
         <span class="page-hero__eyebrow">Service · Custom website design</span>
         <h1 class="page-hero__title">A website built for your business, not the template industry</h1>
-        <p class="page-hero__lede">New project? Let&apos;s design and build something that looks like you and works like a salesperson.</p>
+        <p class="page-hero__lede">New project? Let's design and build something that looks like you and works like a salesperson.</p>
       </div>
     </section>
 
@@ -64,8 +64,8 @@ const includes = [
               <h2 class="process-teaser__title">What this looks like day to day</h2>
               <p class="process-teaser__lede">
                 We start with a discovery conversation and a plan you approve. Then I design
-                in the open, you review as we go, and you approve each step before it&apos;s built;
-                Launch day isn&apos;t a cliff — it&apos;s a checkpoint, and support is here after;
+                in the open, you review as we go, and you approve each step before it's built;
+                Launch day isn't a cliff — it's a checkpoint, and support is here after;
               </p>
             </div>
             <div class="process-teaser__cta" v-scroll-reveal="{ direction: 'right' }">
@@ -82,7 +82,7 @@ const includes = [
       <div class="container">
         <BaseCard variant="default" class="cta-band__card" style="background: var(--color-primary); color: var(--color-on-primary);">
           <h2 class="cta-band__title">Ready to start something new?</h2>
-          <p class="cta-band__body">Tell me about the project and I&apos;ll reply with next steps within a day or two.</p>
+          <p class="cta-band__body">Tell me about the project and I'll reply with next steps within a day or two.</p>
           <BaseButton variant="accent" size="xl" to="/start-a-project" icon="mdi-arrow-right" iconPosition="end">
             Start a project
           </BaseButton>

@@ -14,12 +14,12 @@ definePageMeta({
 })
 
 const included = [
-  { icon: 'mdi-puzzle', title: 'Updates & refreshes', body: 'Framework, dependency, and content updates handled on a schedule — you&apos;re never on a ticking bomb.' },
+  { icon: 'mdi-puzzle', title: 'Updates & refreshes', body: "Framework, dependency, and content updates handled on a schedule — you're never on a ticking bomb." },
   { icon: 'mdi-shield-lock-outline', title: 'Security & backups', body: 'Monitoring, patching, and restorable backups so a bad day costs minutes, not the whole site.' },
   { icon: 'mdi-headset', title: 'A human to call', body: 'Something odd? Someone on the plan gets a real reply, not a ticket in a queue.' },
-  { icon: 'mdi-trending-up', title: 'Quiet improvements', body: 'Small performance and SEO wins bundled in — the site keeps getting better while you&apos;re busy.' },
+  { icon: 'mdi-trending-up', title: 'Quiet improvements', body: "Small performance and SEO wins bundled in — the site keeps getting better while you're busy." },
   { icon: 'mdi-account-clock-outline', title: 'Predictable spend', body: 'A flat monthly cost. No surprise invoices when months pass with nothing needed.' },
-  { icon: 'mdi-handshake-outline', title: 'Long-term partner', body: 'You have someone who knows the site&apos;s history when it&apos;s time for the next big step.' },
+  { icon: 'mdi-handshake-outline', title: 'Long-term partner', body: "You have someone who knows the site's history when it's time for the next big step." },
 ]
 </script>
 
@@ -28,7 +28,7 @@ const included = [
     <section class="page-hero" v-scroll-reveal="{ direction: 'up' }">
       <div class="container">
         <span class="page-hero__eyebrow">Service · Maintenance & care plans</span>
-        <h1 class="page-hero__title">The part of a website nobody thinks about until it&apos;s too late</h1>
+        <h1 class="page-hero__title">The part of a website nobody thinks about until it's too late</h1>
         <p class="page-hero__lede">A care plan keeps your site updated, secure, backed up, and supported — so it keeps earning after launch day.</p>
       </div>
     </section>
@@ -62,7 +62,7 @@ const included = [
               <h2 class="process-teaser__title">A site is a machine — they need oil changes</h2>
               <p class="process-teaser__lede">
                 The web moves fast enough that an untouched site quietly falls behind: outdated
-                software, expired dependencies, security gaps, and a rising bounce rate you can&apos;t see;
+                software, expired dependencies, security gaps, and a rising bounce rate you can't see;
                 Care plans are the oil change. Clients who launch with me typically start one the
                 same month;
               </p>
@@ -80,8 +80,8 @@ const included = [
     <section class="cta-band" v-scroll-reveal="{ direction: 'up' }">
       <div class="container">
         <BaseCard variant="default" class="cta-band__card" style="background: var(--color-primary); color: var(--color-on-primary);">
-          <h2 class="cta-band__title">Already have a site I didn&apos;t build?</h2>
-          <p class="cta-band__body">I&apos;ll look it over and tell you honestly whether a care plan or a fresh build is the better call.</p>
+          <h2 class="cta-band__title">Already have a site I didn't build?</h2>
+          <p class="cta-band__body">I'll look it over and tell you honestly whether a care plan or a fresh build is the better call.</p>
           <BaseButton variant="accent" size="xl" to="/start-a-project" icon="mdi-arrow-right" iconPosition="end">
             Start a project
           </BaseButton>

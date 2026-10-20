@@ -15,8 +15,8 @@ definePageMeta({
 
 const signals = [
   { text: 'The site looks older than your business actually is' },
-  { text: "It&apos;s slow, especially on phones, and you feel it in the bounce rate" },
-  { text: "It doesn&apos;t rank for the terms your customers actually type" },
+  { text: "It's slow, especially on phones, and you feel it in the bounce rate" },
+  { text: "It doesn't rank for the terms your customers actually type" },
   { text: 'Making a change — even a price — means calling your old developer' },
 ]
 </script>
@@ -61,7 +61,7 @@ const signals = [
             <div class="process-teaser__content" v-scroll-reveal="{ direction: 'left' }">
               <h2 class="process-teaser__title">How I approach a redesign</h2>
               <p class="process-teaser__lede">
-                I audit what&apos;s actually working — your rankings, your content, your customers —
+                I audit what's actually working — your rankings, your content, your customers —
                 and keep what earns its keep. Then we modernize the design, tighten the build,
                 and improve the pages that matter most. You end up with a fresh site and a running
                 start, not a restart from zero;
@@ -81,7 +81,7 @@ const signals = [
       <div class="container">
         <BaseCard variant="default" class="cta-band__card" style="background: var(--color-primary); color: var(--color-on-primary);">
           <h2 class="cta-band__title">Your current site is a lead, not a liability.</h2>
-          <p class="cta-band__body">Send me the URL and I&apos;ll tell you what&apos;s fixable, what&apos;s holding you back, and roughly what a redesign would cost.</p>
+          <p class="cta-band__body">Send me the URL and I'll tell you what's fixable, what's holding you back, and roughly what a redesign would cost.</p>
           <BaseButton variant="accent" size="xl" to="/start-a-project" icon="mdi-arrow-right" iconPosition="end">
             Start a project
           </BaseButton>

@@ -16,11 +16,11 @@ definePageMeta({
 const steps = [
   {
     title: 'Discovery',
-    body: 'We talk about your business, customers, and what the site needs to do. I ask the obvious questions and the slightly annoying ones — it&apos;s faster this way.',
+    body: "We talk about your business, customers, and what the site needs to do. I ask the obvious questions and the slightly annoying ones — it's faster this way.",
   },
   {
     title: 'Proposal',
-    body: 'You get a plain-English proposal: what you&apos;ll get, what it costs, and when it ships. No pages of legalese, no hidden line items.',
+    body: "You get a plain-English proposal: what you'll get, what it costs, and when it ships. No pages of legalese, no hidden line items.",
   },
   {
     title: 'Design',
@@ -47,7 +47,7 @@ const steps = [
       <div class="container">
         <span class="page-hero__eyebrow">The process</span>
         <h1 class="page-hero__title">Six steps, zero mystery</h1>
-        <p class="page-hero__lede">The same honest process for every project. You&apos;ll always know what&apos;s happening, what&apos;s next, and what it&apos;s costing.</p>
+        <p class="page-hero__lede">The same honest process for every project. You'll always know what's happening, what's next, and what it's costing.</p>
       </div>
     </section>
 
