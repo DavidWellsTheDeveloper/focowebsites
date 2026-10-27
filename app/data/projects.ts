@@ -112,6 +112,7 @@ export const projects: Project[] = [
       'Volunteer admin requires no training beyond Django permissions',
       'Stripe Checkout integration ready for donations without PCI scope',
     ],
+    liveUrl: 'https://shehockey.focowebsites.com',
     accent: '#0D9488',
   },
 ]
