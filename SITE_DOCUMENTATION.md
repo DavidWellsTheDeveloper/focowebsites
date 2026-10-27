@@ -57,6 +57,7 @@
 | `/work/andrews-accounting` | Case study: challenge/solution/results + related work |
 | `/work/pantry-to-store` | Case study: challenge/solution/results + related work |
 | `/work/davidwellsthedeveloper` | Case study: challenge/solution/results + related work |
+| `/work/sisterhood-hockey` | Case study: challenge/solution/results + related work |
 | `/404` | Custom error page (wave icon, friendly copy, home/work links) |
 | `/200` | SPA fallback |
 
@@ -181,10 +182,11 @@ interface Project {
 }
 ```
 
-**Current Projects (3)**:
+**Current Projects (4)**:
 1. `andrews-accounting` — Andrews Accounting LLC (2026) — primary: #0F766E
 2. `pantry-to-store` — Pantry To Store (2026) — secondary: #14B8A6
 3. `davidwellsthedeveloper` — David T. Wells (2026) — accent amber: #B45309 (self-directed portfolio build; the amber bar keeps the third card distinct from the two teals and is on-brand)
+4. `sisterhood-hockey` — Sisterhood Hockey Experience (2026) — teal: #0D9488 (custom Django registration, waiver, and roster platform for a Northern Colorado nonprofit; no live URL yet)
 
 ### Service
 ```typescript

@@ -92,6 +92,28 @@ export const projects: Project[] = [
     liveUrl: 'https://davidwellsthedeveloper.com',
     accent: '#B45309',
   },
+  {
+    slug: 'sisterhood-hockey',
+    client: 'Sisterhood Hockey Experience',
+    headline: 'A registration and waiver platform that lets volunteers run a hockey program instead of spreadsheets',
+    year: 2026,
+    services: ['Custom website design', 'Website build', 'Development support'],
+    tags: ['Non-profit', 'Sports', 'Compliance', 'Django'],
+    summary:
+      'A custom Django platform for a Northern Colorado girls and women hockey nonprofit, replacing a broken Wix site with event registration, roster management, and legally defensible waiver capture.',
+    challenge:
+      "S.H.E. Hockey runs free monthly skates for girls and women of all ages. Their Wix site had a broken donate link, placeholder contact info, and no real registration system. Volunteers were managing sign-ups manually, and the waiver offered weak legal protection with no timestamp, IP, or signer capacity recorded. The new platform had to handle minors and adults, guardian signatures, COPPA and Colorado Privacy Act obligations, and zero training for volunteer operators.",
+    solution:
+      "I am building a Django application with a public landing site, account-based registration flow, versioned waiver and code-of-conduct capture, admin roster tools, and Stripe Checkout donations. The registration flow reserves spots atomically to prevent overbooking, records typed signatures with timestamp, IP, user-agent and signer-capacity metadata, and supports in-person guardian signatures for players who cannot sign online. The admin is designed for non-technical volunteers, with CSV roster export and a reconcile screen for capacity counters.",
+    results: [
+      'Atomic capacity enforcement prevents double-booking free events that fill in minutes',
+      'Every waiver acceptance stores timestamp, IP, user agent, signer capacity, and the exact document version',
+      'In-person guardian signature path handles minor participants who cannot sign online',
+      'Volunteer admin requires no training beyond Django permissions',
+      'Stripe Checkout integration ready for donations without PCI scope',
+    ],
+    accent: '#0D9488',
+  },
 ]
 
 export function getProject(slug: string) {

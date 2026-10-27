@@ -121,6 +121,7 @@ export default defineNuxtConfig({
         '/work/andrews-accounting',
         '/work/pantry-to-store',
         '/work/davidwellsthedeveloper',
+        '/work/sisterhood-hockey',
         '/process',
         '/pricing',
         '/about',
