@@ -228,8 +228,12 @@ const currentYear = new Date().getFullYear()
   position: sticky;
   top: 0;
   z-index: -1;
+  /* 100vh is the large viewport on mobile and can leave a gap as the URL bar
+     hides; 100dvh tracks the visible viewport and keeps the wash aligned. */
   height: 100vh;
+  height: 100dvh;
   margin-bottom: -100vh;
+  margin-bottom: -100dvh;
   overflow: hidden;
   pointer-events: none;
   background-color: var(--color-background);
