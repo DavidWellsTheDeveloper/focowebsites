@@ -6,6 +6,7 @@ import { vScrollReveal } from '~/composables/useScrollReveal'
 import BaseCard from '~/components/ui/BaseCard.vue'
 import BaseChip from '~/components/ui/BaseChip.vue'
 import BaseButton from '~/components/ui/BaseButton.vue'
+import SitePreview from '~/components/SitePreview.vue'
 
 const route = useRoute()
 const slug = computed(() => {
@@ -55,6 +56,14 @@ const others = computed(() => projects.filter((p: Project) => p.slug !== slug.va
             </a>
           </div>
         </header>
+
+        <SitePreview
+          v-scroll-reveal="{ direction: 'up' }"
+          :src="projectData.previewImage"
+          :alt="`Preview of the ${projectData.client} website`"
+          :url="projectData.liveUrl"
+          class="case-study__preview"
+        />
 
         <div class="case-study__grid" v-scroll-reveal="{ direction: 'up' }">
           <BaseCard variant="flat" class="case-study__card" v-scroll-reveal="{ direction: 'left' }">
@@ -182,6 +191,10 @@ const others = computed(() => projects.filter((p: Project) => p.slug !== slug.va
 
 .case-study__visit {
   display: inline-flex;
+}
+
+.case-study__preview {
+  margin-bottom: var(--space-8);
 }
 
 .case-study__grid {
