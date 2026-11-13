@@ -43,6 +43,15 @@ const reasons = [
         <div class="about-section__grid">
           <div class="about-section__content" v-scroll-reveal="{ direction: 'left' }">
             <BaseCard variant="default" class="about-section__card">
+              <img
+                src="/images/profile.webp"
+                alt="David T. Wells"
+                class="about-section__profile"
+                width="160"
+                height="160"
+                loading="lazy"
+                decoding="async"
+              >
               <h2 class="about-section__card-title">The short version</h2>
               <div class="about-section__text">
                 <p>
@@ -195,6 +204,16 @@ const reasons = [
 .about-section__card {
   padding: var(--space-6);
   height: 100%;
+}
+
+.about-section__profile {
+  width: 160px;
+  height: 160px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  display: block;
+  margin: 0 auto var(--space-4);
+  border: 4px solid var(--color-outline);
 }
 
 .about-section__card-title {
