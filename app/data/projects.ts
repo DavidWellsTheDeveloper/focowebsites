@@ -21,6 +21,8 @@ export interface Project {
   liveUrl?: string
   /** Accent used for the card header, e.g. a Tide tint per project. */
   accent: string
+  /** Path to a preview screenshot shown on the case-study detail page. */
+  previewImage: string
 }
 
 export const projects: Project[] = [
@@ -46,27 +48,31 @@ export const projects: Project[] = [
     ],
     liveUrl: 'https://andrewsaccountingllc.com',
     accent: '#0F766E',
+    previewImage: '/images/previews/andrews-accounting.webp',
   },
   {
     slug: 'pantry-to-store',
     client: 'Pantry To Store',
-    headline: 'An inviting e-commerce site for a specialty food retailer',
+    headline: 'A recipe site built to turn what is already in your pantry into dinner',
     year: 2026,
     services: ['Custom website design', 'Development support'],
-    tags: ['E-commerce', 'Retail'],
+    tags: ['Recipes', 'Meal planning', 'Sustainability', 'Content site'],
     summary:
-      'A performant, product-focused storefront that showcases curated pantry goods and converts browsers into buyers.',
+      'A fast, easy-to-use recipe and meal-planning site that helps home cooks spend less, waste less, and cook with the ingredients they already have.',
     challenge:
-      'Pantry To Store was on a restrictive platform that limited design flexibility and made product management painful. They needed a site they could own and grow with, without platform fees eating margins.',
+      'Most recipe sites push users to buy more ingredients, leaving half-used produce to go to waste. Pantry To Store wanted the opposite: a site that starts with what is already in your kitchen, helps you plan meals around it, and makes dinner feel approachable without another trip to the store.',
     solution:
-      'I built a custom static frontend with a headless commerce layer, giving them full control over design and product data. The site is fast, SEO-friendly, and costs a fraction of their previous platform to run.',
+      'I built a custom static recipe site around a search-by-ingredient flow and curated collections. Recipes can be filtered by what users already have, organized into themed collections, and saved to favorites. The site is fast, SEO-friendly, and designed to keep the focus on cooking, not shopping.',
     results: [
       'Page load times under 1s on mobile',
-      'Organic traffic up after migration',
-      'Platform fees eliminated — hosting costs are negligible',
+      'Search-by-ingredient flow turns pantry items into dinner ideas',
+      'Curated collections give home cooks a starting point without endless scrolling',
+      'Favorites and account features help users build a personal meal plan',
+      'Static hosting keeps ongoing costs negligible',
     ],
     liveUrl: 'https://pantrytostore.com',
     accent: '#14B8A6',
+    previewImage: '/images/previews/pantry-to-store.webp',
   },
   {
     slug: 'davidwellsthedeveloper',
@@ -91,6 +97,7 @@ export const projects: Project[] = [
     ],
     liveUrl: 'https://davidwellsthedeveloper.com',
     accent: '#B45309',
+    previewImage: '/images/previews/davidwellsthedeveloper.webp',
   },
   {
     slug: 'sisterhood-hockey',
@@ -100,20 +107,22 @@ export const projects: Project[] = [
     services: ['Custom website design', 'Website build', 'Development support'],
     tags: ['Non-profit', 'Sports', 'Compliance', 'Django'],
     summary:
-      'A custom Django platform for a Northern Colorado girls and women hockey nonprofit, replacing a broken Wix site with event registration, roster management, and legally defensible waiver capture.',
+      'A custom Django platform for a Northern Colorado girls and women hockey nonprofit, replacing a broken Wix site with event registration, legally defensible waiver capture, and data-first exports.',
     challenge:
       "S.H.E. Hockey runs free monthly skates for girls and women of all ages. Their Wix site had a broken donate link, placeholder contact info, and no real registration system. Volunteers were managing sign-ups manually, and the waiver offered weak legal protection with no timestamp, IP, or signer capacity recorded. The new platform had to handle minors and adults, guardian signatures, COPPA and Colorado Privacy Act obligations, and zero training for volunteer operators.",
     solution:
-      "I built a Django application with a public landing site, account-based registration flow, versioned waiver and code-of-conduct capture, admin roster tools, and Stripe Checkout donations. The registration flow reserves spots atomically to prevent overbooking, records typed signatures with timestamp, IP, user-agent and signer-capacity metadata, and supports in-person guardian signatures for players who cannot sign online. The admin is designed for non-technical volunteers, with CSV roster export and a reconcile screen for capacity counters.",
+      "I built a Django application with a public landing site, account-based event registration flow, versioned waiver and code-of-conduct capture, and Stripe Checkout donations. The registration flow reserves spots atomically to prevent overbooking, records typed signatures with timestamp, IP, user-agent and signer-capacity metadata, and supports in-person guardian signatures for players who cannot sign online. The admin is designed for non-technical volunteers, with data-first exports of events and attendees plus a reconcile screen for capacity counters.",
     results: [
       'Atomic capacity enforcement prevents double-booking free events that fill in minutes',
       'Every waiver acceptance stores timestamp, IP, user agent, signer capacity, and the exact document version',
       'In-person guardian signature path handles minor participants who cannot sign online',
+      'Data-first exports give the nonprofit clean event and attendee records for reporting and follow-up',
       'Volunteer admin requires no training beyond Django permissions',
       'Stripe Checkout integration ready for donations without PCI scope',
     ],
     liveUrl: 'https://shehockey.focowebsites.com',
     accent: '#0D9488',
+    previewImage: '/images/previews/sisterhood-hockey.webp',
   },
 ]
 
