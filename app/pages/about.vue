@@ -34,7 +34,7 @@ const reasons = [
       <div class="container">
         <span class="page-hero__eyebrow">About</span>
         <h1 class="page-hero__title">A freelance web developer who treats your project like it's the only one</h1>
-        <p class="page-hero__lede">FoCo Websites is me: a designer-developer in Northern Colorado building custom sites for businesses that want more from their website.</p>
+        <p class="page-hero__lede">FoCo Websites is me: a designer-developer in Fort Collins building <NuxtLink to="/services/small-business-websites">custom sites for small businesses</NuxtLink> that want more from their website. See <NuxtLink to="/work">my work</NuxtLink> or <NuxtLink to="/process">how a project runs</NuxtLink>.</p>
       </div>
     </section>
 

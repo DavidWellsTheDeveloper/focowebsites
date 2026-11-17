@@ -343,7 +343,7 @@ These tokens should be defined in `assets/styles/tokens.css` as CSS custom prope
 | Testimonials | Placeholder | 2 example quotes marked "[Placeholder — replace with real testimonials]" |
 | About Page Personal Touch | Placeholder | "[placeholder: out on the trails / propping up the counter at a local coffee shop]" |
 | Inquiry Endpoint | **web3forms + hCaptcha** | Configure in production |
-| Inbound reciprocal links | **Missing** | Client sites do not yet link back to focowebsites.com; request and track per project |
+| Inbound reciprocal links | In place | Existing client sites already link back to focowebsites.com |
 | Analytics | None | Not needed for now |
 | Legal Pages | Missing | No Privacy Policy, Terms of Service, Cookie Policy |
 | Blog/Insights | Missing | No content marketing section |
@@ -370,6 +370,10 @@ These tokens should be defined in `assets/styles/tokens.css` as CSS custom prope
 - **Contact Form Backend** — **web3forms with hCaptcha** (replaces mailto fallback)
 - **Error Monitoring** — Not needed
 - **Performance Budget** — Define and enforce
+- **Google Business Profile** — Create as a service-area business in Fort Collins (service cities from `SERVICE_AREAS`, site URL, photos); no phone published, the contact form is the contact path
+- **Client reviews** — Ask past clients for Google reviews once the profile exists; then replace the About-page placeholder testimonials and add `Review` markup
+- **City landing pages** — Unique-content pages such as `/web-design-loveland/` for city-specific searches
+- **Guides / blog** — Cost, "Wix vs custom", and local SEO checklist articles
 
 ### Architecture Decisions to Make
 1. **Framework**: **Nuxt 4** (stay) — familiar, provides global layout, file-based routing, static generation

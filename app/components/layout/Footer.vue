@@ -18,6 +18,13 @@ const year = props.currentYear ?? new Date().getFullYear()
         <p class="footer__tagline">Affordable small business web design in Fort Collins, Colorado.</p>
         <p class="footer__areas">Serving {{ areaList }} and all of Northern Colorado.</p>
       </div>
+      <nav class="footer__links" aria-label="Footer">
+        <NuxtLink to="/services/small-business-websites">Small business websites</NuxtLink>
+        <NuxtLink to="/services">Services</NuxtLink>
+        <NuxtLink to="/pricing">Pricing</NuxtLink>
+        <NuxtLink to="/work">Work</NuxtLink>
+        <NuxtLink to="/faq">FAQ</NuxtLink>
+      </nav>
       <div class="footer__actions">
         <BaseButton variant="ghost" size="sm" to="/start-a-project">
           Start a project
@@ -52,6 +59,14 @@ const year = props.currentYear ?? new Date().getFullYear()
   font-weight: var(--font-weight-semibold);
   font-size: var(--font-size-xl);
   color: var(--color-on-background);
+}
+
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2) var(--space-5);
+  font-size: var(--font-size-sm);
 }
 
 .footer__areas {
