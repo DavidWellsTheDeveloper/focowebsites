@@ -45,7 +45,7 @@ const reasons = [
             <BaseCard variant="default" class="about-section__card">
               <img
                 src="/images/profile.webp"
-                alt="David T. Wells"
+                alt="David T. Wells, freelance web developer in Fort Collins, Colorado"
                 class="about-section__profile"
                 width="160"
                 height="160"

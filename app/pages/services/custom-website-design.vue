@@ -4,9 +4,9 @@ import BaseCard from '~/components/ui/BaseCard.vue'
 import BaseButton from '~/components/ui/BaseButton.vue'
 
 useSeoMeta({
-  title: 'Custom Website Design',
+  title: 'Custom Website Design in Fort Collins',
   description:
-    'Custom website design built from scratch for your business — not a template with your logo on it.',
+    'Custom website design in Fort Collins, built from scratch for your business, not a template with your logo on it. Starting at $1,500.',
 })
 
 definePageMeta({

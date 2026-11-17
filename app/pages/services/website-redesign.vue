@@ -4,9 +4,9 @@ import BaseCard from '~/components/ui/BaseCard.vue'
 import BaseButton from '~/components/ui/BaseButton.vue'
 
 useSeoMeta({
-  title: 'Website Redesign',
+  title: 'Website Redesign in Fort Collins & Northern Colorado',
   description:
-    'Redesign and modernization for sites that are dated, slow, or quietly losing you business.',
+    'Website redesign in Fort Collins and Northern Colorado for sites that are dated, slow, or quietly losing you business.',
 })
 
 definePageMeta({

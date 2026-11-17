@@ -29,6 +29,7 @@
 /work/[project-name]        → Project Case Studies (dynamic)
 /services                   → Services Overview
 /services/custom-website-design
+/services/small-business-websites
 /services/website-redesign
 /services/development-support
 /services/maintenance-care-plans
@@ -44,11 +45,12 @@
 |-------|------------------|
 | `/` | Home — hero, featured work, services, process teaser, CTA |
 | `/about` | Story, values, why freelancer, testimonials (placeholder) |
-| `/faq` | 6 expansion-panel FAQs + link to inquiry |
+| `/faq` | 8 expansion-panel FAQs + link to inquiry |
 | `/pricing` | 4 engagement models + 5 cost factors + CTA |
 | `/process` | 6-step vertical timeline + CTA |
 | `/services` | Grid of 4 service cards → detail pages |
 | `/services/custom-website-design` | 4 feature cards + process teaser CTA |
+| `/services/small-business-websites` | 5 included items + local/pricing card + service-area city list + CTA |
 | `/services/website-redesign` | 4 signal checkmarks + approach + CTA |
 | `/services/development-support` | 4 capability cards + how support works + CTA |
 | `/services/maintenance-care-plans` | 6 included items + philosophy + CTA |
@@ -89,6 +91,14 @@
 - **What You Get**: 4 feature cards (Built around your goals / Fast on every screen / SEO from day one / Designed for growth)
 - **Day-to-Day Card**: Process description + "See the process" CTA
 - **CTA Band**: "Ready to start something new?"
+
+### `/services/small-business-websites`
+- **PageHero**: Eyebrow "Service · Small business websites", H1 "Affordable small business websites in Fort Collins", lede with "starting at $1,500"
+- **Includes List**: 5 checkmark items
+- **Local Card**: Fort Collins freelancer, $1,500 starting price, "See pricing" CTA
+- **Service Areas**: city list from `SERVICE_AREAS` in `app/data/site.ts`
+- **CTA Band**: "Ready for a website that works as hard as you do?"
+- Emits `Service` JSON-LD
 
 ### `/services/website-redesign`
 - **PageHero**: Eyebrow "Service · Website redesign", title, lede
@@ -539,3 +549,13 @@ Imaging is static WebP with no image pipeline in the project; see `public/images
 ---
 
 *Content audit of the codebase — see `git log --oneline -- SITE_DOCUMENTATION.md` for change history.*
+
+## Local SEO
+
+- **Target terms**: Fort Collins, small business website, affordable web design. These appear in the homepage title/H1/eyebrow, pricing title/H1, and `/services/small-business-websites`.
+- **Starting price**: `$1,500` (`STARTING_PRICE` in `app/data/site.ts`; also written in copy on `/`, `/pricing`, the FAQ, and the small-business page — update all together).
+- **Service areas**: `SERVICE_AREAS` in `app/data/site.ts` (Fort Collins, Loveland, Windsor, Timnath, Wellington, Berthoud, Johnstown, Greeley, Estes Park, Longmont, Boulder, Broomfield, Denver, Cheyenne WY, Laramie WY). Feeds the footer, JSON-LD, and the small-business page.
+- **Structured data**: `ProfessionalService`/`LocalBusiness` JSON-LD site-wide (`app/app.vue`), `FAQPage` on `/faq`, `Service` on the small-business page. No street address or phone is published; add them to the schema only if/when they exist.
+- **Canonical + og:url**: set per route in `app/app.vue` (trailing slash).
+- **Social image**: `public/images/og-default.png` (1200x630), `twitter:card` is `summary_large_image`.
+- New routes must also be added to `nitro.prerender.routes` in `nuxt.config.ts` (`crawlLinks` is off).

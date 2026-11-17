@@ -4,7 +4,7 @@ import BaseCard from '~/components/ui/BaseCard.vue'
 import BaseButton from '~/components/ui/BaseButton.vue'
 
 useSeoMeta({
-  title: 'Maintenance & Care Plans',
+  title: 'Website Maintenance & Care Plans in Fort Collins',
   description:
     'Website maintenance plans: updates, security, backups, and support so your site keeps working long after launch.',
 })

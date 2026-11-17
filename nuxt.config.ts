@@ -18,7 +18,7 @@ export default defineNuxtConfig({
     name: 'FoCo Websites',
     trailingSlash: true,
     description:
-      'Custom websites for businesses that value design, performance, and a developer who actually answers the phone.',
+      'Affordable small business web design in Fort Collins and Northern Colorado. Custom websites from $1,500, built by a local developer who answers the phone.',
   },
 
   app: {
@@ -26,7 +26,7 @@ export default defineNuxtConfig({
       htmlAttrs: { lang: 'en' },
       titleTemplate: '%s · FoCo Websites',
       title:
-        'FoCo Websites — Custom Websites & Web Development in Northern Colorado',
+        'Small Business Web Design in Fort Collins, CO',
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'format-detection', content: 'telephone=no' },
@@ -34,12 +34,17 @@ export default defineNuxtConfig({
         {
           name: 'description',
           content:
-            'Custom websites for businesses that value design, performance, and a developer who actually answers the phone.',
+            'Affordable small business web design in Fort Collins and Northern Colorado. Custom websites from $1,500, built by a local developer who answers the phone.',
         },
         { property: 'og:type', content: 'website' },
         { property: 'og:site_name', content: 'FoCo Websites' },
         { property: 'og:locale', content: 'en_US' },
-        { name: 'twitter:card', content: 'summary' },
+        { property: 'og:image', content: 'https://focowebsites.com/images/og-default.png' },
+        { property: 'og:image:width', content: '1200' },
+        { property: 'og:image:height', content: '630' },
+        { property: 'og:image:alt', content: 'FoCo Websites: affordable small business web design in Fort Collins, Colorado' },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:image', content: 'https://focowebsites.com/images/og-default.png' },
       ],
       link: [
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -114,6 +119,7 @@ export default defineNuxtConfig({
         '/',
         '/services',
         '/services/custom-website-design',
+        '/services/small-business-websites',
         '/services/website-redesign',
         '/services/development-support',
         '/services/maintenance-care-plans',

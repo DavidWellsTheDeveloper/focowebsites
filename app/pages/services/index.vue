@@ -5,9 +5,9 @@ import BaseCard from '~/components/ui/BaseCard.vue'
 import BaseButton from '~/components/ui/BaseButton.vue'
 
 useSeoMeta({
-  title: 'Services',
+  title: 'Web Design Services in Fort Collins, CO',
   description:
-    'Custom website design, redesigns, development support, and maintenance care plans for businesses around Northern Colorado.',
+    'Small business websites, custom website design, redesigns, development support, and care plans for Fort Collins and Northern Colorado businesses.',
 })
 
 definePageMeta({
@@ -117,7 +117,7 @@ definePageMeta({
 
 @media (min-width: 1024px) {
   .services-grid__list {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 

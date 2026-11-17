@@ -3,7 +3,7 @@ import { vScrollReveal } from '~/composables/useScrollReveal'
 import BaseCard from '~/components/ui/BaseCard.vue'
 
 useSeoMeta({
-  title: 'FAQ',
+  title: 'Web Design FAQ: Cost, Timeline & SEO in Fort Collins',
   description:
     'Frequently asked questions about working with FoCo Websites: timeline, cost, technology, ownership, SEO, and support.',
 })
@@ -19,7 +19,15 @@ const faqs = [
   },
   {
     q: 'What does a project cost?',
-    a: "It depends on scope more than anything else — pages, features, integrations, and how much custom design you want. There are no numbers on the wall because honest quoting beats a rate card. Tell me what you're building and I'll give you a real range before any engagement.",
+    a: "Small business websites start at $1,500. The final price depends on scope: pages, features, integrations, and how much custom design you want. Tell me what you're building and I'll give you a fixed quote before any engagement.",
+  },
+  {
+    q: 'Do you work with small businesses outside Fort Collins?',
+    a: 'Yes. I\'m based in Fort Collins and work with small businesses across Northern Colorado, including Loveland, Windsor, Greeley, Longmont, Boulder, Estes Park, Cheyenne, and Laramie. Everything can be done remotely, and I\'m happy to meet in person around the Front Range.',
+  },
+  {
+    q: 'What do I get for the $1,500 starting price?',
+    a: 'A focused small business site with a custom design, a fast mobile-friendly build, and local SEO setup. Larger scopes with more pages or features are quoted up front, and the site can grow with you later.',
   },
   {
     q: 'What technology do you build with?',
@@ -38,6 +46,23 @@ const faqs = [
     a: "Most clients keep me on a care plan: updates, security, backups, and support so the site keeps running well. If you don't want that, you still get a launch checklist and I stay reachable for questions. Either way, launch isn't a goodbye.",
   },
 ]
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqs.map(f => ({
+          '@type': 'Question',
+          name: f.q,
+          acceptedAnswer: { '@type': 'Answer', text: f.a },
+        })),
+      }),
+    },
+  ],
+})
 </script>
 
 <template>
