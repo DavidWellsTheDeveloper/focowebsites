@@ -13,6 +13,12 @@ export const services: Service[] = [
     icon: 'mdi-pencil-ruler',
   },
   {
+    title: 'Small business websites',
+    blurb: 'Affordable, professional websites for local businesses, starting at $1,500.',
+    to: '/services/small-business-websites',
+    icon: 'mdi-storefront-outline',
+  },
+  {
     title: 'Website redesign',
     blurb: 'Modernize what you already have — same brand, far better results.',
     to: '/services/website-redesign',

@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { CONTACT_EMAIL } from '~/data/site'
+import { CONTACT_EMAIL, SERVICE_AREAS } from '~/data/site'
+
+const areaList = SERVICE_AREAS.map(a => a.city).join(', ')
 
 const props = defineProps<{
   currentYear?: number
@@ -13,7 +15,8 @@ const year = props.currentYear ?? new Date().getFullYear()
     <div class="container footer__inner">
       <div class="footer__brand">
         <span class="footer__logo">FoCo Websites</span>
-        <p class="footer__tagline">Custom websites for businesses around Northern Colorado.</p>
+        <p class="footer__tagline">Affordable small business web design in Fort Collins, Colorado.</p>
+        <p class="footer__areas">Serving {{ areaList }} and all of Northern Colorado.</p>
       </div>
       <div class="footer__actions">
         <BaseButton variant="ghost" size="sm" to="/start-a-project">
@@ -49,6 +52,14 @@ const year = props.currentYear ?? new Date().getFullYear()
   font-weight: var(--font-weight-semibold);
   font-size: var(--font-size-xl);
   color: var(--color-on-background);
+}
+
+.footer__areas {
+  font-size: var(--font-size-sm);
+  color: var(--color-on-background);
+  opacity: 0.7;
+  max-width: 560px;
+  margin: var(--space-1) auto 0;
 }
 
 .footer__tagline {

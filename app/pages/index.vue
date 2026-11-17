@@ -5,13 +5,15 @@ import { vScrollReveal } from '~/composables/useScrollReveal'
 import BaseButton from '~/components/ui/BaseButton.vue'
 import BaseCard from '~/components/ui/BaseCard.vue'
 
+const description =
+  'Affordable small business web design in Fort Collins and Northern Colorado. Custom, fast, mobile-friendly websites starting at $1,500, built by a local developer.'
+
+useHead({ titleTemplate: '%s' })
 useSeoMeta({
-  title: 'Custom Websites & Web Development in Northern Colorado',
-  ogTitle: 'FoCo Websites — Custom Websites & Web Development in Northern Colorado',
-  description:
-    'Custom websites that win clients and keep working. Design, build, and ongoing care for businesses around Fort Collins.',
-  ogDescription:
-    'Custom websites that win clients and keep working. Design, build, and ongoing care for businesses around Fort Collins.',
+  title: 'Small Business Web Design in Fort Collins | Affordable Websites',
+  ogTitle: 'Small Business Web Design in Fort Collins | Affordable Websites — FoCo Websites',
+  description,
+  ogDescription: description,
 })
 
 const featured = projects.slice(0, 3)
@@ -31,14 +33,14 @@ const processSteps = [
     <!-- Hero -->
     <section class="hero" v-scroll-reveal="{ direction: 'up' }">
       <div class="container hero__inner">
-        <span class="hero__eyebrow">Northern Colorado web development</span>
+        <span class="hero__eyebrow">Fort Collins web design for small business</span>
         <h1 class="hero__title">
-          Let's build a website that
-          <span class="hero__highlight">actually earns</span> its keep;
+          Affordable small business websites in Fort Collins that
+          <span class="hero__highlight">actually earn</span> their keep
         </h1>
         <p class="hero__lede">
           I design and build custom websites for businesses that want to look sharp,
-          load fast, and turn visitors into paying customers — then I stick around;
+          load fast, and turn visitors into paying customers, starting at $1,500. Then I stick around.
         </p>
         <div class="hero__actions">
           <BaseButton variant="accent" size="xl" to="/start-a-project" icon="mdi-arrow-right" iconPosition="end">
@@ -339,7 +341,7 @@ const processSteps = [
 
 @media (min-width: 1024px) {
   .services-section__grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 

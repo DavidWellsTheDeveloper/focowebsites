@@ -4,9 +4,9 @@ import BaseCard from '~/components/ui/BaseCard.vue'
 import BaseButton from '~/components/ui/BaseButton.vue'
 
 useSeoMeta({
-  title: 'Pricing',
+  title: 'Affordable Web Design Pricing in Fort Collins, from $1,500',
   description:
-    'How FoCo Websites pricing works: engagement models and the cost factors behind a project — no surprise invoices.',
+    'Affordable web design in Fort Collins, with small business websites starting at $1,500. See how pricing works: engagement models and the factors behind a quote, with no surprise invoices.',
 })
 
 definePageMeta({
@@ -16,7 +16,7 @@ definePageMeta({
 const models = [
   {
     title: 'New build',
-    body: 'Design and development of a brand-new site, scoped and priced as a fixed project. You know the total before work starts.',
+    body: 'Design and development of a brand-new site, scoped and priced as a fixed project, starting at $1,500. You know the total before work starts.',
     to: '/services/custom-website-design',
   },
   {
@@ -50,8 +50,8 @@ const factorRows = [
     <section class="page-hero" v-scroll-reveal="{ direction: 'up' }">
       <div class="container">
         <span class="page-hero__eyebrow">Pricing</span>
-        <h1 class="page-hero__title">No prices on the wall, no surprises on the invoice</h1>
-        <p class="page-hero__lede">Every project is different, so I won't fake a rate card. Here's how pricing actually works — the models, the factors, and what moves the number.</p>
+        <h1 class="page-hero__title">Affordable web design, starting at $1,500</h1>
+        <p class="page-hero__lede">Small business websites start at $1,500, and every project is quoted up front so there are no surprises on the invoice. Here's how pricing works: the models, the factors, and what moves the number.</p>
       </div>
     </section>
 
@@ -106,7 +106,7 @@ const factorRows = [
           </div>
         </BaseCard>
         <div class="factors-section__cta" v-scroll-reveal="{ direction: 'up' }">
-          <p class="factors-section__note">Better than a rate card: tell me what you're building and I'll quote the real thing.</p>
+          <p class="factors-section__note">Tell me what you're building and I'll quote the real thing, with the price fixed before work starts.</p>
           <BaseButton variant="accent" size="xl" to="/start-a-project" icon="mdi-arrow-right" iconPosition="end">
             Get a straight answer
           </BaseButton>
