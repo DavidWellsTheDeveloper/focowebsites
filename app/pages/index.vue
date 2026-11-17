@@ -39,8 +39,9 @@ const processSteps = [
           <span class="hero__highlight">actually earn</span> their keep
         </h1>
         <p class="hero__lede">
-          I design and build custom websites for businesses that want to look sharp,
-          load fast, and turn visitors into paying customers, starting at $1,500. Then I stick around.
+          I design and build custom <NuxtLink to="/services/small-business-websites">small business websites</NuxtLink>
+          that look sharp, load fast, and turn visitors into paying customers,
+          <NuxtLink to="/pricing">starting at $1,500</NuxtLink>. Then I stick around.
         </p>
         <div class="hero__actions">
           <BaseButton variant="accent" size="xl" to="/start-a-project" icon="mdi-arrow-right" iconPosition="end">

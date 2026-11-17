@@ -65,7 +65,9 @@ const includes = [
               <p class="process-teaser__lede">
                 We start with a discovery conversation and a plan you approve. Then I design
                 in the open, you review as we go, and you approve each step before it's built;
-                Launch day isn't a cliff — it's a checkpoint, and support is here after;
+                Launch day isn't a cliff — it's a checkpoint, and support is here after.
+                Budget-minded? See <NuxtLink to="/services/small-business-websites">small business websites</NuxtLink>
+                and <NuxtLink to="/pricing">pricing</NuxtLink>.
               </p>
             </div>
             <div class="process-teaser__cta" v-scroll-reveal="{ direction: 'right' }">

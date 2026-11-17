@@ -64,7 +64,9 @@ const signals = [
                 I audit what's actually working — your rankings, your content, your customers —
                 and keep what earns its keep. Then we modernize the design, tighten the build,
                 and improve the pages that matter most. You end up with a fresh site and a running
-                start, not a restart from zero;
+                start, not a restart from zero. Starting fresh instead? See
+                <NuxtLink to="/services/small-business-websites">small business websites</NuxtLink> and
+                <NuxtLink to="/pricing">pricing</NuxtLink>.
               </p>
             </div>
             <div class="process-teaser__cta" v-scroll-reveal="{ direction: 'right' }">

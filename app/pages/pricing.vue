@@ -51,7 +51,7 @@ const factorRows = [
       <div class="container">
         <span class="page-hero__eyebrow">Pricing</span>
         <h1 class="page-hero__title">Affordable web design, starting at $1,500</h1>
-        <p class="page-hero__lede">Small business websites start at $1,500, and every project is quoted up front so there are no surprises on the invoice. Here's how pricing works: the models, the factors, and what moves the number.</p>
+        <p class="page-hero__lede"><NuxtLink to="/services/small-business-websites">Small business websites</NuxtLink> start at $1,500, and every project is quoted up front so there are no surprises on the invoice. Here's how pricing works: the models, the factors, and what moves the number.</p>
       </div>
     </section>
 

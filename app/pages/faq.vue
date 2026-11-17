@@ -101,6 +101,10 @@ useHead({
         <p class="faq-section__cta" v-scroll-reveal="{ direction: 'up' }">
           Something else on your mind?
           <NuxtLink to="/start-a-project" class="faq-section__link">Ask it here.</NuxtLink>
+          <br>
+          Or see <NuxtLink to="/pricing" class="faq-section__link">pricing</NuxtLink>,
+          <NuxtLink to="/services/small-business-websites" class="faq-section__link">small business websites</NuxtLink>,
+          or <NuxtLink to="/process" class="faq-section__link">how a project runs</NuxtLink>.
         </p>
       </div>
     </section>

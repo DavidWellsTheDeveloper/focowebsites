@@ -93,6 +93,8 @@ const includes = [
                 I'm a freelance web developer based in Fort Collins, so you talk to the person
                 building your site. Projects start at {{ STARTING_PRICE }} for a focused small business
                 site, and larger scopes are quoted up front, so the number you agree to is the number you pay.
+                See <NuxtLink to="/work">recent work</NuxtLink>, read the <NuxtLink to="/faq">FAQ</NuxtLink>,
+                or compare a <NuxtLink to="/services/website-redesign">redesign</NuxtLink> if you already have a site.
               </p>
             </div>
             <div class="process-teaser__cta" v-scroll-reveal="{ direction: 'right' }">
